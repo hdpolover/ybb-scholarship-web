@@ -1,7 +1,5 @@
 <!-- ========== HEADER ========== -->
-<header id="header"
-	class="navbar navbar-expand-lg navbar-end navbar-absolute-top <?= (empty($this->uri->segment(1)) ? "navbar-dark" : "navbar-light") ?> <?= ($this->uri->segment(1) == "other-programs" ? "bg-white shadow" : "") ?> navbar-show-hide"
-	data-hs-header-options='{"fixMoment": 1000,"fixEffect": "slide"}'>
+<header id="header" class="navbar navbar-expand-lg navbar-end navbar-light bg-white">
 
 	<!-- Topbar -->
 	<div class="container navbar-topbar">
@@ -58,7 +56,7 @@
 						<!-- Mega Menu -->
 						<div class="hs-sub-menu hs-position-right dropdown-menu" aria-labelledby="docsMegaMenu"
 							style="min-width: 14rem;">
-							<a class="dropdown-item <?= ($this->uri->segment(1) == "user" ? "active" : "") ?>"
+							<a class="dropdown-item <?= ($this->uri->segment(1) =="user" && empty($this->uri->segment(2)) ? "active" : "") ?>"
 								href="<?= site_url('user'); ?>">Profile</a>
 							<a class="dropdown-item <?= ($this->uri->segment(2) == "scholarship" ? "active" : "") ?>"
 								href="<?= site_url('user/scholarship'); ?>">Scholarship</a>

@@ -49,7 +49,7 @@
                             <div class="input-group-prepend input-group-text">
                                 <i class="bi-key"></i>
                             </div>
-                            <input type="password" class="js-toggle-password form-control form-control-lg" name="password" autocomplete="off" id="signupModalFormSignupPassword" placeholder="8+ characters required" aria-label="8+ characters required" required data-hs-toggle-password-options='{
+                            <input type="password" class="js-toggle-password form-control form-control-lg" minlength="8" name="password" autocomplete="off" id="signupModalFormSignupPassword" placeholder="8+ characters required" aria-label="8+ characters required" required data-hs-toggle-password-options='{
                              "target": [".js-toggle-password-target-1", ".js-toggle-password-target-2"],
                              "defaultClass": "bi-eye-slash",
                              "showClass": "bi-eye",

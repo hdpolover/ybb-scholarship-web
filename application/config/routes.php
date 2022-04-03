@@ -58,6 +58,8 @@ $route['recovery-password/(:any)'] = 'authentication/ubah_password/$1';
 $route['email-activation'] = 'authentication/emailActivation';
 $route['logout'] = 'authentication/logout';
 
+// user
+
 // home
 $route['default_controller'] = 'home';
 $route['about-us'] = 'home/aboutUs';
