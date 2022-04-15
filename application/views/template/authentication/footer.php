@@ -6,10 +6,10 @@
 
 <!-- JS Front -->
 <script src="<?= base_url(); ?>assets/js/theme.min.js"></script>
-
+<script src="<?= base_url(); ?>assets/vendor/hs-file-attach/dist/hs-file-attach.min.js"></script>
 <!-- JS Plugins Init. -->
 <script>
-	(function() {
+	(function () {
 		// INITIALIZATION OF BOOTSTRAP VALIDATION
 		// =======================================================
 		HSBsValidation.init('.js-validate', {
@@ -26,8 +26,12 @@
 
 		// INITIALIZATION OF TOGGLE PASSWORD
 		// =======================================================
-		new HSTogglePassword('.js-toggle-password')
+		new HSTogglePassword('.js-toggle-password');
+		// INITIALIZATION OF FILE ATTACH
+		// =======================================================
+		new HSFileAttach('.js-file-attach')
 	})()
+
 </script>
 </body>
 

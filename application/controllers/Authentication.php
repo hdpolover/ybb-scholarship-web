@@ -61,15 +61,13 @@ class Authentication extends CI_Controller
 
     public function emailActivation()
     {
+
         // cek apakah user sudah login
         if ($this->session->userdata('logged_in') == true) {
             $email = htmlspecialchars($this->session->userdata('email'), true);
 
             // cek apakah terdapat data verifikasi
-            if ($this->M_auth->get_aktivasi(htmlspecialchars($this->session->userdata('user_id'), true)) == false) {
-                $this->session->set_flashdata('notif_error', 'There is an error when trying get your account info !');
-                redirect(site_url('login'));
-            } else {
+            if ($this->M_auth->get_aktivasi(htmlspecialchars($this->session->userdata('user_id'), true)) != false) {
                 // mengambil data verifikasi
                 $aktivasi = $this->M_auth->get_aktivasi(htmlspecialchars($this->session->userdata('user_id'), true));
 
@@ -78,7 +76,6 @@ class Authentication extends CI_Controller
 
                     // cek apakah mengirim permintaan pengiriman email verifikasi
                     if ($this->input->get('act') == "send-email") {
-
                         $subject = "Activation code - YBB Foundation Scholarship";
                         $message = "Your activation code : <br><br><center><h1 style='font-size: 62px;'>{$this->encryption->decrypt($aktivasi->key)}</h1></center><br><br><small class='text-muted'>Your activation code will be valid for 24 hours, please activated your account in this time frame. <span class='text-danger'>If your activation code has been expired, <b>you must redo regristration process</b>.</span></small>";
 
@@ -89,8 +86,7 @@ class Authentication extends CI_Controller
                             $this->session->set_flashdata('notif_error', 'There is an error when trying sent message to your email !');
                             redirect(site_url('email-activation'));
                         }
-                    }elseif($this->input->get('act') == "resend-email") {
-
+                    } elseif ($this->input->get('act') == "resend-email") {
                         $subject = "Activation code - YBB Foundation Scholarship";
                         $message = "Your activation code : <br><br><center><h1 style='font-size: 62px;'>{$this->encryption->decrypt($aktivasi->key)}</h1></center><br><br><small class='text-muted'>Your activation code will be valid for 24 hours, please activated your account in this time frame. <span class='text-danger'>If your activation code has been expired, please redo activation process.</span></small>";
 
@@ -110,6 +106,11 @@ class Authentication extends CI_Controller
                     $this->session->set_flashdata('notif_warning', 'Your account already activated !');
                     redirect(base_url());
                 }
+
+            } else {
+                $this->session->set_flashdata('notif_error', 'There is an error when trying get your account info !');
+                redirect(site_url('login'));
+
             }
         } else {
             if (!empty($_SERVER['QUERY_STRING'])) {
@@ -168,11 +169,13 @@ class Authentication extends CI_Controller
                     // menyimpan data session
                     $this->session->set_userdata($sessiondata);
 
+                    $this->M_auth->setLogTime($user->user_id);
+
                     // cek status dari user yang lagin - 0: BELUM AKTIF - 1: AKTIF - 2: SUSPEND;
-                    if ($user->active == 0) {
+                    if ($user->active == "0") {
                         $this->session->set_flashdata('error', "Hi {$user->name}, please activated your account first");
                         redirect(site_url('email-activation'));
-                    } elseif ($user->active == 2) {
+                    } elseif ($user->active == "2") {
                         $this->session->set_flashdata('error', "Hi {$user->name}, your account has been suspended, please contact admin for more info");
                         redirect(site_url('suspend'));
                     } else {
@@ -195,7 +198,7 @@ class Authentication extends CI_Controller
                                 redirect($this->session->userdata('redirect'));
                             } else {
                                 $this->session->set_flashdata('notif_success', "Welcome admin, {$user->name}");
-                                redirect(base_url());
+                                redirect(site_url('dashboard'));
                             }
                         
                         // USER
@@ -320,8 +323,8 @@ class Authentication extends CI_Controller
                     // memverivikasi email
                     if ($this->M_auth->aktivasi_akun($this->session->userdata('user_id')) == true) {
 
-                        $this->session->set_flashdata('success', " Successfully activated your account, welcome to the YBB Foundation Scholarship !");
-                        redirect(base_url());
+                        $this->session->set_flashdata('success', "Successfully activated your account, now you can continued to apply for scholarship program !");
+                        redirect(site_url('scholarship'));
                     } else {
                         $this->session->set_flashdata('notif_error', 'There is an error, please try again later !');
                         redirect($this->agent->referrer());

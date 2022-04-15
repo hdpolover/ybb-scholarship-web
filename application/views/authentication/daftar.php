@@ -147,3 +147,47 @@
     	<!-- End Row -->
     </div>
     <!-- End Form -->
+
+    <script>
+    	$(document).ready(function () {
+    		$("#signupModalFormSignupName").keydown(function (event) {
+    			var inputValue = event.which;
+    			// allow letters and whitespaces only.
+    			if (!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0 &&
+    					inputValue != 8 && inputValue != 37 && inputValue != 39)) {
+    				event.preventDefault();
+    			}
+    		});
+    	});
+
+    	$("#signupModalFormSignupPhone").keyup(function () {
+    		var value = $(this).val();
+    		value = value.replace(/^(0*)/, "");
+    		$(this).val(value);
+    	});
+
+    	// Restricts input for the given textbox to the given inputFilter.
+    	function setInputFilter(textbox, inputFilter) {
+    		["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function (
+    		event) {
+    			textbox.addEventListener(event, function () {
+    				if (inputFilter(this.value)) {
+    					this.oldValue = this.value;
+    					this.oldSelectionStart = this.selectionStart;
+    					this.oldSelectionEnd = this.selectionEnd;
+    				} else if (this.hasOwnProperty("oldValue")) {
+    					this.value = this.oldValue;
+    					this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+    				} else {
+    					this.value = "";
+    				}
+    			});
+    		});
+    	}
+
+    	// Install input filters Tambah Hp Pegawai.
+    	setInputFilter(document.getElementById("signupModalFormSignupPhone"), function (value) {
+    		return /^\d*$/.test(value);
+    	});
+
+    </script>

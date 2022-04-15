@@ -8,6 +8,11 @@ class M_auth extends CI_Model
         parent::__construct();
     }
 
+    function setLogTime($user_id){
+        $this->db->where('user_id', $user_id);
+        $this->db->update('tb_auth', ['log_time' => time()]);
+    }
+
     // main
     public function get_auth($email)
     {

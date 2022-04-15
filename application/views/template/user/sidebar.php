@@ -87,12 +87,15 @@
     									<a class="nav-link <?= ($this->uri->segment(2) == "scholarship" ? "active" : "") ?>"
     										href="<?= site_url('user/scholarship'); ?>">
     										<i class="bi-people nav-icon"></i> Scholarship
+											<?php if ($scholarship['status'] == false || $scholarship['status'] == 1):?>
+												<i class="bi bi-exclamation-diamond text-<?= $scholarship['alert'];?> ms-auto"></i>
+											<?php endif;?>
     									</a>
     								</li>
     								<li class="nav-item">
     									<a class="nav-link <?= ($this->uri->segment(2) == "settings" ? "active" : "") ?>"
     										href="<?= site_url('user/settings'); ?>">
-    										<i class="bi-sliders nav-icon"></i> Preferences
+    										<i class="bi-sliders nav-icon"></i> Preferences 
     									</a>
     								</li>
     							</ul>

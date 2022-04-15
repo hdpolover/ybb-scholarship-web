@@ -3,12 +3,52 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class M_user extends CI_Model
 {
-    function __construct()
+    public function __construct()
     {
         parent::__construct();
     }
 
-    function updateProfile($picture){
+    public function getScholarshipStatus($user_id)
+    {
+        $query = $this->db->get_where('tb_scholarship', ['user_id' => $user_id, 'is_deleted' => 0]);
+        if ($query->num_rows() > 0) {
+            return $query->row()->status;
+        } else {
+            return false;
+        }
+    }
+
+    public function getScholarshipData($user_id)
+    {
+        $this->db->select('*');
+        $this->db->from('tb_scholarship sh');
+        $this->db->join('tb_scholarship_file sf', 'sh.scholar_id = sf.scholar_id', 'inner');
+        $this->db->where('sh.user_id', $user_id);
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            return $query->row();
+        } else {
+            return false;
+        }
+    }
+
+    public function getDetailUser($user_id)
+    {
+        $this->db->select('*');
+        $this->db->from('tb_auth ta');
+        $this->db->join('tb_user tu', 'ta.user_id = tu.user_id', 'inner');
+        $this->db->where('ta.user_id', $user_id);
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            return $query->row();
+        } else {
+            return false;
+        }
+    }
+
+    public function updateProfile($picture)
+    {
         $name = htmlspecialchars($this->input->post('name'), true);
         $email = htmlspecialchars($this->input->post('email'), true);
         $phone = htmlspecialchars($this->input->post('phone'), true);
@@ -42,14 +82,14 @@ class M_user extends CI_Model
     }
 
 
-    function resetPicture()
+    public function resetPicture()
     {
         $this->db->where('user_id', $this->session->userdata('user_id'));
         $this->db->update('tb_user', ['picture' => null]);
         return ($this->db->affected_rows() != 1) ? false : true;
     }
 
-    function changePassword($password)
+    public function changePassword($password)
     {
         $this->db->where('user_id', $this->session->userdata('user_id'));
         $this->db->update('tb_auth', ['password' => password_hash($password, PASSWORD_DEFAULT)]);

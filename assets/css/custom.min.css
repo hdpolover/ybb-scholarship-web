@@ -1,27 +1,27 @@
 .navbar-brand-logo {
 	width: 100%;
 	min-width: 9rem;
-	max-width: 9rem;
+	max-width: 9rem
 }
 
 .hs-position-right {
 	left: auto !important;
-	right: 0 !important;
+	right: 0 !important
 }
 
-@media (min-width: 991.98px) {
+@media (min-width:991.98px) {
 	.docs-navbar-sidebar-aside-body {
-		padding-top: 5rem !important;
+		padding-top: 5rem !important
 	}
 }
 
 div.dataTables_wrapper {
 	width: 100%;
-	margin: 0 auto;
+	margin: 0 auto
 }
 
 .bg-school {
-	position: relative;
+	position: relative
 }
 
 .bg-school:before {
@@ -36,11 +36,11 @@ div.dataTables_wrapper {
 	background-image: url('../images/bg-school.jpg');
 	background-repeat: no-repeat;
 	background-position: 50% 0;
-	background-size: cover;
+	background-size: cover
 }
 
 .form-label {
-	font-weight: 600;
+	font-weight: 600
 }
 
 .cursor {
@@ -70,7 +70,7 @@ div.dataTables_wrapper {
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
-	background: #0B4C8A;
+	background: #377dff;
 	opacity: 0.5;
 	cursor: pointer;
 }
@@ -79,7 +79,7 @@ div.dataTables_wrapper {
 /* Handle on hover */
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #0B4C8A;
+	background: #377dff;
 	opacity: 0.9;
 	cursor: pointer !important;
 }

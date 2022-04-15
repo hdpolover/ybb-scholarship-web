@@ -10,7 +10,7 @@
 <!-- End Hero -->
 
 <!-- FAQ -->
-<div class="container content-space-2 content-space-b-lg-3">
+<div class="container bg-white content-space-2 content-space-b-lg-3">
     <div class="w-lg-75 mx-lg-auto">
         <div class="d-grid gap-10">
             <div class="d-grid gap-3">

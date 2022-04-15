@@ -37,12 +37,17 @@ class User extends CI_Controller
     {
         $data['user'] = $this->M_auth->get_auth($this->session->userdata('email'));
 
+        $data['scholarship'] = $this->cekScholarshipStatus();
+
         $this->templateuser->view('user/overview', $data);
     }
 
     public function scholarship()
     {
         $data['user'] = $this->M_auth->get_auth($this->session->userdata('email'));
+
+        $data['scholarship'] = $this->cekScholarshipStatus();
+        $data['scholar'] = $this->M_user->getScholarshipData($this->session->userdata('user_id'));
 
         $this->templateuser->view('user/scholarship', $data);
     }
@@ -51,20 +56,19 @@ class User extends CI_Controller
     {
         $data['user'] = $this->M_auth->get_auth($this->session->userdata('email'));
 
+        $data['scholarship'] = $this->cekScholarshipStatus();
+
         $this->templateuser->view('user/settings', $data);
     }
 
-    public function updateProfile(){
-
+    public function updateProfile()
+    {
         if (isset($_FILES['image'])) {
-
             $path = "berkas/user/{$this->session->userdata('user_id')}/profile/";
             $upload = $this->uploader->uploadImage($_FILES['image'], $path);
             
             if ($upload == true) {
-
                 if ($this->M_user->updateProfile($upload['filename']) == true) {
-
                     $session = [
                         'name' => $this->input->post('name'),
                         'email' => $this->input->post('email'),
@@ -82,11 +86,8 @@ class User extends CI_Controller
                 $this->session->set_flashdata('notif_warning', $upload['message']);
                 redirect($this->agent->referrer());
             }
-            
-        }else {
-
+        } else {
             if ($this->M_user->updateProfile(null) == true) {
-
                 $session = [
                     'name' => $this->input->post('name'),
                     'email' => $this->input->post('email'),
@@ -101,17 +102,15 @@ class User extends CI_Controller
                 redirect($this->agent->referrer());
             }
         }
-        
     }
 
     public function resetPicture()
     {
-
         if ($this->M_user->resetPicture() == true) {
             $this->load->helper('file');
             $path = "berkas/user/{$this->session->userdata('user_id')}/profile/";
             // delete all uploaded files
-            delete_files($path, TRUE); 
+            delete_files($path, true);
 
             $this->session->set_flashdata('notif_success', 'Your picture profile has been reset');
             redirect($this->agent->referrer());
@@ -123,7 +122,6 @@ class User extends CI_Controller
 
     public function changePassword()
     {
-
         $cur_password   = $this->input->post('currentPassword');
         $password       = $this->input->post('newPassword');
         $conf_password  = $this->input->post('confirmNewPassword');
@@ -134,7 +132,6 @@ class User extends CI_Controller
         if ($password == $conf_password) {
             //mengecek apakah password benar
             if (password_verify($cur_password, $user->password)) {
-
                 if ($this->M_user->changePassword($password) == true) {
 
                     // atur dataemailperubahan password
@@ -165,10 +162,59 @@ class User extends CI_Controller
 
 
     // FUNCTION PRIVATE
-    // MAILER SENDER
-    function send_email($email, $subject, $message)
-    {
 
+    public function cekScholarshipStatus()
+    {
+        $scholarshipStatus = $this->M_user->getScholarshipStatus($this->session->userdata('user_id'));
+        switch ($scholarshipStatus) {
+            // not yet apply
+            case false:
+                $scholar = [
+                    'status' => false,
+                    'alert' => 'warning',
+                    'message' => 'You not yet apply for YBB scholarship, please go to applicant form to apply',
+                ];
+                break;
+            // waiting verfication
+            case 1:
+                $scholar = [
+                    'status' => 1,
+                    'alert' => 'info',
+                    'message' => 'Your applicantion for YBB Scholarship Program, has been send. Please wait for our team verified your data',
+                ];
+                break;
+            // accepted
+            case 2:
+                $scholar = [
+                    'status' => 2,
+                    'alert' => 'success',
+                    'message' => '<b>Congratulation</b>. Your applicantion has been approved by YBB Scholarship administration, please wait in few days for our team to reach you',
+                ];
+                break;
+            // rejected
+            case 3:
+                $scholar = [
+                    'status' => 3,
+                    'alert' => 'danger',
+                    'message' => '<b>Sorry</b>. Your applicantion for YBB scholarship, has been rejected.',
+                ];
+                break;
+            
+            default:
+                $scholar = [
+                    'status' => false,
+                    'alert' => 'warning',
+                    'message' => 'You not yet apply for YBB scholarship, please go to applicant form to apply',
+                ];
+                break;
+        }
+
+        return $scholar;
+
+    }
+    // MAILER SENDER
+    public function send_email($email, $subject, $message)
+    {
         $mail = [
                 'to' => $email,
                 'subject' => $subject,

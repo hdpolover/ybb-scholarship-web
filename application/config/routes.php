@@ -60,6 +60,11 @@ $route['logout'] = 'authentication/logout';
 
 // user
 
+// admin
+$route['dashboard'] = 'admin';
+$route['users'] = 'admin/userList';
+$route['settings/website'] = 'admin/settingWebsite';
+
 // home
 $route['default_controller'] = 'home';
 $route['about-us'] = 'home/aboutUs';
