@@ -70,7 +70,11 @@
   					</li>
   					<li class="nav-item" id="tour-applicant">
   						<a class="nav-link <?= ($this->uri->segment(2) == "applicant" ? "active" : "") ?>"
-  							href="<?= site_url('scholarship/applicant'); ?>">Applicant</a>
+  							href="<?= site_url('scholarship/applicant'); ?>">Applicant
+  							<?php if($countScholar > 0):?>
+  							<span class="ms-auto badge bg-primary"><?= $countScholar;?></span>
+  							<?php endif;?>
+  						</a>
   					</li>
   					<li class="nav-item" id="tour-members">
   						<a class="nav-link <?= ($this->uri->segment(2) == "member" ? "active" : "") ?>"

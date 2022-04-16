@@ -8,8 +8,15 @@ class TemplateBack
         $this->_ci = &get_instance();
         $this->_ci->load->database();
     }
+
+    function countScholar(){
+        $query = $this->_ci->db->get_where('tb_scholarship', ['status !=' => 2]);
+        return $query->num_rows();
+    }
+
     function view($content, $data = null)
     {
+        $data['countScholar'] = $this->countScholar();
 
         $this->_ci->load->view('template/backend/header', $data);
         $this->_ci->load->view('template/alert', $data);

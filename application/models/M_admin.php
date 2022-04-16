@@ -29,7 +29,7 @@ class M_admin extends CI_Model
         $this->db->join('tb_scholarship_file b', 'a.scholar_id = b.scholar_id');
         $this->db->join('tb_auth c', 'a.user_id = c.user_id');
         $this->db->join('tb_user d', 'a.user_id = d.user_id');
-        $this->db->where(['c.is_deleted' => 0, 'c.role' => 2]);
+        $this->db->where(['c.is_deleted' => 0, 'c.role' => 2, 'status !=' => 2]);
         return $this->db->get()->result();
     }
 }
