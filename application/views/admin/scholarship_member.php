@@ -39,9 +39,6 @@
 									data-bs-target="#detailApplicant"
 									class="btn btn-primary btn-xs selectorApplicant"><i class="bi bi-eye"></i> applicant
 									data`s</button>
-								<button type="button" data-bs-toggle="modal"
-									data-bs-target="#manageUser<?= $user->user_id; ?>" class="btn btn-warning btn-xs"><i
-										class="bi bi-bookmark-check"></i> manage</button>
 							</td>
 							<td><b><?= date("d F Y - H:i", $user->created_at); ?></b></td>
 							<td><b><?= $user->name; ?></b></td>
@@ -90,8 +87,8 @@
 												<div class="d-grid gap-3">
 													<!-- Check -->
 													<div class="form-check">
-														<input class="form-check-input" type="radio"
-															name="status" id="acceptApplicant" value="approved" required>
+														<input class="form-check-input" type="radio" name="status"
+															id="acceptApplicant" value="approved" required>
 														<label class="form-check-label text-dark" for="acceptApplicant">
 															<b>Accept Applicant</b>
 															<span class="d-block text-muted small">Applicant will
@@ -106,8 +103,8 @@
 
 													<!-- Check -->
 													<div class="form-check">
-														<input class="form-check-input" type="radio"
-															name="status" id="rejectApplicant" value="rejected" required>
+														<input class="form-check-input" type="radio" name="status"
+															id="rejectApplicant" value="rejected" required>
 														<label class="form-check-label text-dark" for="rejectApplicant">
 															<b>Reject Applicant</b>
 															<span class="d-block text-muted small">Applicant will

@@ -51,4 +51,22 @@ class M_scholarship extends CI_Model
         $this->db->insert('tb_scholarship_file', $uploadData);
         return ($this->db->affected_rows() != 1) ? false : true;
     }
+
+    public function manageApplicant()
+    {
+        $scholar_id = $this->input->post('scholar_id');
+        $status = $this->input->post('status');
+
+        $status = $status == 'approved' ? 2 : 3;
+
+        $formData = [
+            'scholar_id' => $scholar_id,
+            'status' => $status,
+            'modified_at' => time()
+        ];
+
+        $this->db->where('scholar_id', $scholar_id);
+        $this->db->update('tb_scholarship', $formData);
+        return ($this->db->affected_rows() != 1) ? false : true;
+    }
 }

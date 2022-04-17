@@ -10,7 +10,7 @@ class M_admin extends CI_Model
 
     function countDashboard(){
         $users = $this->db->get_where('tb_auth', ['active' => 1])->num_rows();
-        $members = $this->db->get_where('tb_auth', ['active' => 1])->num_rows();
+        $members = $this->db->get_where('tb_scholarship', ['status' => 2])->num_rows();
 
         return ['users' => $users, 'members' => $members];
     }
@@ -24,12 +24,22 @@ class M_admin extends CI_Model
     }
 
     public function getScholarlist(){
-        $this->db->select('a.*, b.*, c.email, c.role, c.is_deleted, d.name, d.picture');
+        $this->db->select('a.*, b.*, c.email, c.role, c.is_deleted, d.name, d.picture, d.gender');
         $this->db->from('tb_scholarship a');
         $this->db->join('tb_scholarship_file b', 'a.scholar_id = b.scholar_id');
         $this->db->join('tb_auth c', 'a.user_id = c.user_id');
         $this->db->join('tb_user d', 'a.user_id = d.user_id');
         $this->db->where(['c.is_deleted' => 0, 'c.role' => 2, 'status !=' => 2]);
+        return $this->db->get()->result();
+    }
+
+    public function getScholarlistApproved(){
+        $this->db->select('a.*, b.*, c.email, c.role, c.is_deleted, d.name, d.picture, d.gender');
+        $this->db->from('tb_scholarship a');
+        $this->db->join('tb_scholarship_file b', 'a.scholar_id = b.scholar_id');
+        $this->db->join('tb_auth c', 'a.user_id = c.user_id');
+        $this->db->join('tb_user d', 'a.user_id = d.user_id');
+        $this->db->where(['c.is_deleted' => 0, 'c.role' => 2, 'status' => 2]);
         return $this->db->get()->result();
     }
 }

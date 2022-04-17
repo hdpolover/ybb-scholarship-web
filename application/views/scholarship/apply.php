@@ -310,7 +310,7 @@
 								<label class="form-label" for="formCurrentGPA">Current GPA <small
 										class="text-danger">*</small></label>
 
-								<input type="number" id="formCurrentGPA" class="form-control" name="current_gpa"
+								<input type="text" id="formCurrentGPA" class="form-control" name="current_gpa"
 									maxlength="4" placeholder="Your answer" required>
 
 							</div>

@@ -34,6 +34,12 @@ class Scholarship extends CI_Controller
         $this->templateback->view('admin/scholarship', $data);
     }
 
+    public function member()
+    {
+        $data['users'] = $this->M_admin->getScholarlistApproved();
+        $this->templateback->view('admin/scholarship_member', $data);
+    }
+
     // form
     public function applyScholarship()
     {
@@ -77,5 +83,17 @@ class Scholarship extends CI_Controller
             $this->session->set_flashdata('notif_warning', 'There is a problem with regristration process, try again later');
             redirect($this->agent->referrer());
         }
+    }
+
+    function manageApplicant(){
+        $status = $this->input->post('status');
+        if ($this->M_scholarship->manageApplicant() == true) {
+            $this->session->set_flashdata('notif_success', 'Applicant request for YBB Scholarship program has been '.$status);
+            redirect(site_url('scholarship/applicant'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying manage applicant, try again later');
+            redirect($this->agent->referrer());
+        }
+
     }
 }
