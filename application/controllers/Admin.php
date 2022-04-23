@@ -43,6 +43,12 @@ class Admin extends CI_Controller
         $this->templateback->view('admin/data_user', $data);
     }
 
+    public function announcement()
+    {
+        $data['announcement'] = $this->M_admin->getAnnouncementlist();
+        $this->templateback->view('admin/announcement', $data);
+    }
+
     public function settingWebsite()
     {
         $this->templateback->view('admin/settings');
@@ -76,6 +82,57 @@ class Admin extends CI_Controller
 			echo "<center class='py-5'><h4>There is an error when trying get user applicant data`s !</h4></center>";
 		}
     }
+
+    public function getDetailAnnouncement(){
+
+        $id = $this->input->post('id');
+
+		if ($this->M_admin->getDetailAnnouncement($id) != false) {
+            $data['item'] = $this->M_admin->getDetailAnnouncement($id);
+
+            $this->load->view('admin/ajax/edit_annoucement', $data);
+
+		} else {
+			echo "<center class='py-5'><h4>There is an error when trying get user applicant data`s !</h4></center>";
+		}
+    }
+
+    function addAnnouncement()
+    {
+        $subject = $this->input->post('subject');
+        if ($this->M_admin->addAnnouncement() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly post announcement '.$subject);
+            redirect(site_url('information/announcement'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying post announcement, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    function editAnnouncement()
+    {
+        $subject = $this->input->post('subject');
+        if ($this->M_admin->editAnnouncement() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly edit announcement '.$subject);
+            redirect(site_url('information/announcement'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit announcement, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    function deleteAnnouncement()
+    {
+        $subject = $this->input->post('subject');
+        if ($this->M_admin->deleteAnnouncement() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly delete announcement '.$subject);
+            redirect(site_url('information/announcement'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying delete announcement, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
+
 
 
     // FUNCTION PRIVATE

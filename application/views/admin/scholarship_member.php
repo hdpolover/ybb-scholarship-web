@@ -2,8 +2,8 @@
 <div class="docs-page-header">
 	<div class="row align-items-center">
 		<div class="col-sm">
-			<h1 class="docs-page-header-title">Scholarship Applicant</h1>
-			<p class="docs-page-header-text">List of all user that has been send their applicant for scholarship
+			<h1 class="docs-page-header-title">Scholarship Members</h1>
+			<p class="docs-page-header-text">List of all user that has been approved for scholarship
 				programs.</p>
 		</div>
 	</div>
@@ -34,7 +34,7 @@
 							<td>
 								<button type="button" data-bs-toggle="modal" id="<?= $user->user_id; ?>"
 									data-bs-target="#detailUser" class="btn btn-info btn-xs selectorDetail"><i
-										class="bi bi-eye"></i> detail</button>
+										class="bi bi-eye"></i> account</button>
 								<button type="button" data-bs-toggle="modal" id="<?= $user->user_id; ?>"
 									data-bs-target="#detailApplicant"
 									class="btn btn-primary btn-xs selectorApplicant"><i class="bi bi-eye"></i> applicant

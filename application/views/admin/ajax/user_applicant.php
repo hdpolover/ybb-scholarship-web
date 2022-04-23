@@ -120,13 +120,9 @@
 			</li>
 			<li class="list-group-item p-3">
 				<div class="row">
-					<div class="col-sm-4 mb-2 mb-sm-0">
+					<div class="col-sm-12 mb-2 mb-sm-0">
 						<span class="h6">About your self</span>
-					</div>
-					<!-- End Col -->
-
-					<div class="col-sm-8 mb-2 mb-sm-0">
-						<span><?= $scholar->about;?></span>
+						<p><?= $scholar->about;?></p>
 					</div>
 					<!-- End Col -->
 				</div>
@@ -134,13 +130,9 @@
 			</li>
 			<li class="list-group-item p-3">
 				<div class="row">
-					<div class="col-sm-4 mb-2 mb-sm-0">
+					<div class="col-sm-12 mb-2 mb-sm-0">
 						<span class="h6">biggest dream and how will to make it come true</span>
-					</div>
-					<!-- End Col -->
-
-					<div class="col-sm-8 mb-2 mb-sm-0">
-						<span><?= $scholar->dream_come;?></span>
+						<p><?= $scholar->dream_come;?></p>
 					</div>
 					<!-- End Col -->
 				</div>
@@ -148,13 +140,9 @@
 			</li>
 			<li class="list-group-item p-3">
 				<div class="row">
-					<div class="col-sm-4 mb-2 mb-sm-0">
+					<div class="col-sm-12 mb-2 mb-sm-0">
 						<span class="h6">volunteering or organizational experiences</span>
-					</div>
-					<!-- End Col -->
-
-					<div class="col-sm-8 mb-2 mb-sm-0">
-						<span><?= $scholar->volunteer;?></span>
+						<p><?= $scholar->volunteer;?></p>
 					</div>
 					<!-- End Col -->
 				</div>
@@ -181,7 +169,7 @@
 					data-bs-parent="#accordionApplicant">
 					<div class="accordion-body">
 						<img src="<?= base_url().$scholar->upload_follow;?>"
-							alt="<?= base_url().$scholar->upload_follow;?>" class="w-100 h-auto">
+							alt="<?= base_url().$scholar->upload_follow;?>" class="w-100 h-auto border">
 					</div>
 				</div>
 			</div>
@@ -198,7 +186,7 @@
 					data-bs-parent="#accordionApplicant">
 					<div class="accordion-body">
 						<img src="<?= base_url().$scholar->upload_apps;?>"
-							alt="<?= base_url().$scholar->upload_apps;?>" class="w-100 h-auto">
+							alt="<?= base_url().$scholar->upload_apps;?>" class="w-100 h-auto border">
 					</div>
 				</div>
 			</div>
@@ -215,7 +203,7 @@
 					data-bs-parent="#accordionApplicant">
 					<div class="accordion-body">
 						<img src="<?= base_url().$scholar->upload_youtube;?>"
-							alt="<?= base_url().$scholar->upload_youtube;?>" class="w-100 h-auto">
+							alt="<?= base_url().$scholar->upload_youtube;?>" class="w-100 h-auto border">
 					</div>
 				</div>
 			</div>
@@ -232,7 +220,7 @@
 					data-bs-parent="#accordionApplicant">
 					<div class="accordion-body">
 						<img src="<?= base_url().$scholar->upload_telegram;?>"
-							alt="<?= base_url().$scholar->upload_telegram;?>" class="w-100 h-auto">
+							alt="<?= base_url().$scholar->upload_telegram;?>" class="w-100 h-auto border">
 					</div>
 				</div>
 			</div>
@@ -250,7 +238,7 @@
 					data-bs-parent="#accordionApplicant">
 					<div class="accordion-body">
 						<img src="<?= base_url().$scholar->upload_story;?>"
-							alt="<?= base_url().$scholar->upload_story;?>" class="w-100 h-auto">
+							alt="<?= base_url().$scholar->upload_story;?>" class="w-100 h-auto border">
 					</div>
 				</div>
 			</div>
@@ -267,7 +255,7 @@
 					data-bs-parent="#accordionApplicant">
 					<div class="accordion-body">
 						<img src="<?= base_url().$scholar->upload_tags;?>"
-							alt="<?= base_url().$scholar->upload_tags;?>" class="w-100 h-auto">
+							alt="<?= base_url().$scholar->upload_tags;?>" class="w-100 h-auto border">
 					</div>
 				</div>
 			</div>

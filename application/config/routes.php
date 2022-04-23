@@ -63,7 +63,9 @@ $route['logout'] = 'authentication/logout';
 // admin
 $route['dashboard'] = 'admin';
 $route['users'] = 'admin/userList';
+$route['information/announcement'] = 'admin/announcement';
 $route['settings/website'] = 'admin/settingWebsite';
+
 
 // home
 $route['default_controller'] = 'home';

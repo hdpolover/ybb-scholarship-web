@@ -34,7 +34,7 @@
 							<td>
 								<button type="button" data-bs-toggle="modal" id="<?= $user->user_id; ?>"
 									data-bs-target="#detailUser" class="btn btn-info btn-xs selectorDetail"><i
-										class="bi bi-eye"></i> detail</button>
+										class="bi bi-eye"></i> account</button>
 								<button type="button" data-bs-toggle="modal" id="<?= $user->user_id; ?>"
 									data-bs-target="#detailApplicant"
 									class="btn btn-primary btn-xs selectorApplicant"><i class="bi bi-eye"></i> applicant
@@ -171,7 +171,7 @@
 <!-- Modal -->
 <div id="detailApplicant" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="detailUserTitle"
 	aria-hidden="true">
-	<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+	<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h4 class="modal-title" id="detailUserTitle">Applicant information</h4>
