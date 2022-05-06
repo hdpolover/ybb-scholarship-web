@@ -1,6 +1,6 @@
 <!-- ========== HEADER ========== -->
 <header id="header"
-	class="navbar navbar-expand-lg navbar-end navbar-absolute-top <?= (empty($this->uri->segment(1)) ? "navbar-dark" : "navbar-light") ?> <?= ($this->uri->segment(1) == "other-programs" ? "bg-white shadow" : "") ?> navbar-show-hide"
+	class="navbar navbar-expand-lg navbar-end navbar-absolute-top <?= (empty($this->uri->segment(1)) ? "navbar-dark" : "navbar-light bg-white shadow-sm") ?> navbar-show-hide"
 	data-hs-header-options='{"fixMoment": 1000,"fixEffect": "slide"}'>
 
 	<!-- Topbar -->
@@ -58,6 +58,10 @@
 						<!-- Mega Menu -->
 						<div class="hs-sub-menu hs-position-right dropdown-menu" aria-labelledby="docsMegaMenu"
 							style="min-width: 14rem;">
+							<?php if($this->session->userdata('role') == 0 || $this->session->userdata('role') == 1):?>
+							<a class="dropdown-item <?= ($this->uri->segment(1) == "dashboard" ? "active" : "") ?>"
+								href="<?= site_url('dashboard'); ?>">Admin Dashboard</a>
+							<?php else:?>
 							<a class="dropdown-item <?= ($this->uri->segment(1) == "user" ? "active" : "") ?>"
 								href="<?= site_url('user'); ?>">Profile</a>
 							<a class="dropdown-item <?= ($this->uri->segment(2) == "scholarship" ? "active" : "") ?>"
@@ -65,6 +69,7 @@
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item <?= ($this->uri->segment(2) == "settings" ? "active" : "") ?>"
 								href="<?= site_url('user/settings'); ?>">Account Setting</a>
+							<?php endif;?>
 							<a class="dropdown-item " href="<?= site_url('logout'); ?>">Logout</a>
 						</div>
 						<!-- End Mega Menu -->

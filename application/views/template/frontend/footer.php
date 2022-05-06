@@ -51,7 +51,7 @@
 
 				<!-- List -->
 				<ul class="list-unstyled list-py-1 mb-0">
-					<li><a class="link-sm link-light" href="<?= site_url('support'); ?>">Support</a></li>
+					<li><a class="link-sm link-light" href="<?= site_url('contribute'); ?>">Support</a></li>
 					<li><a class="link-sm link-light" href="<?= site_url('faq'); ?>">FAQ</a></li>
 				</ul>
 				<!-- End List -->
@@ -63,7 +63,7 @@
 
 				<!-- List -->
 				<ul class="list-unstyled list-py-1 mb-5">
-					<li><a class="link-sm link-light" href="<?= site_url('help'); ?>"><i
+					<li><a class="link-sm link-light" href="<?= site_url('faq'); ?>"><i
 								class="bi-question-circle-fill me-1"></i> Help</a>
 					</li>
 					<li><a class="link-sm link-light" href="<?= site_url('user'); ?>"><i
@@ -164,6 +164,8 @@
 <script src="<?= base_url(); ?>assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/aos/dist/aos.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/prism/prism.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/fslightbox/index.js"></script>
 
 <!-- JS Front -->
 <script src="<?= base_url(); ?>assets/js/theme.min.js"></script>

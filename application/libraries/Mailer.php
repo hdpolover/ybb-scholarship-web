@@ -4,12 +4,19 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 class Mailer{
+    protected $_ci;
   
   public function __construct(){
     log_message('Debug', 'PHPMailer class is loaded.');
     $this->_ci = &get_instance();
     $this->_ci->load->database();
   }
+
+  function get_settingsValue($key){
+      $query = $this->_ci->db->get_where('tb_settings', ['key' => $key]);
+      return $query->row()->value;
+  }
+  
   
   public function send($data){
     // Include PHPMailer library files
@@ -32,17 +39,17 @@ class Mailer{
           )
         );
 
-        // $mail->SMTPDebug      = 1;
+        $mail->SMTPDebug      = $this->get_settingsValue('mailer_mode');
         $mail->SMTPAuth       = TRUE;
         $mail->SMTPKeepAlive  = TRUE;
         $mail->SMTPSecure     = "tls";
-        $mail->Port           = 587;
-        $mail->Host           = "smtp.gmail.com";
-        $mail->Username       = "ngodingin.indonesia@gmail.com";
-        $mail->Password       = "hxexyuauljnejjmq";
+        $mail->Port           = $this->get_settingsValue('mailer_port'); #587;
+        $mail->Host           = $this->get_settingsValue('mailer_host'); #"smtp.gmail.com";
+        $mail->Username       = $this->get_settingsValue('mailer_username'); #"ngodingin.indonesia@gmail.com";
+        $mail->Password       = $this->get_settingsValue('mailer_password'); #"hxexyuauljnejjmq";
         
-        $mail->setFrom("ngodingin.indonesia@gmail.com", "YBB Foundation");
-        $mail->addReplyTo("ngodingin.indonesia@gmail.com", "YBB Foundation");
+        $mail->setFrom($this->get_settingsValue('mailer_username'), $this->get_settingsValue('mailer_alias'));
+        $mail->addReplyTo($this->get_settingsValue('mailer_username'), $this->get_settingsValue('mailer_alias'));
         
         // Add a recipient
         $mail->addAddress($data['to']);

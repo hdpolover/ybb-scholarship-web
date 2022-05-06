@@ -51,7 +51,87 @@ class Admin extends CI_Controller
 
     public function settingWebsite()
     {
-        $this->templateback->view('admin/settings');
+        $page = $this->input->get('page');
+
+        switch ($page) {
+            case 'basic':
+                $data['web_title'] = $this->M_home->get_settingsValue('web_title');
+                $data['web_icon'] = $this->M_home->get_settingsValue('web_icon');
+                $data['web_logo'] = $this->M_home->get_settingsValue('web_logo');
+                $data['web_desc'] = $this->M_home->get_settingsValue('web_desc');
+                $data['web_address'] = $this->M_home->get_settingsValue('web_address');
+                $data['web_phone'] = $this->M_home->get_settingsValue('web_phone');
+                $data['web_facebook'] = $this->M_home->get_settingsValue('web_facebook');
+                $data['web_instagram'] = $this->M_home->get_settingsValue('web_instagram');
+                $data['web_twitter'] = $this->M_home->get_settingsValue('web_twitter');
+                $data['web_youtube'] = $this->M_home->get_settingsValue('web_youtube');
+
+                $this->templateback->view('admin/settings/basic', $data);
+                break;
+
+            case 'credentials':
+                $data['super_account'] = $this->M_admin->get_superAccount();
+                $data['admin_account'] = $this->M_admin->get_adminAccount();
+
+                $this->templateback->view('admin/settings/credentials', $data);
+                break;
+
+            case 'mailer':
+                $data['mailer_mode'] = $this->M_home->get_settingsValue('mailer_mode');
+                $data['mailer_host'] = $this->M_home->get_settingsValue('mailer_host');
+                $data['mailer_port'] = $this->M_home->get_settingsValue('mailer_port');
+                $data['mailer_alias'] = $this->M_home->get_settingsValue('mailer_alias');
+                $data['mailer_username'] = $this->M_home->get_settingsValue('mailer_username');
+                $data['mailer_password'] = $this->M_home->get_settingsValue('mailer_password');
+
+                $this->templateback->view('admin/settings/mailer', $data);
+                break;
+
+            case 'home':
+                $data['hero_section'] = $this->M_home->get_homeSection('hero');
+                $data['web_motto'] = $this->M_home->get_settingsValue('web_motto');
+                $data['home_sinopsis'] = $this->M_home->get_homeSection('sinopsis');
+                $data['home_manfaat'] = $this->M_home->get_homeSection('manfaat');
+                $data['home_gallery'] = $this->M_home->get_homeSection('gallery');
+
+                $this->templateback->view('admin/settings/home', $data);
+                break;
+
+            case 'about':
+                $data['web_about'] = $this->M_home->get_settingsValue('web_about');
+                $data['web_motto'] = $this->M_home->get_settingsValue('web_motto');
+                $data['about_gallery'] = $this->M_home->get_aboutGallery();
+
+                $this->templateback->view('admin/settings/about', $data);
+                break;
+
+            case 'faq':
+                $data['faq'] = $this->M_home->get_faqContent();
+
+                $this->templateback->view('admin/settings/faq', $data);
+                break;
+
+            case 'programs':
+                $data['op_bg'] = $this->M_home->get_settingsValue('op_bg');
+                $data['op_desc'] = $this->M_home->get_settingsValue('op_desc');
+                $data['op_content'] = $this->M_home->get_otherProgramsContent();
+
+                $this->templateback->view('admin/settings/programs', $data);
+                break;
+
+            case 'contribute':
+                $data['contribute_desc'] = $this->M_home->get_settingsValue('contribute_desc');
+                $data['contribute_an_rekening'] = $this->M_home->get_settingsValue('contribute_an_rekening');
+                $data['contribute_rekening'] = $this->M_home->get_settingsValue('contribute_rekening');
+                $data['contribute_whatsapp'] = $this->M_home->get_settingsValue('contribute_whatsapp');
+
+                $this->templateback->view('admin/settings/contribute', $data);
+                break;
+            
+            default:
+                $this->templateback->view('admin/settings');
+                break;
+        }
     }
 
     public function getDetailUser(){
@@ -132,6 +212,220 @@ class Admin extends CI_Controller
             redirect($this->agent->referrer());
         }
     }
+
+    // settings
+
+    function changeContribute(){
+        if ($this->M_admin->changeContribute() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly changes contribute content page');
+            redirect(site_url('settings/website?page=contribute'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying changes contribute content page, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    // faq
+
+    function addFaq()
+    {
+        if ($this->M_admin->addFaq() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly add new faq content');
+            redirect(site_url('settings/website?page=faq'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying add new faq,content try again later');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    function editFaq()
+    {
+        if ($this->M_admin->editFaq() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly edit faq ');
+            redirect(site_url('settings/website?page=faq'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit faq, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    function deleteFaq()
+    {
+        if ($this->M_admin->deleteFaq() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly delete faq ');
+            redirect(site_url('settings/website?page=faq'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying delete faq, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    // about
+
+    function changeAboutContent()
+    {
+        if ($this->M_admin->changeAboutContent() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly changes about content page');
+            redirect(site_url('settings/website?page=about'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying changes about content page, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    // about gallery
+
+    function addAboutGallery()
+    {
+        if (isset($_FILES['image'])) {
+            $path = "berkas/about/gallery/";
+            $upload = $this->uploader->uploadImage($_FILES['image'], $path);
+            
+            if ($upload == true) {
+                if ($this->M_admin->addAboutGallery($upload['filename']) == true) {
+                    $this->session->set_flashdata('notif_success', 'Succesfuly add new Gallery Item');
+                    redirect(site_url('settings/website?page=about'));
+                } else {
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying add new Gallery Item, try again later');
+                    redirect($this->agent->referrer());
+                }
+            } else {
+                $this->session->set_flashdata('notif_warning', $upload['message']);
+                redirect($this->agent->referrer());
+            }
+        } else {
+            $this->session->set_flashdata('notif_warning', 'Please select a file');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    function editAboutGallery()
+    {
+        if (isset($_FILES['image'])) {
+            $path = "berkas/about/gallery/";
+            $upload = $this->uploader->uploadImage($_FILES['image'], $path);
+            
+            if ($upload == true) {
+                if ($this->M_admin->editAboutGallery($upload['filename']) == true) {
+                    $this->session->set_flashdata('notif_success', 'Succesfuly edit Gallery Item ');
+                    redirect(site_url('settings/website?page=about'));
+                } else {
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit Gallery Item, try again later');
+                    redirect($this->agent->referrer());
+                }
+            } else {
+                $this->session->set_flashdata('notif_warning', $upload['message']);
+                redirect($this->agent->referrer());
+            }
+        } else {
+            $this->session->set_flashdata('notif_warning', 'Please select a file');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    function deleteAboutGallery()
+    {
+        if ($this->M_admin->deleteAboutGallery() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly delete Gallery Item ');
+            redirect(site_url('settings/website?page=about'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying delete Gallery Item, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    // Other Program
+
+    function changeOtherProgramContent()
+    {
+        if (isset($_FILES['image'])) {
+            $path = "berkas/other-program/";
+            $upload = $this->uploader->uploadImage($_FILES['image'], $path);
+            
+            if ($upload == true) {
+                if ($this->M_admin->changeOtherProgramContent($upload['filename']) == true) {
+                    $this->session->set_flashdata('notif_success', 'Succesfuly changes other program content page');
+                    redirect(site_url('settings/website?page=programs'));
+                } else {
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying changes other program content page, try again later');
+                    redirect($this->agent->referrer());
+                }
+            } else {
+                $this->session->set_flashdata('notif_warning', $upload['message']);
+                redirect($this->agent->referrer());
+            }
+        } else {
+            if ($this->M_admin->changeOtherProgramContent(false) == true) {
+                $this->session->set_flashdata('notif_success', 'Succesfuly changes other program content page');
+                redirect(site_url('settings/website?page=programs'));
+            } else {
+                $this->session->set_flashdata('notif_warning', 'There is a problem when trying changes other program content page, try again later');
+                redirect($this->agent->referrer());
+            }
+        }
+    }
+
+    // about gallery
+
+    function addOtherProgramContent()
+    {
+        if (isset($_FILES['image'])) {
+            $path = "berkas/other-program/content/";
+            $upload = $this->uploader->uploadImage($_FILES['image'], $path);
+            
+            if ($upload == true) {
+                if ($this->M_admin->addOtherProgramContent($upload['filename']) == true) {
+                    $this->session->set_flashdata('notif_success', 'Succesfuly add new Other Program Content');
+                    redirect(site_url('settings/website?page=programs'));
+                } else {
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying add new Other Program Content, try again later');
+                    redirect($this->agent->referrer());
+                }
+            } else {
+                $this->session->set_flashdata('notif_warning', $upload['message']);
+                redirect($this->agent->referrer());
+            }
+        } else {
+            $this->session->set_flashdata('notif_warning', 'Please select a file');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    function editOtherProgramContent()
+    {
+        if (isset($_FILES['image'])) {
+            $path = "berkas/other-program/content/";
+            $upload = $this->uploader->uploadImage($_FILES['image'], $path);
+            
+            if ($upload == true) {
+                if ($this->M_admin->editOtherProgramContent($upload['filename']) == true) {
+                    $this->session->set_flashdata('notif_success', 'Succesfuly edit Other Program Content ');
+                    redirect(site_url('settings/website?page=programs'));
+                } else {
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit Other Program Content, try again later');
+                    redirect($this->agent->referrer());
+                }
+            } else {
+                $this->session->set_flashdata('notif_warning', $upload['message']);
+                redirect($this->agent->referrer());
+            }
+        } else {
+            $this->session->set_flashdata('notif_warning', 'Please select a file');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    function deleteOtherProgramContent()
+    {
+        if ($this->M_admin->deleteOtherProgramContent() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly delete Other Program Content ');
+            redirect(site_url('settings/website?page=programs'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying delete Other Program Content, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
+
 
 
 

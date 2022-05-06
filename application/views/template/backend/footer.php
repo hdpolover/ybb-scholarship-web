@@ -64,35 +64,35 @@
 		}).start();
 	};
 
-	(function() {
+	(function () {
 		// INITIALIZATION OF HEADER
 		// =======================================================
 		new HSHeader('#header').init()
 
-
-		// INITIALIZATION OF LISTJS COMPONENT
+		// INITIALIZATION OF BOOTSTRAP VALIDATION
 		// =======================================================
-		const docsSearch = HSCore.components.HSList.init('#docsSearch')
-
-
-		// GET JSON FILE RESULTS
-		// =======================================================
-		fetch('<?= base_url(); ?>assets/json/docs-search.json')
-			.then(response => response.json())
-			.then(data => {
-				docsSearch.getItem(0).add(data)
-			})
+		HSBsValidation.init('.js-validate', {
+			onSubmit: data => {
+				$('button[type=submit]').prop("disabled", true);
+				// add spinner to button
+				$('button[type=submit]').html(
+					`<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`
+				);
+				return;
+			}
+		})
 
 		// INITIALIZATION OF GO TO
 		// =======================================================
 		new HSGoTo('.js-go-to')
 	})()
 
-	$(document).ready(function() {
+	$(document).ready(function () {
 		$('#table').DataTable({
 			"scrollX": true
 		});
 	})
+
 </script>
 </body>
 
