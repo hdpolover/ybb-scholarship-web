@@ -107,7 +107,7 @@
 							</div>
 						</div>
 
-						<div id="delete<?= $val->id; ?>" class="modal fade" tabindex="-1" role="dialog"
+						<div id="delete-<?= $val->id; ?>" class="modal fade" tabindex="-1" role="dialog"
 							aria-labelledby="delete" aria-hidden="true">
 							<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
 								role="document">
@@ -120,7 +120,7 @@
 									<div class="modal-body">
 										<form action="<?= site_url('admin/deleteAboutGallery');?>" method="post"
 											class="js-validate need-validate" novalidate>
-											<input type="hidden" name="id" value="<?= $item->id;?>">
+											<input type="hidden" name="id" value="<?= $val->id;?>">
 											<p>Are you sure want to delete this Gallery Item?</p>
 											<div class="modal-footer px-0 pb-0">
 												<button type="button" class="btn btn-white btn-sm"
