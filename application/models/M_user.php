@@ -33,6 +33,18 @@ class M_user extends CI_Model
         }
     }
 
+    public function get_annoucementsUser(){
+        return $this->db->get_where('tb_announcement', ['for_users' => 'users', 'for_members' => null, 'is_deleted' => 0])->result();
+    }
+
+    public function get_annoucementsMember(){
+        return $this->db->get_where('tb_announcement', ['for_members' => 'members', 'for_users' => null, 'is_deleted' => 0])->result();
+    }
+
+    public function get_annoucementsBoth(){
+        return $this->db->get_where('tb_announcement', ['for_members' => 'members', 'for_users' => 'users', 'is_deleted' => 0])->result();
+    }
+
     public function getDetailUser($user_id)
     {
         $this->db->select('*');

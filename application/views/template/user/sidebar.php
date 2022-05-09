@@ -84,6 +84,12 @@
     									</a>
     								</li>
     								<li class="nav-item">
+    									<a class="nav-link <?= ($this->uri->segment(2) == "Announcements" ? "active" : "") ?>"
+    										href="<?= site_url('user/announcements'); ?>">
+    										<i class="bi-app-indicator nav-icon"></i> Announcements
+    									</a>
+    								</li>
+    								<li class="nav-item">
     									<a class="nav-link <?= ($this->uri->segment(2) == "scholarship" ? "active" : "") ?>"
     										href="<?= site_url('user/scholarship'); ?>">
     										<i class="bi-people nav-icon"></i> Scholarship

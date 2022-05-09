@@ -42,6 +42,18 @@ class User extends CI_Controller
         $this->templateuser->view('user/overview', $data);
     }
 
+    public function announcements()
+    {
+        $data['user'] = $this->M_auth->get_auth($this->session->userdata('email'));
+
+        $data['scholarship'] = $this->cekScholarshipStatus();
+        $data['annoucementsUser'] = $this->M_user->get_annoucementsUser();
+        $data['annoucementsMember'] = $this->M_user->get_annoucementsMember();
+        $data['annoucementsBoth'] = $this->M_user->get_annoucementsBoth();
+
+        $this->templateuser->view('user/announcements', $data);
+    }
+
     public function scholarship()
     {
         $data['user'] = $this->M_auth->get_auth($this->session->userdata('email'));
