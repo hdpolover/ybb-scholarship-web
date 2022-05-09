@@ -244,7 +244,7 @@
 								<label class="form-label" for="formFullName">Full Name <small
 										class="text-danger">*</small></label>
 
-								<input type="text" id="formFullName" class="form-control" name="full_name"
+								<input type="text" id="formFullName" class="form-control form-control-sm" name="full_name"
 									value="<?= $this->session->userdata('name');?>" required>
 
 							</div>
@@ -254,7 +254,7 @@
 								<label class="form-label" for="formDateBirth">Date of Birth <small
 										class="text-danger">*</small></label>
 								<div class="input-group mb-3">
-									<input type="date" id="formDateBirth" class="form-control" name="date_birth"
+									<input type="date" id="formDateBirth" class="form-control form-control-sm" name="date_birth"
 										placeholder="Your answer" aria-describedby="basic-formDateBirth" required>
 									<span class="input-group-text" id="basic-formDateBirth"><i
 											class="bi bi-calendar3"></i></span>
@@ -268,7 +268,7 @@
 										class="text-danger">*</small></label>
 								<div class="input-group mb-3">
 									<span class="input-group-text" id="basic-formWhatsappNumber">+62</span>
-									<input type="text" id="formWhatsappNumber" class="form-control"
+									<input type="text" id="formWhatsappNumber" class="form-control form-control-sm"
 										name="whatsapp_number" placeholder="Your answer"
 										aria-describedby="basic-formWhatsappNumber" required>
 								</div>
@@ -280,7 +280,7 @@
 								<label class="form-label" for="formCurrentAddress">Current Address <small
 										class="text-danger">*</small></label>
 
-								<textarea type="text" id="formCurrentAddress" class="form-control"
+								<textarea type="text" id="formCurrentAddress" class="form-control form-control-sm"
 									name="current_address" rows="3" placeholder="Your answer" required></textarea>
 
 							</div>
@@ -290,7 +290,7 @@
 								<label class="form-label" for="formFieldOfStudy">Field of study <small
 										class="text-danger">*</small></label>
 
-								<input type="text" id="formFieldOfStudy" class="form-control" name="field_study"
+								<input type="text" id="formFieldOfStudy" class="form-control form-control-sm" name="field_study"
 									placeholder="Your answer" required>
 
 							</div>
@@ -300,7 +300,7 @@
 								<label class="form-label" for="formSchoolCollage">School or Collage <small
 										class="text-danger">*</small></label>
 
-								<input type="text" id="formSchoolCollage" class="form-control" name="school"
+								<input type="text" id="formSchoolCollage" class="form-control form-control-sm" name="school"
 									placeholder="Your answer" required>
 
 							</div>
@@ -310,7 +310,7 @@
 								<label class="form-label" for="formCurrentGPA">Current GPA <small
 										class="text-danger">*</small></label>
 
-								<input type="text" id="formCurrentGPA" class="form-control" name="current_gpa"
+								<input type="text" id="formCurrentGPA" class="form-control form-control-sm" name="current_gpa"
 									maxlength="4" placeholder="Your answer" required>
 
 							</div>
@@ -320,7 +320,7 @@
 								<label class="form-label" for="formSemester">Semester <small
 										class="text-danger">*</small></label>
 
-								<input type="text" id="formSemester" class="form-control" name="semester"
+								<input type="text" id="formSemester" class="form-control form-control-sm" name="semester"
 									placeholder="Your answer" required>
 
 							</div>
@@ -330,7 +330,7 @@
 								<label class="form-label" for="formAboutYourself">Tell us about yourself <small
 										class="text-danger">*</small></label>
 
-								<textarea type="text" id="formAboutYourself" class="form-control" name="about" rows="3"
+								<textarea type="text" id="formAboutYourself" class="form-control form-control-sm" name="about" rows="3"
 									placeholder="Your answer" required></textarea>
 
 							</div>
@@ -340,7 +340,7 @@
 								<label class="form-label" for="formDreamComeTrue">What is your biggest dream and how
 									will you make it come true? <small class="text-danger">*</small></label>
 
-								<textarea type="text" id="formDreamComeTrue" class="form-control" name="dream_come"
+								<textarea type="text" id="formDreamComeTrue" class="form-control form-control-sm" name="dream_come"
 									rows="3" placeholder="Your answer" required></textarea>
 
 							</div>
@@ -351,7 +351,7 @@
 									organizational experiences? If yes, what are they? <small
 										class="text-danger">*</small></label>
 
-								<textarea type="text" id="formVolunteer" class="form-control" name="volunteer" rows="3"
+								<textarea type="text" id="formVolunteer" class="form-control form-control-sm" name="volunteer" rows="3"
 									placeholder="Your answer" required></textarea>
 
 							</div>
@@ -469,7 +469,7 @@
 									the proof that you already have followed those accounts <small
 										class="text-danger">*</small></label>
 
-								<input class="form-control" type="file" id="followedAccount" name="upload_follow"
+								<input class="form-control form-control-sm" type="file" id="followedAccount" name="upload_follow"
 									accept="image/*" required>
 								<small class="text-secondary">Upload jpg, png, or jpeg file</small>
 							</div>
@@ -482,7 +482,7 @@
 									the proof that you already have an account on YBB Apps <small
 										class="text-danger">*</small></label>
 
-								<input class="form-control" type="file" id="registerApp" name="upload_apps"
+								<input class="form-control form-control-sm" type="file" id="registerApp" name="upload_apps"
 									accept="image/*" required>
 								<small class="text-secondary">Upload jpg, png, or jpeg file</small>
 							</div>
@@ -495,7 +495,7 @@
 									the proof that you have subscribed YBB Youtube official account <small
 										class="text-danger">*</small></label>
 
-								<input class="form-control" type="file" id="subscribedYoutube" name="upload_youtube"
+								<input class="form-control form-control-sm" type="file" id="subscribedYoutube" name="upload_youtube"
 									accept="image/*" required>
 								<small class="text-secondary">Upload jpg, png, or jpeg file</small>
 							</div>
@@ -508,7 +508,7 @@
 									the proof that you have joined YBB telegram official account <small
 										class="text-danger">*</small></label>
 
-								<input class="form-control" type="file" id="joinedTelegram" name="upload_telegram"
+								<input class="form-control form-control-sm" type="file" id="joinedTelegram" name="upload_telegram"
 									accept="image/*" required>
 								<small class="text-secondary">Upload jpg, png, or jpeg file</small>
 							</div>
@@ -522,7 +522,7 @@
 
 									post or both <small class="text-danger">*</small></label>
 
-								<input class="form-control" type="file" id="sharedInstagram" name="upload_story"
+								<input class="form-control form-control-sm" type="file" id="sharedInstagram" name="upload_story"
 									accept="image/*" required>
 								<small class="text-secondary">Upload jpg, png, or jpeg file</small>
 							</div>
@@ -535,7 +535,7 @@
 									the proof that you have tagged 5 of your friends on the post <small
 										class="text-danger">*</small></label>
 
-								<input class="form-control" type="file" id="taggedFriends" name="upload_tags"
+								<input class="form-control form-control-sm" type="file" id="taggedFriends" name="upload_tags"
 									accept="image/*" required>
 								<small class="text-secondary">Upload jpg, png, or jpeg file</small>
 							</div>

@@ -7,16 +7,20 @@ class Home extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model(['M_home']);
+        $this->load->model(['M_home', 'M_admin']);
     }
 	
 	public function index()
 	{
 		$data['hero_section'] = $this->M_home->get_homeSection('hero');
-        $data['web_motto'] = $this->M_home->get_settingsValue('web_motto');
-        $data['home_sinopsis'] = $this->M_home->get_homeSection('sinopsis');
-        $data['home_manfaat'] = $this->M_home->get_homeSection('manfaat');
-        $data['home_gallery'] = $this->M_home->get_homeSection('gallery');
+		$data['web_motto'] = $this->M_home->get_settingsValue('web_motto');
+		$data['home_sinopsis'] = $this->M_home->get_homeSection('sinopsis');
+		$data['home_manfaat'] = $this->M_home->get_homeSection('manfaat');
+		$data['home_benefit'] = $this->M_home->get_homeSection('benefit');
+		$data['home_gallery'] = $this->M_home->get_homeSection('gallery');
+
+		// statistik
+		$data['statistik'] = $this->M_home->get_statistik();
 
 		$this->templatefront->view('home/home', $data);
 	}
@@ -35,6 +39,20 @@ class Home extends CI_Controller {
         $data['faq'] = $this->M_home->get_faqContent();
 
 		$this->templatefront->view('home/faq', $data);
+	}
+
+	public function announcements()
+	{
+        $data['announcement'] = $this->M_home->getAnnouncementHome();
+
+		$this->templatefront->view('home/announcement', $data);
+	}
+
+	public function timeline()
+	{
+        $data['timeline'] = $this->M_admin->getTimelinelist();
+
+		$this->templatefront->view('home/timeline', $data);
 	}
 
 	public function otherPrograms()

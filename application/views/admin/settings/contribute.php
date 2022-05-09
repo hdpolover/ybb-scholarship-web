@@ -31,19 +31,19 @@
 					<div class="mb-3">
 						<label for="inputContributeAnRekening" class="form-label">Contribute An. Rekening <small
 								class="text-danger">*</small></label>
-						<input type="text" id="inputContributeAnRekening" class="form-control"
+						<input type="text" id="inputContributeAnRekening" class="form-control form-control-sm"
 							name="contribute_an_rekening" value="<?= $contribute_an_rekening;?>" required>
 					</div>
 					<div class="mb-3">
 						<label for="inputContributeRekening" class="form-label">Contribute No. Rekening <small
 								class="text-danger">*</small></label>
-						<input type="text" id="inputContributeRekening" class="form-control" name="contribute_rekening"
+						<input type="text" id="inputContributeRekening" class="form-control form-control-sm" name="contribute_rekening"
 							value="<?= $contribute_rekening;?>" required>
 					</div>
 					<div class="mb-3">
 						<label for="inputContributeWhatsapp" class="form-label">Contribute Whatsapp <small
 								class="text-danger">*</small></label>
-						<input type="text" id="inputContributeWhatsapp" class="form-control" name="contribute_whatsapp"
+						<input type="text" id="inputContributeWhatsapp" class="form-control form-control-sm" name="contribute_whatsapp"
 							value="<?= $contribute_whatsapp;?>" required>
 					</div>
                     <div class="card-footer px-0">

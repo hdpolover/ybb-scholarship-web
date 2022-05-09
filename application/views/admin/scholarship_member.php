@@ -121,7 +121,7 @@
 											<div class="mb-3">
 												<label for="formMassage">Massage <small
 														class="text-secondary">(optional)</small></label>
-												<textarea class="form-control" name="message" rows="3"
+												<textarea class="form-control form-control-sm" name="message" rows="3"
 													placeholder="You can include a message for applicant"></textarea>
 											</div>
 											<div class="modal-footer px-0 pb-0">

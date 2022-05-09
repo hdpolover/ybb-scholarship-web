@@ -166,6 +166,8 @@
 <script src="<?= base_url(); ?>assets/vendor/swiper/swiper-bundle.min.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/prism/prism.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/fslightbox/index.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/appear/dist/appear.min.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/circles.js/circles.js"></script>
 
 <!-- JS Front -->
 <script src="<?= base_url(); ?>assets/js/theme.min.js"></script>
@@ -210,6 +212,12 @@
 		// INITIALIZATION OF GO TO
 		// =======================================================
 		new HSGoTo('.js-go-to')
+
+		// INITIALIZATION OF CIRCLES
+		// =======================================================
+		setTimeout(() => {
+			HSCore.components.HSCircles.init('.js-circle')
+		})
 
 
 		// INITIALIZATION OF AOS

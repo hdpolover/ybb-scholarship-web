@@ -64,11 +64,14 @@ $route['logout'] = 'authentication/logout';
 $route['dashboard'] = 'admin';
 $route['users'] = 'admin/userList';
 $route['information/announcement'] = 'admin/announcement';
+$route['information/timeline'] = 'admin/timeline';
 $route['settings/website'] = 'admin/settingWebsite';
 
 
 // home
 $route['default_controller'] = 'home';
+$route['announcements'] = 'home/announcements';
+$route['timeline'] = 'home/timeline';
 $route['about-us'] = 'home/aboutUs';
 $route['faq'] = 'home/faq';
 $route['other-programs'] = 'home/otherPrograms';

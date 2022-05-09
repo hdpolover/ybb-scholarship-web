@@ -15,7 +15,7 @@
 						password</label>
 
 					<div class="col-sm-9">
-						<input type="password" class="form-control" name="currentPassword" id="currentPasswordLabel"
+						<input type="password" class="form-control form-control-sm" name="currentPassword" id="currentPasswordLabel"
 							placeholder="Enter current password" aria-label="Enter current password" required>
 					</div>
 				</div>
@@ -26,7 +26,7 @@
 					<label for="newPassword" class="col-sm-3 col-form-label form-label">New password</label>
 
 					<div class="col-sm-9">
-						<input type="password" class="form-control" name="newPassword" id="newPassword" minlength="8"
+						<input type="password" class="form-control form-control-sm" name="newPassword" id="newPassword" minlength="8"
 							placeholder="Enter new password" aria-label="Enter new password" required>
 					</div>
 				</div>
@@ -39,7 +39,7 @@
 
 					<div class="col-sm-9">
 						<div class="mb-3">
-							<input type="password" class="form-control" name="confirmNewPassword" minlength="8"
+							<input type="password" class="form-control form-control-sm" name="confirmNewPassword" minlength="8"
 								id="confirmNewPasswordLabel" placeholder="Confirm your new password"
 								aria-label="Confirm your new password" required>
 						</div>

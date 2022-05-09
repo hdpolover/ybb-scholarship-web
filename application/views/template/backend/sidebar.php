@@ -90,6 +90,10 @@
   						<a class="nav-link <?= ($this->uri->segment(2) == "announcement" ? "active" : "") ?>"
   							href="<?= site_url('information/announcement'); ?>">Announcement</a>
   					</li>
+  					<li class="nav-item" id="tour-announcement">
+  						<a class="nav-link <?= ($this->uri->segment(2) == "timeline" ? "active" : "") ?>"
+  							href="<?= site_url('information/timeline'); ?>">Timeline</a>
+  					</li>
 
   					<li class="nav-item my-2 my-lg-5"></li>
 

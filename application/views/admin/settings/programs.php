@@ -22,17 +22,18 @@
 				</h4>
 			</div>
 			<div class="card-body border-bottom">
-				<form action="<?= site_url('admin/changeOtherProgramContent');?>" method="post" enctype="multipart/form-data"
-					class="js-validate need-validate" novalidate>
+				<form action="<?= site_url('admin/changeOtherProgramContent');?>" method="post"
+					enctype="multipart/form-data" class="js-validate need-validate" novalidate>
 					<div class="mb-3">
 						<label for="inputBackground" class="form-label">Background <small
 								class="text-danger">*</small></label>
-						<input type="file" name="image" id="inputBackground" class="form-control" value="<?= $op_bg;?>">
+						<input type="file" name="image" id="inputBackground" class="form-control form-control-sm"
+							value="<?= $op_bg;?>">
 					</div>
 					<div class="mb-3">
 						<label class="form-label" for="inputDescription">Description <small
 								class="text-danger">*</small></label>
-						<textarea type="text" class="form-control" rows="4" name="op_desc"
+						<textarea type="text" class="form-control form-control-sm" rows="4" name="op_desc"
 							placeholder="Other Program Description" required><?= $op_desc;?></textarea>
 					</div>
 					<div class="card-footer px-0">
@@ -80,7 +81,8 @@
 						<!-- Modal -->
 						<div id="edit-<?= $val->id;?>" class="modal fade" tabindex="-1" role="dialog"
 							aria-labelledby="add" aria-hidden="true">
-							<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+							<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg"
+								role="document">
 								<div class="modal-content">
 									<div class="modal-header">
 										<h4 class="modal-title" id="detailUserTitle">Edit Other Program content</h4>
@@ -95,15 +97,16 @@
 											<div class="mb-3">
 												<label for="inputTitle">Title <small
 														class="text-danger">*</small></label>
-												<input type="text" class="form-control" name="title" id="inputTitle"
-													value="<?= $val->title;?>" required>
+												<input type="text" class="form-control form-control-sm" name="title"
+													id="inputTitle" value="<?= $val->title;?>" required>
 											</div>
 
 											<div class="mb-3">
 												<label for="inputSubject" class="input-label">Picture <small
 														class="text-danger">*</small></label>
-												<input class="form-control" type="file" name="image"
-													value="<?= $val->picture;?>" required>
+												<input class="form-control form-control-sm" type="file" name="image"
+													value="" accept="image/*">
+												<input type="hidden" name="old_image" value="<?= $val->picture;?>">
 											</div>
 
 											<div class="mb-3">
@@ -155,7 +158,8 @@
 
 						<div id="detail-<?= $val->id; ?>" class="modal fade" tabindex="-1" role="dialog"
 							aria-labelledby="delete" aria-hidden="true">
-							<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
+							<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg"
+								role="document">
 								<div class="modal-content">
 									<div class="modal-header">
 										<h4 class="modal-title" id="detailUserTitle">Detail</h4>
@@ -204,21 +208,21 @@
 
 					<div class="mb-3">
 						<label for="inputTitle">Title <small class="text-danger">*</small></label>
-						<input type="text" class="form-control" name="title" id="inputTitle" placeholder="Title"
-							required>
+						<input type="text" class="form-control form-control-sm" name="title" id="inputTitle"
+							placeholder="Title" required>
 					</div>
 
 					<div class="mb-3">
 						<label for="inputSubject" class="input-label">Picture <small
 								class="text-danger">*</small></label>
-						<input class="form-control" type="file" name="image" placeholder="Picture" required>
+						<input class="form-control form-control-sm" type="file" name="image" placeholder="Picture"
+							accept="image/*" required>
 					</div>
 
 					<div class="mb-3">
-						<label for="inputDescription">Description <small
-								class="text-danger">*</small></label>
-						<textarea type="text" id="inputDescription" class="form-control editor" rows="4"
-							name="desc" placeholder="Other Program Description" required></textarea>
+						<label for="inputDescription">Description <small class="text-danger">*</small></label>
+						<textarea type="text" id="inputDescription" class="form-control editor" rows="4" name="desc"
+							placeholder="Other Program Description" required></textarea>
 					</div>
 
 					<div class="modal-footer px-0 pb-0">

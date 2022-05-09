@@ -3,7 +3,7 @@
 
 	<div class="mb-3">
 		<label for="inputSubject" class="input-label">Subject <small class="text-danger">*</small></label>
-		<input class="form-control" type="text" name="subject" value="<?= $item->subject;?>" required>
+		<input class="form-control form-control-sm" type="text" name="subject" value="<?= $item->subject;?>" required>
 	</div>
 
 	<div class="mb-3">

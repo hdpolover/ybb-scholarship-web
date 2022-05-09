@@ -1,6 +1,6 @@
 <!-- ========== HEADER ========== -->
 <header id="header"
-	class="navbar navbar-expand-lg navbar-end navbar-absolute-top <?= (empty($this->uri->segment(1)) ? "navbar-dark" : "navbar-light bg-white shadow-sm") ?> navbar-show-hide"
+	class="navbar navbar-expand-lg navbar-end navbar-absolute-top <?= (empty($this->uri->segment(1)) || $this->uri->segment(1) ==  'home' ? "navbar-dark" : "navbar-light bg-white shadow-sm") ?> navbar-show-hide"
 	data-hs-header-options='{"fixMoment": 1000,"fixEffect": "slide"}'>
 
 	<!-- Topbar -->
@@ -43,8 +43,7 @@
 					<!-- Demos -->
 					<li class="nav-item">
 						<a class="nav-link <?= ($this->uri->segment(1) == "faq" ? "active" : "") ?>" aria-current="page"
-							href="<?= site_url('faq'); ?>" role="button">Help
-							Center</a>
+							href="<?= site_url('faq'); ?>" role="button">FAQ</a>
 					</li>
 					<!-- End Demos -->
 					<?php if ($this->session->userdata('logged_in') == true) : ?>
@@ -110,8 +109,22 @@
 					<ul class="navbar-nav">
 						<!-- Landings -->
 						<li class="nav-item">
-							<a class="nav-link <?= (empty($this->uri->segment(1)) ? "active" : "") ?>"
+							<a class="nav-link <?= (empty($this->uri->segment(1)) || $this->uri->segment(1) == 'home' ? "active" : "") ?>"
 								href="<?= base_url(); ?>" aria-current="page" role="button">Home</a>
+						</li>
+						<!-- End Landings -->
+
+						<!-- Landings -->
+						<li class="nav-item">
+							<a class="nav-link <?= ($this->uri->segment(1) == "announcements" ? "active" : "") ?>"
+								href="<?= site_url('announcements'); ?>" role="button">Announcements</a>
+						</li>
+						<!-- End Landings -->
+
+						<!-- Landings -->
+						<li class="nav-item">
+							<a class="nav-link <?= ($this->uri->segment(1) == "timeline" ? "active" : "") ?>"
+								href="<?= site_url('timeline'); ?>" role="button">Timeline</a>
 						</li>
 						<!-- End Landings -->
 
@@ -123,10 +136,10 @@
 						<!-- End Landings -->
 
 						<!-- Landings -->
-						<li class="nav-item">
+						<!-- <li class="nav-item">
 							<a class="nav-link <?= ($this->uri->segment(1) == "faq" ? "active" : "") ?>"
 								href="<?= site_url('faq'); ?>" role="button">FAQ</a>
-						</li>
+						</li> -->
 						<!-- End Landings -->
 
 						<!-- Landings -->
@@ -162,4 +175,4 @@
 <!-- ========== END HEADER ========== -->
 
 <!-- ========== MAIN CONTENT ========== -->
-<main id="content" role="main" class="bg-light">
+<main id="content" role="main" class="bg-white">

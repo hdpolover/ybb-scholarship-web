@@ -23,7 +23,7 @@
         <!-- End Card -->
     </div>
     <!-- End Col -->
-
+    <?php if($this->session->userdata('role') == 0):?>
     <div class="col mb-4">
         <!-- Card -->
         <a class="card card-sm card-transition h-100" href="<?= site_url('settings/website?page=credentials'); ?>" data-aos="fade-up">
@@ -36,7 +36,7 @@
         <!-- End Card -->
     </div>
     <!-- End Col -->
-
+    <?php endif;?>
     <div class="col mb-4">
         <!-- Card -->
         <a class="card card-sm card-transition h-100" href="<?= site_url('settings/website?page=mailer'); ?>" data-aos="fade-up">

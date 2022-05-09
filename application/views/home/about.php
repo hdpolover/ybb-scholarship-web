@@ -1,5 +1,5 @@
 <!-- Gallery -->
-<div class="container content-space-t-3 content-space-t-lg-5">
+<div class="container content-space-t-3 content-space-t-lg-5" style="background: url(<?= base_url();?>assets/svg/components/abstract-shapes-19.svg) center no-repeat;">
 	<div class="w-lg-75 text-center mx-lg-auto">
 		<!-- Heading -->
 		<div class="mb-5 mb-md-10">
@@ -38,7 +38,7 @@
 <div class="border-top mx-auto" style="max-width: 25rem;"></div>
 
 <!-- Info -->
-<div class="container content-space-2">
+<div class="container content-space-2" style="background: url(<?= base_url();?>assets/svg/components/abstract-shapes-9.svg) center no-repeat;">
 	<div class="row justify-content-lg-between">
 		<div class="col-lg-4 mb-5 mb-lg-0">
 			<h2><?= $web_motto;?></h2>

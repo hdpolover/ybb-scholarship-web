@@ -15,8 +15,8 @@
 		<div class="card">
 			<div class="card-header">
 				<h4 class="card-title">Manage About content
-					<a class="btn btn-ghost-secondary btn-sm float-end"
-						href="<?= site_url('about-us'); ?>" target="_blank">
+					<a class="btn btn-ghost-secondary btn-sm float-end" href="<?= site_url('about-us'); ?>"
+						target="_blank">
 						Preview <i class="bi-box-arrow-up-right ms-1"></i>
 					</a>
 				</h4>
@@ -26,13 +26,18 @@
 					class="js-validate need-validate" novalidate>
 					<div class="mb-3">
 						<label for="inputMotto" class="form-label">Motto <small class="text-danger">*</small></label>
-						<input type="text" name="web_motto" id="inputMotto" class="form-control"
+						<input type="text" name="web_motto" id="inputMotto" class="form-control form-control-sm"
 							value="<?= $web_motto;?>" required>
 					</div>
 					<div class="mb-3">
 						<label class="form-label" for="inputAbout">About <small class="text-danger">*</small></label>
-						<textarea type="text" id="inputAbout" class="form-control editor" rows="4" name="web_about"
+						<textarea type="text" id="inputAbout" class="form-control" rows="4" name="web_about"
 							placeholder="About" required><?= $web_about;?></textarea>
+						<small class="text-secondary">If you insert an emoji or special characters and it become <b>???</b>, its
+							mean that
+							emoji
+							or special characters not yet supported and please change it to another
+							alternative.</small>
 					</div>
 					<div class="card-footer px-0">
 						<button type="submit" class="btn btn-primary btn-sm float-end">Save Changes</button>
@@ -91,8 +96,8 @@
 											<div class="mb-3">
 												<label for="inputSubject" class="input-label">Picture <small
 														class="text-danger">*</small></label>
-												<input class="form-control" type="file" name="image"
-													value="<?= $val->picture;?>" required>
+												<input class="form-control form-control-sm" type="file" name="image"
+													value="<?= $val->picture;?>" accept="image/*" required>
 											</div>
 
 											<div class="modal-footer px-0 pb-0">
@@ -178,7 +183,8 @@
 					<div class="mb-3">
 						<label for="inputSubject" class="input-label">Picture <small
 								class="text-danger">*</small></label>
-						<input class="form-control" type="file" name="image" placeholder="Question" required>
+						<input class="form-control form-control-sm" type="file" name="image" placeholder="Question"
+							accept="image/*" required>
 					</div>
 
 					<div class="modal-footer px-0 pb-0">
@@ -197,6 +203,26 @@
 
 		CKEDITOR.replace($(this).attr('id'));
 
+	});
+
+	// TINYMCE
+	tinymce.init({
+		selector: '#inputAbout',
+		height: 400,
+		menubar: false,
+		branding: false,
+		toolbar_sticky: true,
+		plugins: 'print preview paste importcss searchreplace autolink autosave save directionality  visualblocks visualchars fullscreen image link media codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap emoticons lineheight',
+		// plugins: [
+		//     'lists preview',
+		//     'visualblocks',
+		//     'table paste wordcount emoticons'
+		// ],
+		toolbar: 'fullscreen  preview | undo redo | fontselect fontsizeselect formatselect lineheight | charmap emoticons | blockquote bold italic underline strikethrough |  alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | image media template link codesample',
+		// toolbar: 'undo redo | fontsizeselect formatselect | forecolor backcolor removeformat | emoticons' +
+		//     'blockquote bold italic underline strikethrough | alignleft aligncenter ' +
+		//     'alignright alignjustify | bullist numlist outdent indent | ' +
+		//     'removeformat preview'
 	});
 
 </script>

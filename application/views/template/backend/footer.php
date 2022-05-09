@@ -28,6 +28,10 @@
 <script src="<?= base_url(); ?>assets/vendor/list.js/dist/list.min.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/prism/prism.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/aos/dist/aos.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/prism/prism.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/fslightbox/index.js"></script>
 
 <!-- JS Front -->
 <script src="<?= base_url(); ?>assets/js/theme.min.js"></script>
@@ -85,11 +89,100 @@
 		// INITIALIZATION OF GO TO
 		// =======================================================
 		new HSGoTo('.js-go-to')
+
+
+		// INITIALIZATION OF AOS
+		// =======================================================
+		AOS.init({
+			duration: 650,
+			once: true
+		});
+
+
+		// INITIALIZATION OF SWIPER
+		// =======================================================
+		let activeIndex = 0
+		var sliderThumbs = new Swiper('.js-swiper-thumbs', {
+			slidesPerView: 1,
+			autoplay: false,
+			watchSlidesVisibility: true,
+			watchSlidesProgress: true,
+			followFinger: false,
+			loop: true,
+			on: {
+				'slideChangeTransitionEnd': function (event) {
+					if (sliderMain === undefined) return
+					sliderMain.slideTo(event.activeIndex)
+				}
+			}
+		});
+
+		var sliderMain = new Swiper('.js-swiper-main', {
+			effect: 'fade',
+			autoplay: false,
+			disableOnInteraction: true,
+			loop: true,
+			navigation: {
+				nextEl: '.js-swiper-main-button-next',
+				prevEl: '.js-swiper-main-button-prev',
+			},
+			thumbs: {
+				swiper: sliderThumbs
+			},
+			on: {
+				'slideChangeTransitionEnd': function (event) {
+					if (sliderThumbs === undefined) return
+					sliderThumbs.slideTo(event.activeIndex)
+				}
+			}
+		})
+
+		// Clients
+		var swiper = new Swiper('.js-swiper-clients', {
+			slidesPerView: 2,
+			breakpoints: {
+				380: {
+					slidesPerView: 3,
+					spaceBetween: 15,
+				},
+				768: {
+					slidesPerView: 4,
+					spaceBetween: 15,
+				},
+				1024: {
+					slidesPerView: 5,
+					spaceBetween: 15,
+				},
+			},
+		});
+
+		// Card Grid
+		var swiper = new Swiper('.js-swiper-card-blocks', {
+			slidesPerView: 1,
+			pagination: {
+				el: '.js-swiper-card-blocks-pagination',
+				dynamicBullets: true,
+				clickable: true,
+			},
+			breakpoints: {
+				620: {
+					slidesPerView: 2,
+					spaceBetween: 15,
+				},
+				1024: {
+					slidesPerView: 3,
+					spaceBetween: 15,
+				},
+			},
+		});
 	})()
 
 	$(document).ready(function () {
 		$('#table').DataTable({
-			"scrollX": true
+			responsive: true
+		});
+		$('#table2').DataTable({
+			responsive: true
 		});
 	})
 

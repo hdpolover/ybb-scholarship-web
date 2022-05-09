@@ -49,6 +49,12 @@ class Admin extends CI_Controller
         $this->templateback->view('admin/announcement', $data);
     }
 
+    public function timeline()
+    {
+        $data['timeline'] = $this->M_admin->getTimelinelist();
+        $this->templateback->view('admin/timeline', $data);
+    }
+
     public function settingWebsite()
     {
         $page = $this->input->get('page');
@@ -92,6 +98,7 @@ class Admin extends CI_Controller
                 $data['web_motto'] = $this->M_home->get_settingsValue('web_motto');
                 $data['home_sinopsis'] = $this->M_home->get_homeSection('sinopsis');
                 $data['home_manfaat'] = $this->M_home->get_homeSection('manfaat');
+                $data['home_benefit'] = $this->M_home->get_homeSection('benefit');
                 $data['home_gallery'] = $this->M_home->get_homeSection('gallery');
 
                 $this->templateback->view('admin/settings/home', $data);
@@ -160,6 +167,20 @@ class Admin extends CI_Controller
 
 		} else {
 			echo "<center class='py-5'><h4>There is an error when trying get user applicant data`s !</h4></center>";
+		}
+    }
+
+    public function getEditHeroAjax(){
+
+        $id = $this->input->post('id');
+
+		if ($this->M_admin->getDetailhero($id) != false) {
+            $data['hero'] = $this->M_admin->getDetailhero($id);
+            
+            $this->load->view('admin/ajax/edit_hero', $data);
+
+		} else {
+			echo "<center class='py-5'><h4>There is an error when trying get hero data`s !</h4></center>";
 		}
     }
 
@@ -277,7 +298,7 @@ class Admin extends CI_Controller
 
     function addAboutGallery()
     {
-        if (isset($_FILES['image'])) {
+        if ($_FILES['image']['name']) {
             $path = "berkas/about/gallery/";
             $upload = $this->uploader->uploadImage($_FILES['image'], $path);
             
@@ -301,7 +322,7 @@ class Admin extends CI_Controller
 
     function editAboutGallery()
     {
-        if (isset($_FILES['image'])) {
+        if ($_FILES['image']['name']) {
             $path = "berkas/about/gallery/";
             $upload = $this->uploader->uploadImage($_FILES['image'], $path);
             
@@ -318,8 +339,13 @@ class Admin extends CI_Controller
                 redirect($this->agent->referrer());
             }
         } else {
-            $this->session->set_flashdata('notif_warning', 'Please select a file');
-            redirect($this->agent->referrer());
+            if ($this->M_admin->editAboutGallery($this->input->post('old_image')) == true) {
+                $this->session->set_flashdata('notif_success', 'Succesfuly edit Gallery Item ');
+                redirect(site_url('settings/website?page=about'));
+            } else {
+                $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit Gallery Item, try again later');
+                redirect($this->agent->referrer());
+            }
         }
     }
 
@@ -338,7 +364,7 @@ class Admin extends CI_Controller
 
     function changeOtherProgramContent()
     {
-        if (isset($_FILES['image'])) {
+        if ($_FILES['image']['name']) {
             $path = "berkas/other-program/";
             $upload = $this->uploader->uploadImage($_FILES['image'], $path);
             
@@ -369,7 +395,7 @@ class Admin extends CI_Controller
 
     function addOtherProgramContent()
     {
-        if (isset($_FILES['image'])) {
+        if ($_FILES['image']['name']) {
             $path = "berkas/other-program/content/";
             $upload = $this->uploader->uploadImage($_FILES['image'], $path);
             
@@ -393,7 +419,7 @@ class Admin extends CI_Controller
 
     function editOtherProgramContent()
     {
-        if (isset($_FILES['image'])) {
+        if ($_FILES['image']['name']) {
             $path = "berkas/other-program/content/";
             $upload = $this->uploader->uploadImage($_FILES['image'], $path);
             
@@ -410,8 +436,13 @@ class Admin extends CI_Controller
                 redirect($this->agent->referrer());
             }
         } else {
-            $this->session->set_flashdata('notif_warning', 'Please select a file');
-            redirect($this->agent->referrer());
+            if ($this->M_admin->editOtherProgramContent($this->input->post('old_image')) == true) {
+                $this->session->set_flashdata('notif_success', 'Succesfuly edit Other Program Content ');
+                redirect(site_url('settings/website?page=programs'));
+            } else {
+                $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit Other Program Content, try again later');
+                redirect($this->agent->referrer());
+            }
         }
     }
 
@@ -426,7 +457,257 @@ class Admin extends CI_Controller
         }
     }
 
+    // home
 
+    function changeHomeContent()
+    {
+        if ($this->M_admin->changeHomeContent() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly changes home content page');
+            redirect(site_url('settings/website?page=home'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying changes home content page, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    function addHomeBenefit()
+    {
+        if ($_FILES['image']['name']) {
+            $path = "berkas/home/benefit/";
+            $upload = $this->uploader->uploadImage($_FILES['image'], $path);
+            
+            if ($upload == true) {
+                if ($this->M_admin->addHomeBenefit($upload['filename']) == true) {
+                    $this->session->set_flashdata('notif_success', 'Succesfuly add new Benefit Component');
+                    redirect(site_url('settings/website?page=home'));
+                } else {
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying add new Benefit Component, try again later');
+                    redirect($this->agent->referrer());
+                }
+            } else {
+                $this->session->set_flashdata('notif_warning', $upload['message']);
+                redirect($this->agent->referrer());
+            }
+        } else {
+            $this->session->set_flashdata('notif_warning', 'Please select a file');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    function editHomeBenefit()
+    {
+        if ($_FILES['image']['name']) {
+            $path = "berkas/home/benefit/";
+            $upload = $this->uploader->uploadImage($_FILES['image'], $path);
+            
+            if ($upload == true) {
+                if ($this->M_admin->editHomeBenefit($upload['filename']) == true) {
+                    $this->session->set_flashdata('notif_success', 'Succesfuly edit Benefit Component ');
+                    redirect(site_url('settings/website?page=home'));
+                } else {
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit Benefit Component, try again later');
+                    redirect($this->agent->referrer());
+                }
+            } else {
+                $this->session->set_flashdata('notif_warning', $upload['message']);
+                redirect($this->agent->referrer());
+            }
+        } else {
+            if ($this->M_admin->editHomeBenefit($this->input->post('old_image')) == true) {
+                $this->session->set_flashdata('notif_success', 'Succesfuly edit Benefit Component ');
+                redirect(site_url('settings/website?page=home'));
+            } else {
+                $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit Benefit Component, try again later');
+                redirect($this->agent->referrer());
+            }
+        }
+    }
+
+    function deleteHomeBenefit()
+    {
+        if ($this->M_admin->deleteHomeBenefit() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly delete Benefit Component ');
+            redirect(site_url('settings/website?page=home'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying delete Benefit Component, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
+
+
+    function addHomeGallery()
+    {
+        if ($_FILES['image']['name']) {
+            $path = "berkas/home/gallery/";
+            $upload = $this->uploader->uploadImage($_FILES['image'], $path);
+            
+            if ($upload == true) {
+                if ($this->M_admin->addHomeGallery($upload['filename']) == true) {
+                    $this->session->set_flashdata('notif_success', 'Succesfuly add new Gallery Item');
+                    redirect(site_url('settings/website?page=home'));
+                } else {
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying add new Gallery Item, try again later');
+                    redirect($this->agent->referrer());
+                }
+            } else {
+                $this->session->set_flashdata('notif_warning', $upload['message']);
+                redirect($this->agent->referrer());
+            }
+        } else {
+            $this->session->set_flashdata('notif_warning', 'Please select a file');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    function editHomeGallery()
+    {
+        if ($_FILES['image']['name']) {
+            $path = "berkas/home/gallery/";
+            $upload = $this->uploader->uploadImage($_FILES['image'], $path);
+            
+            if ($upload == true) {
+                if ($this->M_admin->editHomeGallery($upload['filename']) == true) {
+                    $this->session->set_flashdata('notif_success', 'Succesfuly edit Gallery Item ');
+                    redirect(site_url('settings/website?page=home'));
+                } else {
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit Gallery Item, try again later');
+                    redirect($this->agent->referrer());
+                }
+            } else {
+                $this->session->set_flashdata('notif_warning', $upload['message']);
+                redirect($this->agent->referrer());
+            }
+        } else {
+            if ($this->M_admin->editHomeGallery($this->input->post('old_image')) == true) {
+                $this->session->set_flashdata('notif_success', 'Succesfuly edit Gallery Item ');
+                redirect(site_url('settings/website?page=home'));
+            } else {
+                $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit Gallery Item, try again later');
+                redirect($this->agent->referrer());
+            }
+        }
+    }
+
+    function deleteHomeGallery()
+    {
+        if ($this->M_admin->deleteHomeGallery() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly delete Gallery Item ');
+            redirect(site_url('settings/website?page=home'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying delete Gallery Item, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    function addHomeHero()
+    {
+        if ($_FILES['image']['name']) {
+            $path = "berkas/home/hero/";
+            $upload = $this->uploader->uploadImageMulti($_FILES['image'], 'image', $path);
+            
+            if ($upload == true) {
+                $icon = $this->uploader->uploadImageMulti($_FILES['icon'], 'icon', $path);
+
+                if ($this->M_admin->addHomeHero($upload['filename'], $icon['filename']) == true) {
+                    $this->session->set_flashdata('notif_success', 'Succesfuly add new Hero Component');
+                    redirect(site_url('settings/website?page=home'));
+                } else {
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying add new Hero Component, try again later');
+                    redirect($this->agent->referrer());
+                }
+            } else {
+                $this->session->set_flashdata('notif_warning', $upload['message']);
+                redirect($this->agent->referrer());
+            }
+        } else {
+            $this->session->set_flashdata('notif_warning', 'Please select a file');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    function editHomeHero()
+    {
+        if ($_FILES['image']['name']) {
+            $path = "berkas/home/hero/";
+            $upload = $this->uploader->uploadImageMulti($_FILES['image'], 'image', $path);
+            
+            if ($upload == true) {
+                $icon = $this->uploader->uploadImageMulti($_FILES['icon'], 'icon', $path);
+
+                if ($this->M_admin->editHomeHero($upload['filename'], $icon['filename']) == true) {
+
+                    $this->session->set_flashdata('notif_success', 'Succesfuly add new Hero Component');
+                    redirect(site_url('settings/website?page=home'));
+                } else {
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit new Hero Component, try again later');
+                    redirect($this->agent->referrer());
+                }
+            } else {
+                $this->session->set_flashdata('notif_warning', $upload['message']);
+                redirect($this->agent->referrer());
+            }
+        } else {
+            $path = "berkas/home/hero/";
+
+            $icon = $this->uploader->uploadImageMulti($_FILES['icon'], 'icon', $path);
+
+            if ($this->M_admin->editHomeHero($this->input->post('old_image'), $icon['filename']) == true) {
+                $this->session->set_flashdata('notif_success', 'Succesfuly add new Hero Component');
+                redirect(site_url('settings/website?page=home'));
+            } else {
+                $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit new Hero Component, try again later');
+                redirect($this->agent->referrer());
+            }
+        }
+    }
+
+    function deleteHomeHero($id)
+    {
+        if ($this->M_admin->deleteHomeHero($id) == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly delete Hero Component ');
+            redirect(site_url('settings/website?page=home'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying delete Hero Component, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    // timeline
+
+    function addTimeline()
+    {
+        if ($this->M_admin->addTimeline() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly add Timeline ');
+            redirect(site_url('information/timeline'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying add Timeline, try again later');
+            redirect($this->agent->referrer());
+        }
+
+    }
+
+    function editTimeline()
+    {
+        if ($this->M_admin->editTimeline() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly change Timeline ');
+            redirect(site_url('information/timeline'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying change Timeline, try again later');
+            redirect($this->agent->referrer());
+        }
+
+    }
+
+    function deleteTimeline()
+    {
+        if ($this->M_admin->deleteTimeline() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly delete Timeline ');
+            redirect(site_url('information/timeline'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying delete Timeline, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
 
 
     // FUNCTION PRIVATE

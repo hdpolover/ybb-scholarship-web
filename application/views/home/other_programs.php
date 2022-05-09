@@ -59,15 +59,6 @@
 			</div>
 			<!-- End Logo -->
 		</div>
-
-		<div class="col-3 col-lg-2 d-none d-sm-inline-block">
-			<!-- Logo -->
-			<div class="avatar avatar-xl avatar-circle shadow-sm p-4 mx-auto">
-				<img class="avatar-img" src="<?= base_url();?>assets/svg/brands/spotify-icon.svg"
-					alt="Image Description">
-			</div>
-			<!-- End Logo -->
-		</div>
 	</div>
 </div>
 <!-- End Clients -->

@@ -70,14 +70,14 @@
 											<div class="mb-3">
 												<label for="inputSubject" class="input-label">Question <small
 														class="text-danger">*</small></label>
-												<input class="form-control" type="text" name="question"
+												<input class="form-control form-control-sm" type="text" name="question"
 													value="<?= $val->question;?>" required>
 											</div>
 
 											<div class="mb-3">
 												<label for="inputContent" class="input-label">Answer <small
 														class="text-danger">*</small></label>
-												<textarea class="form-control" name="answer" rows="5"
+												<textarea class="form-control form-control-sm" name="answer" rows="5"
 													placeholder="Answer" required><?= $val->answer;?></textarea>
 											</div>
 
@@ -164,13 +164,13 @@
 					<div class="mb-3">
 						<label for="inputSubject" class="input-label">Question <small
 								class="text-danger">*</small></label>
-						<input class="form-control" type="text" name="question" placeholder="Question" required>
+						<input class="form-control form-control-sm" type="text" name="question" placeholder="Question" required>
 					</div>
 
 					<div class="mb-3">
 						<label for="inputContent" class="input-label">Answer <small
 								class="text-danger">*</small></label>
-						<textarea class="form-control" name="answer" rows="5" placeholder="Answer" required></textarea>
+						<textarea class="form-control form-control-sm" name="answer" rows="5" placeholder="Answer" required></textarea>
 					</div>
 
 					<div class="modal-footer px-0 pb-0">

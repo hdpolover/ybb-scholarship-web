@@ -4,32 +4,55 @@
     		<div class="js-swiper-main swiper vh-md-70">
     			<div class="swiper-wrapper">
     				<!-- Slide -->
+    				<!-- <div class="swiper-slide gradient-y-overlay-sm-gray-900 bg-img-start"
+    					style="background-image: url(<?= base_url(); ?>assets/img/1920x800/img2.jpg);">
+    					<div
+    						class="container d-md-flex align-items-md-center vh-md-70 content-space-t-5 content-space-b-3 content-space-md-0">
+    						<div class="w-100 text-center">
+    							<h4 class="text-white">Welcome to</h4>
+    							<h2 class="display-6 text-white mb-0">Youth Break the Boundaries<br><small
+    									class="display-7">Foundation Scholarship</small></h2>
+    						</div>
+    					</div>
+    				</div> -->
+    				<!-- End Slide -->
+    				<?php if (empty($hero_section)):?>
+    				<!-- Slide -->
     				<div class="swiper-slide gradient-y-overlay-sm-gray-900 bg-img-start"
     					style="background-image: url(<?= base_url(); ?>assets/img/1920x800/img2.jpg);">
     					<div
     						class="container d-md-flex align-items-md-center vh-md-70 content-space-t-5 content-space-b-3 content-space-md-0">
-    						<div class="w-100 w-lg-75">
-    							<h4 class="text-white">Welcome to</h4>
-    							<h2 class="display-6 text-white mb-0">Youth Break the Boundaries<br><small
-    									class="display-7">Foundation Scholarship</small></h2>
+    						<div class="w-100 text-center">
+    							<h5 class="text-white">Welcome to</h5>
+    							<h2 class="display-7 text-white mb-0">Youth Break the
+    								Boundaries<br><small class="display-7">Foundation
+    									Scholarship</small></h2>
     						</div>
     					</div>
     				</div>
     				<!-- End Slide -->
-
+    				<?php else:?>
+    				<?php foreach ($hero_section as $val):?>
     				<!-- Slide -->
     				<div class="swiper-slide gradient-y-overlay-sm-gray-900 bg-img-start"
-    					style="background-image: url(<?= base_url(); ?>assets/img/1920x800/img3.jpg);">
+    					style="background-image: url(<?= base_url(); ?><?= $val->picture;?>);">
     					<div
     						class="container d-md-flex align-items-md-center vh-md-70 content-space-t-5 content-space-b-3 content-space-md-0">
-    						<div class="w-100 w-lg-75">
-    							<h4 class="text-white">Welcome to</h4>
-    							<h2 class="display-6 text-white mb-0">Youth Break the Boundaries<br><small
-    									class="display-7">Foundation Scholarship</small></h2>
+    						<div class="w-100 text-center">
+    							<?php if ($val->hero_icon == 1):?><img src="<?= base_url();?><?= $val->icon;?>"
+    								alt="<?= $val->icon;?>" class="w-25 mb-3"><?php endif;?>
+    							<h2 class="display-2 text-white mb-2"><?= $val->value;?></h2>
+    							<?php if (isset($val->desc)):?><h2 class="display-6 text-white fw-normal mb-0">
+    								<?= $val->desc;?></h2><?php endif;?>
+    							<?php if ($val->button == 1):?><a href="<?= prep_url($val->button_link);?>"
+    								class="btn rounded-pill text-white"
+    								style="background-color: <?= $val->button_color;?> !important;color: <?= $val->button_text_color;?> !important;"><?= $val->button_text;?></a><?php endif;?>
     						</div>
     					</div>
     				</div>
     				<!-- End Slide -->
+    				<?php endforeach;?>
+    				<?php endif;?>
     			</div>
 
     			<!-- Arrows -->
@@ -49,77 +72,211 @@
     	</div>
     	<!-- Swiper Slider -->
 
-    	<!-- Step -->
-    	<div class="container content-space-t-2 content-space-t-lg-2 content-space-b-lg-2">
+    	<!-- Circles Chart -->
+    	<div class="container content-space-2 content-space-lg-3"
+    		style="background: url(<?= base_url();?>assets/svg/components/abstract-shapes-9.svg) center no-repeat;">
     		<!-- Heading -->
     		<div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
-    			<span class="text-cap">Visi & Misi</span>
-    			<h2>Solutions rooted in code and design</h2>
+    			<h2>Our scholarship acceptance statistics</h2>
     		</div>
     		<!-- End Heading -->
-    		<div class="row">
-    			<div class="col-md-6 mb-3 mb-lg-0" data-aos="fade-up">
-    				<!-- Icon Block -->
-    				<a class="card card-transition h-100" href="#">
-    					<div class="card-body">
-    						<div class="d-flex">
-    							<div class="flex-shrink-0">
-    								<span class="svg-icon text-primary">
-    									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-    										xmlns="http://www.w3.org/2000/svg">
-    										<path fill-rule="evenodd" clip-rule="evenodd"
-    											d="M22.1671 18.1421C22.4827 18.4577 23.0222 18.2331 23.0206 17.7868L23.0039 13.1053V5.52632C23.0039 4.13107 21.8729 3 20.4776 3H8.68815C7.2929 3 6.16183 4.13107 6.16183 5.52632V9H13C14.6568 9 16 10.3431 16 12V15.6316H19.6565L22.1671 18.1421Z"
-    											fill="#035A4B" />
-    										<path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
-    											d="M1.98508 18V13C1.98508 11.8954 2.88051 11 3.98508 11H11.9851C13.0896 11 13.9851 11.8954 13.9851 13V18C13.9851 19.1046 13.0896 20 11.9851 20H4.10081L2.85695 21.1905C2.53895 21.4949 2.01123 21.2695 2.01123 20.8293V18.3243C1.99402 18.2187 1.98508 18.1104 1.98508 18ZM5.99999 14.5C5.99999 14.2239 6.22385 14 6.49999 14H11.5C11.7761 14 12 14.2239 12 14.5C12 14.7761 11.7761 15 11.5 15H6.49999C6.22385 15 5.99999 14.7761 5.99999 14.5ZM9.49999 16C9.22385 16 8.99999 16.2239 8.99999 16.5C8.99999 16.7761 9.22385 17 9.49999 17H11.5C11.7761 17 12 16.7761 12 16.5C12 16.2239 11.7761 16 11.5 16H9.49999Z"
-    											fill="#035A4B" />
-    									</svg>
 
-    								</span>
-    							</div>
-
-    							<div class="flex-grow-1 ms-4">
-    								<h4 class="card-title">A group</h4>
-    								<p class="card-text text-body">Become a group that help each others in different ways.</p>
-    							</div>
-    						</div>
-    					</div>
-    				</a>
-    				<!-- End Icon Block -->
+    		<div class="row mb-7">
+    			<div class="col-sm-6 col-lg-4 mb-7 mb-lg-4">
+    				<!-- Circle Chart -->
+    				<div class="circles-chart">
+    					<div class="js-circle" data-hs-circles-options='{
+               "value": <?= $statistik['total'];?>,
+               "maxValue": <?= $statistik['total'];?>,
+               "duration": 2000,
+               "isViewportInit": true,
+               "colors": ["#f8fafd", "#00c9a7"],
+               "radius": 100,
+               "width": 8,
+               "fgStrokeLinecap": "round",
+               "fgStrokeMiterlimit": "10",
+               "textClass": "circles-chart-content",
+               "textFontSize": 24,
+               "textFontWeight": 500,
+               "textColor": "#00c9a7",
+               "secondaryText": "total applicants",
+               "secondaryTextColor": "#77838f",
+               "secondaryTextFontSize": "13",
+               "secondaryTextFontWeight": "400",
+               "dividerSpace": "10"
+             }'></div>
+    				</div>
+    				<!-- End Circle Chart -->
     			</div>
     			<!-- End Col -->
 
-    			<div class="col-md-6 mb-3 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
-    				<!-- Icon Block -->
-    				<a class="card card-transition h-100" href="#">
-    					<div class="card-body">
-    						<div class="d-flex">
-    							<div class="flex-shrink-0">
-    								<span class="svg-icon text-primary">
-    									<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-    										xmlns="http://www.w3.org/2000/svg">
-    										<path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
-    											d="M4.85714 1H11.7364C12.0911 1 12.4343 1.12568 12.7051 1.35474L17.4687 5.38394C17.8057 5.66895 18 6.08788 18 6.5292V19.0833C18 20.8739 17.9796 21 16.1429 21H4.85714C3.02045 21 3 20.8739 3 19.0833V2.91667C3 1.12612 3.02045 1 4.85714 1ZM7 13C7 12.4477 7.44772 12 8 12H15C15.5523 12 16 12.4477 16 13C16 13.5523 15.5523 14 15 14H8C7.44772 14 7 13.5523 7 13ZM8 16C7.44772 16 7 16.4477 7 17C7 17.5523 7.44772 18 8 18H11C11.5523 18 12 17.5523 12 17C12 16.4477 11.5523 16 11 16H8Z"
-    											fill="#035A4B" />
-    										<path fill-rule="evenodd" clip-rule="evenodd"
-    											d="M6.85714 3H14.7364C15.0911 3 15.4343 3.12568 15.7051 3.35474L20.4687 7.38394C20.8057 7.66895 21 8.08788 21 8.5292V21.0833C21 22.8739 20.9796 23 19.1429 23H6.85714C5.02045 23 5 22.8739 5 21.0833V4.91667C5 3.12612 5.02045 3 6.85714 3ZM7 13C7 12.4477 7.44772 12 8 12H15C15.5523 12 16 12.4477 16 13C16 13.5523 15.5523 14 15 14H8C7.44772 14 7 13.5523 7 13ZM8 16C7.44772 16 7 16.4477 7 17C7 17.5523 7.44772 18 8 18H11C11.5523 18 12 17.5523 12 17C12 16.4477 11.5523 16 11 16H8Z"
-    											fill="#035A4B" />
-    									</svg>
+    			<div class="col-sm-6 col-lg-4 mb-7 mb-lg-4">
+    				<!-- Circle Chart -->
+    				<div class="circles-chart">
+    					<div class="js-circle" data-hs-circles-options='{
+               "value": <?= $statistik['seleksi'];?>,
+               "maxValue": <?= $statistik['total'];?>,
+               "duration": 2000,
+               "isViewportInit": true,
+               "colors": ["#f8fafd", "#ffc107"],
+               "radius": 100,
+               "width": 8,
+               "fgStrokeLinecap": "round",
+               "fgStrokeMiterlimit": "10",
+               "textClass": "circles-chart-content",
+               "textFontSize": 24,
+               "textFontWeight": 500,
+               "textColor": "#00c9a7",
+               "secondaryText": "pass the administrative selection",
+               "secondaryTextColor": "#77838f",
+               "secondaryTextFontSize": "13",
+               "secondaryTextFontWeight": "400",
+               "dividerSpace": "10"
+             }'></div>
+    				</div>
+    				<!-- End Circle Chart -->
+    			</div>
+    			<!-- End Col -->
 
-    								</span>
-    							</div>
-
-    							<div class="flex-grow-1 ms-4">
-    								<h4 class="card-title">Learning Center</h4>
-    								<p class="card-text text-body">Tech each other and become a learning center community.</p>
-    							</div>
-    						</div>
-    					</div>
-    				</a>
-    				<!-- End Icon Block -->
+    			<div class="col-sm-6 col-lg-4 mb-7 mb-lg-4">
+    				<!-- Circle Chart -->
+    				<div class="circles-chart">
+    					<div class="js-circle" data-hs-circles-options='{
+               "value": <?= $statistik['member'];?>,
+               "maxValue": <?= $statistik['seleksi'];?>,
+               "duration": 2000,
+               "isViewportInit": true,
+               "colors": ["#f8fafd", "#de4437"],
+               "radius": 100,
+               "width": 8,
+               "fgStrokeLinecap": "round",
+               "fgStrokeMiterlimit": "10",
+               "textClass": "circles-chart-content",
+               "textFontSize": 24,
+               "textFontWeight": 500,
+               "textColor": "#00c9a7",
+               "secondaryText": "scholarship grantee",
+               "secondaryTextColor": "#77838f",
+               "secondaryTextFontSize": "13",
+               "secondaryTextFontWeight": "400",
+               "dividerSpace": "10"
+             }'></div>
+    				</div>
+    				<!-- End Circle Chart -->
     			</div>
     			<!-- End Col -->
     		</div>
     		<!-- End Row -->
+
+    		<!-- Card Info -->
+    		<div class="text-center">
+    			<div class="card card-info-link card-sm">
+    				<div class="card-body">
+    					interested in joining our scholarship program? <a class="card-link ms-2"
+    						href="<?= site_url('join-now');?>">Go here <span
+    							class="bi-chevron-right small ms-1"></span></a>
+    				</div>
+    			</div>
+    		</div>
+    		<!-- End Card Info -->
+    	</div>
+    	<!-- End Circles Chart -->
+
+    	<?php if (!empty($home_sinopsis)):?>
+    	<!-- Features -->
+    	<div class="overflow-hidden">
+    		<div class="container bg-white">
+    			<div class="row justify-content-lg-between align-items-lg-center">
+    				<div class="col-lg-12 mb-9 mb-lg-0 text-center">
+    					<div class="position-relative mx-auto mb-3">
+    						<iframe width="100%" height="500" src="https://www.youtube.com/embed/gTthcmZpu2o"
+    							title="YouTube video player" frameborder="0"
+    							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    							allowfullscreen></iframe>
+    					</div>
+    				</div>
+    				<!-- End Col -->
+
+    				<div class="col-lg-12 text-center"
+    					style="background: url(<?= base_url();?>assets/svg/components/abstract-shapes-9.svg) center no-repeat;">
+    					<!-- Heading -->
+    					<div class="mb-5">
+    						<p><?= $home_sinopsis;?></p>
+    					</div>
+    					<!-- End Heading -->
+    				</div>
+    				<!-- End Col -->
+    			</div>
+    			<!-- End Row -->
+    		</div>
+    	</div>
+    	<!-- End Features -->
+    	<?php endif;?>
+
+
+    	<?php if(!empty($home_benefit)):?>
+    	<!-- Step -->
+    	<div class="container content-space-t-2 content-space-t-lg-2 content-space-b-lg-2"
+    		style="background: url(<?= base_url();?>assets/svg/components/abstract-shapes-19.svg) center no-repeat;">
+    		<!-- Heading -->
+    		<div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+    			<span class="text-cap">Benefit</span>
+    			<h2>What will you get when join us</h2>
+    		</div>
+    		<!-- End Heading -->
+    		<div class="row justify-content-center">
+    			<?php foreach($home_benefit as $val):?>
+    			<div class="col-md-6 col-lg-4 mb-4 mb-md-5 mb-lg-0">
+    				<!-- Card -->
+    				<a class="card card-lg card-transition h-100 text-center" href="#">
+    					<div class="card-body">
+    						<div class="mb-4">
+    							<img class="avatar w-50 h-50"
+    								src="<?= base_url();?><?= isset($val->picture) ? $val->picture : 'assets/svg/brands/google-adz-icon.svg';?>"
+    								alt="Logo">
+    						</div>
+    						<h3 class="card-title"><?= $val->value;?></h3>
+    						<?php if(isset($val->desc)):?><p class="card-text text-body"><?= $val->desc;?></p>
+    						<?php endif;?>
+    					</div>
+    				</a>
+    				<!-- End Card -->
+    			</div>
+    			<!-- End Col -->
+    			<?php endforeach;?>
+    		</div>
+    		<!-- End Row -->
     	</div>
     	<!-- End Step -->
+    	<?php endif;?>
+
+    	<?php if (!empty($home_gallery)):?>
+    	<div class="container content-space-t-2 content-space-t-lg-2 content-space-b-lg-5"
+    		style="background: url(<?= base_url();?>assets/svg/components/abstract-shapes-9.svg) center no-repeat;">
+    		<!-- Heading -->
+    		<div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+    			<span class="text-cap">Our Gallery</span>
+    			<h2>See documentation about what we do</h2>
+    		</div>
+    		<div class="row justify-content-center">
+    			<?php foreach ($home_gallery as $val):?>
+    			<div class="col-md-3">
+    				<!-- Media Viewer -->
+    				<a class="media-viewer" href="<?= base_url();?><?= $val->picture;?>" data-fslightbox="gallery">
+    					<!-- End Media Viewer -->
+    					<div class="bg-img-start"
+    						style="background-image: url(<?= base_url();?><?= $val->picture;?>); height: 15rem;"></div>
+
+    					<span class="media-viewer-container">
+    						<span class="media-viewer-icon">
+    							<i class="bi-plus media-viewer-icon-inner"></i>
+    						</span>
+    					</span>
+    				</a>
+    			</div>
+    			<!-- End Col -->
+    			<?php endforeach;?>
+    		</div>
+    		<!-- End Row -->
+    	</div>
+    	<?php endif;?>

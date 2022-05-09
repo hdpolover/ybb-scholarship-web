@@ -37,6 +37,13 @@ class M_admin extends CI_Model
         return $this->db->get()->row();
     }
 
+    public function getTimelinelist(){
+        $this->db->select('*');
+        $this->db->from('tb_timeline');
+        $this->db->where(['is_deleted' => 0]);
+        return $this->db->get()->result();
+    }
+
     public function getScholarlist(){
         $this->db->select('a.*, b.*, c.email, c.role, c.is_deleted, d.name, d.picture, d.gender');
         $this->db->from('tb_scholarship a');
@@ -71,6 +78,17 @@ class M_admin extends CI_Model
         $this->db->join('tb_auth b', 'a.user_id = b.user_id');
         $this->db->where(['b.is_deleted' => 0, 'role' => 1]);
         return $this->db->get()->result();
+    }
+
+    // hero
+    function getDetailhero($id){
+        $query =  $this->db->get_where('tb_home', ['id' => $id, 'is_deleted' => 0]);
+        if ($query->num_rows() > 0):
+            return $query->row();
+        else:
+            return false;
+        endif;
+
     }
 
     public function addAnnouncement()
@@ -281,6 +299,234 @@ class M_admin extends CI_Model
         $this->db->update('tb_settings', ['value' => $op_desc]);
 
         return true;
+    }
+
+    // home
+
+    public function addHomeBenefit($filename)
+    {
+        $benefit = $this->input->post('benefit');
+        $desc = $this->input->post('desc');
+
+        $data = [
+            'key' => 'benefit',
+            'picture' => $filename,
+            'value' => $benefit,
+            'desc' => $desc,
+            'created_at' => time()
+        ];
+
+        $this->db->insert('tb_home', $data);
+        return ($this->db->affected_rows() != 1) ? false : true;
+    }
+
+    public function editHomeBenefit($filename)
+    {
+        $id = $this->input->post('id');
+        $benefit = $this->input->post('benefit');
+        $desc = $this->input->post('desc');
+
+        $data = [
+            'key' => 'benefit',
+            'picture' => $filename,
+            'value' => $benefit,
+            'desc' => $desc,
+            'modified_at' => time()
+        ];
+
+        $this->db->where('id', $id);
+        $this->db->update('tb_home', $data);
+        return ($this->db->affected_rows() != 1) ? false : true;
+    }
+
+    public function deleteHomeBenefit()
+    {
+        $id = $this->input->post('id');
+
+        $this->db->where('id', $id);
+        $this->db->update('tb_home', ['is_deleted' => 1]);
+        return ($this->db->affected_rows() != 1) ? false : true;
+    }
+
+    public function addHomeGallery($filename)
+    {
+
+        $data = [
+            'key' => 'gallery',
+            'picture' => $filename,
+            'created_at' => time()
+        ];
+
+        $this->db->insert('tb_home', $data);
+        return ($this->db->affected_rows() != 1) ? false : true;
+    }
+
+    public function editHomeGallery($filename)
+    {
+        $id = $this->input->post('id');
+
+        $data = [
+            'picture' => $filename,
+            'modified_at' => time()
+        ];
+
+        $this->db->where('id', $id);
+        $this->db->update('tb_home', $data);
+        return ($this->db->affected_rows() != 1) ? false : true;
+    }
+
+    public function deleteHomeGallery()
+    {
+        $id = $this->input->post('id');
+
+        $this->db->where('id', $id);
+        $this->db->update('tb_home', ['is_deleted' => 1]);
+        return ($this->db->affected_rows() != 1) ? false : true;
+    }
+
+    function changeHomeContent(){
+        $home_sinopsis = $this->input->post('home_sinopsis');
+        $this->db->where('key', 'sinopsis');
+        $this->db->update('tb_home', ['value' => $home_sinopsis]);
+
+        return true;
+    }
+
+    public function addHomeHero($filename, $iconImg = null)
+    {
+        $title = $this->input->post('title');
+        $sub_title = $this->input->post('sub_title');
+        $icon = $this->input->post('icon');
+        $button = $this->input->post('button');
+        $button_text = $this->input->post('button_text');
+        $button_color = $this->input->post('button_color');
+        $button_text_color = $this->input->post('button_text_color');
+        $button_link = $this->input->post('button_link');
+
+
+        $data = [
+            'key' => 'hero',
+            'picture' => $filename,
+            'value' => $title,
+            'desc' => $sub_title,
+            'hero_icon' => is_null($icon) ? 0 : 1,
+            'icon' => $iconImg,
+            'button' => is_null($button) ? 0 : 1,
+            'button_text' => $button_text,
+            'button_color' => $button_color,
+            'button_text_color' => $button_text_color,
+            'button_link' => $button_link,
+            'created_at' => time()
+        ];
+
+        $this->db->insert('tb_home', $data);
+        return ($this->db->affected_rows() != 1) ? false : true;
+    }
+
+    public function editHomeHero($filename, $iconImg = null)
+    {
+        $id = $this->input->post('id');
+
+        $title = $this->input->post('title');
+        $sub_title = $this->input->post('sub_title');
+        $icon = $this->input->post('icon');
+        $button = $this->input->post('button');
+        $button_text = $this->input->post('button_text');
+        $button_color = $this->input->post('button_color');
+        $button_text_color = $this->input->post('button_text_color');
+        $button_link = $this->input->post('button_link');
+
+        $button = is_null($button) ? 0 : 1;
+        $icon = is_null($icon) ? 0 : 1;
+
+        if($button == 0){
+            $data = [
+                'key' => 'hero',
+                'picture' => $filename,
+                'value' => $title,
+                'desc' => $sub_title,
+                'hero_icon' => $icon,
+                'icon' => $iconImg,
+                'button' => $button,
+                'button_text' => '',
+                'button_color' => '',
+                'button_text_color' => '',
+                'button_link' => '',
+                'created_at' => time()
+            ];
+        }else{
+            $data = [
+                'key' => 'hero',
+                'picture' => $filename,
+                'value' => $title,
+                'desc' => $sub_title,
+                'button' => $button,
+                'button_text' => $button_text,
+                'button_color' => $button_color,
+                'button_text_color' => $button_text_color,
+                'button_link' => $button_link,
+                'created_at' => time()
+            ];
+        }
+
+        $this->db->where('id', $id);
+        $this->db->update('tb_home', $data);
+        return ($this->db->affected_rows() != 1) ? false : true;
+    }
+
+    public function deleteHomeHero($id)
+    {
+
+        $this->db->where('id', $id);
+        $this->db->update('tb_home', ['is_deleted' => 1]);
+        return ($this->db->affected_rows() != 1) ? false : true;
+    }
+
+    // timeline
+
+    public function addTimeline()
+    {
+        $title = $this->input->post('title');
+        $period = $this->input->post('period');
+        $desc = $this->input->post('desc');
+
+        $data = [
+            'title' => $title,
+            'period' => $period,
+            'desc' => $desc,
+            'created_at' => time()
+        ];
+
+        $this->db->insert('tb_timeline', $data);
+        return ($this->db->affected_rows() != 1) ? false : true;
+    }
+
+    public function editTimeline()
+    {
+        $id = $this->input->post('id');
+        $title = $this->input->post('title');
+        $period = $this->input->post('period');
+        $desc = $this->input->post('desc');
+
+        $data = [
+            'title' => $title,
+            'period' => $period,
+            'desc' => $desc,
+            'modified_at' => time()
+        ];
+
+        $this->db->where('id', $id);
+        $this->db->update('tb_timeline', $data);
+        return ($this->db->affected_rows() != 1) ? false : true;
+    }
+
+    public function deleteTimeline()
+    {
+        $id = $this->input->post('id');
+
+        $this->db->where('id', $id);
+        $this->db->update('tb_timeline', ['is_deleted' => 1]);
+        return ($this->db->affected_rows() != 1) ? false : true;
     }
 
     // contribute

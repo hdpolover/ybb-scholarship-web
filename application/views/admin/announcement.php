@@ -142,7 +142,7 @@
 					<div class="mb-3">
 						<label for="inputSubject" class="input-label">Subject <small
 								class="text-danger">*</small></label>
-						<input class="form-control" type="text" name="subject" placeholder="Insert annoucement subject"
+						<input class="form-control form-control-sm" type="text" name="subject" placeholder="Insert annoucement subject"
 							required>
 					</div>
 
@@ -194,7 +194,7 @@
 					<div class="mb-3">
 						<label for="inputContent" class="input-label">Content <small
 								class="text-danger">*</small></label>
-						<textarea class="form-control" id="ckeditor" name="content" rows="5"
+						<textarea class="form-control form-control-sm" id="ckeditor" name="content" rows="5"
 							placeholder="Insert annoucement content" required></textarea>
 					</div>
 

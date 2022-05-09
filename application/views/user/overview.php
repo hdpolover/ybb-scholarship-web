@@ -99,7 +99,7 @@
           							title="Displayed on public forums, such as Front."></i></label>
 
           					<div class="col-sm-9">
-          						<input type="text" class="form-control" name="name" id="nameLabel"
+          						<input type="text" class="form-control form-control-sm" name="name" id="nameLabel"
           							placeholder="<?= $user->name; ?>" aria-label="Clarice" value="<?= $user->name; ?>"
           							required>
           					</div>
@@ -111,7 +111,7 @@
           					<label for="emailLabel" class="col-sm-3 col-form-label form-label">Email</label>
 
           					<div class="col-sm-9">
-          						<input type="email" class="form-control" name="email" id="emailLabel"
+          						<input type="email" class="form-control form-control-sm" name="email" id="emailLabel"
           							placeholder="clarice@example.com" aria-label="<?= $user->email; ?>"
           							value="<?= $user->email; ?>" required>
           					</div>
@@ -141,7 +141,7 @@
           					<div class="col-sm-9">
           						<div class="input-group input-group-md-down-break">
           							<!-- Radio Check -->
-          							<label class="form-control" for="male">
+          							<label class="form-control form-control-sm" for="male">
           								<span class="form-check">
           									<input type="radio" class="form-check-input" name="gender" id="male"
           										value="male" <?= $user->gender == 'male' ? 'checked' : ''; ?>>
@@ -151,7 +151,7 @@
           							<!-- End Radio Check -->
 
           							<!-- Radio Check -->
-          							<label class="form-control" for="female">
+          							<label class="form-control form-control-sm" for="female">
           								<span class="form-check">
           									<input type="radio" class="form-check-input" name="gender" id="female"
           										value="female" <?= $user->gender == 'female' ? 'checked' : ''; ?>>
@@ -161,7 +161,7 @@
           							<!-- End Radio Check -->
 
           							<!-- Radio Check -->
-          							<label class="form-control" for="other">
+          							<label class="form-control form-control-sm" for="other">
           								<span class="form-check">
           									<input type="radio" class="form-check-input" name="gender" id="other"
           										value="other"
