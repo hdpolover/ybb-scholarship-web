@@ -16,7 +16,7 @@
 
     <!-- Title -->
 
-    <title>YBB Scholarship</title>
+    <title><?= $web_title;?></title>
 
 
 

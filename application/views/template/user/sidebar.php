@@ -5,13 +5,13 @@
     		<div class="row align-items-center">
     			<div class="col">
     				<div class="d-none d-lg-block">
-    					<h1 class="h2 text-white">Personal info</h1>
+    					<h1 class="h2 text-white">Informasi akun</h1>
     				</div>
 
     				<!-- Breadcrumb -->
     				<nav aria-label="breadcrumb">
     					<ol class="breadcrumb breadcrumb-light mb-0">
-    						<li class="breadcrumb-item">Account</li>
+    						<li class="breadcrumb-item">Akun</li>
     						<li class="breadcrumb-item active" aria-current="page">
     							<?= !empty($this->uri->segment(2)) ? str_replace('-', ' ', $this->uri->segment(2)) : 'Overview'; ?>
     						</li>
@@ -73,26 +73,26 @@
     							<!-- End Avatar -->
 
     							<!-- Nav -->
-    							<span class="text-cap">Account</span>
+    							<span class="text-cap">Akun</span>
 
     							<!-- List -->
     							<ul class="nav nav-sm nav-tabs nav-vertical">
     								<li class="nav-item">
     									<a class="nav-link <?= ($this->uri->segment(1) == "user" && empty($this->uri->segment(2)) ? "active" : "") ?>"
     										href="<?= site_url('user'); ?>">
-    										<i class="bi-person-badge nav-icon"></i> Overview
+    										<i class="bi-person-badge nav-icon"></i> Akun saya
     									</a>
     								</li>
     								<li class="nav-item">
     									<a class="nav-link <?= ($this->uri->segment(2) == "Announcements" ? "active" : "") ?>"
     										href="<?= site_url('user/announcements'); ?>">
-    										<i class="bi-app-indicator nav-icon"></i> Announcements
+    										<i class="bi-app-indicator nav-icon"></i> Pengumuman
     									</a>
     								</li>
     								<li class="nav-item">
     									<a class="nav-link <?= ($this->uri->segment(2) == "scholarship" ? "active" : "") ?>"
     										href="<?= site_url('user/scholarship'); ?>">
-    										<i class="bi-people nav-icon"></i> Scholarship
+    										<i class="bi-people nav-icon"></i> Beasiswa
 											<?php if ($scholarship['status'] == false || $scholarship['status'] == 1):?>
 												<i class="bi bi-exclamation-diamond text-<?= $scholarship['alert'];?> ms-auto"></i>
 											<?php endif;?>
@@ -101,7 +101,7 @@
     								<li class="nav-item">
     									<a class="nav-link <?= ($this->uri->segment(2) == "settings" ? "active" : "") ?>"
     										href="<?= site_url('user/settings'); ?>">
-    										<i class="bi-sliders nav-icon"></i> Preferences 
+    										<i class="bi-sliders nav-icon"></i> Pengaturan 
     									</a>
     								</li>
     							</ul>
@@ -113,8 +113,8 @@
     								<!-- List -->
     								<ul class="nav nav-sm nav-tabs nav-vertical">
     									<li class="nav-item">
-    										<a class="nav-link" href="#">
-    											<i class="bi-box-arrow-right nav-icon"></i> Log out
+    										<a class="nav-link" href="<?= site_url('logout');?>">
+    											<i class="bi-box-arrow-right nav-icon"></i> Keluar
     										</a>
     									</li>
     								</ul>

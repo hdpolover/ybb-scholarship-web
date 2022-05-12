@@ -9,6 +9,13 @@ class TemplateBack
         $this->_ci->load->database();
     }
 
+    function getSettingsValue($key)
+    {
+        $query = $this->_ci->db->get_where('tb_settings', ['key' => $key]);
+        return $query->row()->value;
+    }
+
+
     function countScholar(){
         $query = $this->_ci->db->get_where('tb_scholarship', ['status !=' => 2]);
         return $query->num_rows();
@@ -16,6 +23,9 @@ class TemplateBack
 
     function view($content, $data = null)
     {
+        $data['web_title'] = $this->getSettingsValue('web_title');
+        $data['web_desc'] = $this->getSettingsValue('web_desc');
+
         $data['countScholar'] = $this->countScholar();
 
         $this->_ci->load->view('template/backend/header', $data);

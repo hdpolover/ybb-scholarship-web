@@ -3,7 +3,7 @@
 	<div class="container content-space-t-3 content-space-t-lg-5 content-space-b-2">
 		<div class="w-md-75 w-lg-50 text-center mx-md-auto">
 			<h1>FAQ</h1>
-			<p>Search our FAQ for answers to anything you might ask.</p>
+			<p>Cari FAQ yang mungkin kamu butuhkan.</p>
 		</div>
 	</div>
 </div>
@@ -16,7 +16,7 @@
 			<div class="d-grid gap-3">
 
 				<?php if(empty($faq)):?>
-				<center>Sorry, we couldn't find any faq at this moment.</center>
+				<center>Mohon maaf, tidak dapat menemukan satupun FAQ terbaru.</center>
 				<?php else:?>
 				<!-- Accordion -->
 				<div class="accordion accordion-flush accordion-lg" id="accordionFAQBasics">

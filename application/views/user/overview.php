@@ -3,7 +3,7 @@
           	<div class="card">
           		<form action="<?= site_url('user/updateProfile'); ?>" method="POST" enctype="multipart/form-data">
           			<div class="card-header border-bottom">
-          				<h4 class="card-header-title">Basic info</h4>
+          				<h4 class="card-header-title">Informasi pribadi</h4>
           			</div>
 
           			<!-- Body -->
@@ -21,8 +21,7 @@
 
           							<div class="col-md-auto">
           								<a class="btn btn-primary btn-transition"
-          									href="<?= site_url('scholarship');?>">Apply
-          									Now</a>
+          									href="<?= site_url('scholarship');?>">Daftar sekarang</a>
           							</div>
           						</div>
 
@@ -56,7 +55,7 @@
           				<?php endif;?>
           				<!-- Form -->
           				<div class="row mb-4">
-          					<label class="col-sm-3 col-form-label form-label">Profile photo</label>
+          					<label class="col-sm-3 col-form-label form-label">Foto profil</label>
 
           					<div class="col-sm-9">
           						<!-- Media -->
@@ -69,7 +68,7 @@
           							</label>
 
           							<div class="d-grid d-sm-flex gap-2 ms-4">
-          								<div class="form-attachment-btn btn btn-primary btn-sm">Upload photo
+          								<div class="form-attachment-btn btn btn-primary btn-sm">Unggah foto
           									<input type="file" class="js-file-attach form-attachment-btn-label"
           										name="image" id="avatarUploader" data-hs-file-attach-options='{
                                       "textTarget": "#avatarImg",
@@ -93,7 +92,7 @@
 
           				<!-- Form -->
           				<div class="row mb-4">
-          					<label for="nameLabel" class="col-sm-3 col-form-label form-label">Full name <i
+          					<label for="nameLabel" class="col-sm-3 col-form-label form-label">Nama lengkap <i
           							class="bi-question-circle text-body ms-1" data-bs-toggle="tooltip"
           							data-bs-placement="top"
           							title="Displayed on public forums, such as Front."></i></label>
@@ -120,7 +119,7 @@
 
           				<!-- Form -->
           				<div class="row mb-4">
-          					<label for="phoneLabel" class="col-sm-3 col-form-label form-label">Phone <span
+          					<label for="phoneLabel" class="col-sm-3 col-form-label form-label">No. Telepon <span
           							class="form-label-secondary">(Optional)</span></label>
 
           					<div class="col-sm-9">
@@ -136,7 +135,7 @@
 
           				<!-- Form -->
           				<div class="row mb-4">
-          					<label class="col-sm-3 col-form-label form-label">Gender</label>
+          					<label class="col-sm-3 col-form-label form-label">Jenis kelamin</label>
 
           					<div class="col-sm-9">
           						<div class="input-group input-group-md-down-break">
@@ -145,7 +144,7 @@
           								<span class="form-check">
           									<input type="radio" class="form-check-input" name="gender" id="male"
           										value="male" <?= $user->gender == 'male' ? 'checked' : ''; ?>>
-          									<span class="form-check-label">Male</span>
+          									<span class="form-check-label">Laki laki</span>
           								</span>
           							</label>
           							<!-- End Radio Check -->
@@ -155,7 +154,7 @@
           								<span class="form-check">
           									<input type="radio" class="form-check-input" name="gender" id="female"
           										value="female" <?= $user->gender == 'female' ? 'checked' : ''; ?>>
-          									<span class="form-check-label">Female</span>
+          									<span class="form-check-label">Perempuan</span>
           								</span>
           							</label>
           							<!-- End Radio Check -->
@@ -166,7 +165,7 @@
           									<input type="radio" class="form-check-input" name="gender" id="other"
           										value="other"
           										<?= $user->gender == null || $user->gender == 'other' ? 'checked' : ''; ?>>
-          									<span class="form-check-label">Other</span>
+          									<span class="form-check-label">Tidak mengatakan</span>
           								</span>
           							</label>
           							<!-- End Radio Check -->
@@ -180,7 +179,7 @@
           			<!-- Footer -->
           			<div class="card-footer pt-0">
           				<div class="d-flex justify-content-end gap-3">
-          					<button type="submit" class="btn btn-primary">Save changes</button>
+          					<button type="submit" class="btn btn-primary">Simpan perubahan</button>
           				</div>
           			</div>
           			<!-- End Footer -->

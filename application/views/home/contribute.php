@@ -3,7 +3,7 @@
 	style="background-image: url(<?= base_url();?>assets/svg/components/card-11.svg);">
 	<div class="container content-space-t-3 content-space-t-lg-5 content-space-b-2 position-relative zi-2">
 		<div class="w-md-75 w-lg-75 text-center mx-md-auto mb-5 mb-md-9">
-			<h1 class="mb-3">Contribute</h1>
+			<h1 class="mb-3">Kontribusi</h1>
 			<p class="h4 fw-normal"><?= $contribute_desc;?></p>
 		</div>
 
@@ -87,7 +87,7 @@
 
 					<div class="card-footer pt-0">
 						<span class="card-link"
-							onclick="window.location.href=`https://wa.me/<?= $contribute_whatsapp;?>?text=I'm%20interested%20to%20become%20YBB%20Contributor`">Contact
+							onclick="window.location.href=`https://wa.me/<?= $contribute_whatsapp;?>?text=I'm%20interested%20to%20become%20YBB%20Contributor`">Hubungi
 							<i class="bi-chevron-right small ms-1"></i></span>
 					</div>
 				</a>

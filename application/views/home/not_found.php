@@ -61,7 +61,7 @@
         <div class="container pb-5 content-space-b-sm-1">
             <div class="row justify-content-between align-items-center">
                 <div class="col-sm mb-3 mb-sm-0">
-                    <p class="small mb-0">&copy; Front. 2021 Htmlstream.</p>
+                    <p class="small mb-0">&copy; YBB Scholarship Program 2021 supported by Ngodingin Indonesia</p>
                 </div>
 
                 <div class="col-sm-auto">

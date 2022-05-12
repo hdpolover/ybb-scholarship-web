@@ -2,7 +2,7 @@
 	<!-- Card -->
 	<div class="card">
 		<div class="card-header border-bottom">
-			<h4 class="card-header-title">YBB Scholarship Program</h4>
+			<h4 class="card-header-title">YBB Scholarship </h4>
 		</div>
 		<!-- Body -->
 		<div class="card-body">
@@ -17,8 +17,7 @@
 						</div>
 
 						<div class="col-md-auto">
-							<a class="btn btn-primary btn-transition" href="<?= site_url('scholarship');?>">Apply
-								Now</a>
+							<a class="btn btn-primary btn-transition" href="<?= site_url('scholarship');?>">Daftar sekarang</a>
 						</div>
 					</div>
 
@@ -54,13 +53,12 @@
 					<!-- List Striped -->
 					<ul class="list-group list-group-lg">
 						<li class="list-group-item p-2 active">
-							<i class="bi bi-person-circle list-group-icon"></i> <span style="margin-top: -20px">Personal
-								Information</span>
+							<i class="bi bi-person-circle list-group-icon"></i> <span style="margin-top: -20px">Informasi pribadi</span>
 						</li>
 						<li class="list-group-item p-3">
 							<div class="row">
 								<div class="col-sm-4 mb-2 mb-sm-0">
-									<span class="h6">Full Name</span>
+									<span class="h6">Nama lengkap</span>
 								</div>
 								<!-- End Col -->
 
@@ -74,7 +72,7 @@
 						<li class="list-group-item p-3">
 							<div class="row">
 								<div class="col-sm-4 mb-2 mb-sm-0">
-									<span class="h6">date of birth</span>
+									<span class="h6">Tanggal lahir</span>
 								</div>
 								<!-- End Col -->
 
@@ -88,7 +86,7 @@
 						<li class="list-group-item p-3">
 							<div class="row">
 								<div class="col-sm-4 mb-2 mb-sm-0">
-									<span class="h6">Whatssapp Number <small
+									<span class="h6">Whatssapp <small
 											class="text-success">(active)</small></span>
 								</div>
 								<!-- End Col -->
@@ -103,7 +101,7 @@
 						<li class="list-group-item p-3">
 							<div class="row">
 								<div class="col-sm-4 mb-2 mb-sm-0">
-									<span class="h6">Current Address</span>
+									<span class="h6">Alamat</span>
 								</div>
 								<!-- End Col -->
 
@@ -117,7 +115,7 @@
 						<li class="list-group-item p-3">
 							<div class="row">
 								<div class="col-sm-4 mb-2 mb-sm-0">
-									<span class="h6">Field of Study</span>
+									<span class="h6">Jurusan / Prodi / Fakultas</span>
 								</div>
 								<!-- End Col -->
 
@@ -131,7 +129,7 @@
 						<li class="list-group-item p-3">
 							<div class="row">
 								<div class="col-sm-4 mb-2 mb-sm-0">
-									<span class="h6">School or University</span>
+									<span class="h6">Sekolah / Universitas</span>
 								</div>
 								<!-- End Col -->
 
@@ -145,7 +143,7 @@
 						<li class="list-group-item p-3">
 							<div class="row">
 								<div class="col-sm-4 mb-2 mb-sm-0">
-									<span class="h6">Current GPA</span>
+									<span class="h6">GPA Saat ini</span>
 								</div>
 								<!-- End Col -->
 
@@ -173,7 +171,7 @@
 						<li class="list-group-item p-3">
 							<div class="row">
 								<div class="col-sm-4 mb-2 mb-sm-0">
-									<span class="h6">About your self</span>
+									<span class="h6">Ceritakan tentang dirimu</span>
 								</div>
 								<!-- End Col -->
 
@@ -187,7 +185,7 @@
 						<li class="list-group-item p-3">
 							<div class="row">
 								<div class="col-sm-4 mb-2 mb-sm-0">
-									<span class="h6">biggest dream and how will to make it come true</span>
+									<span class="h6">Mimpi terbesarmu dan cara mewujudkannya</span>
 								</div>
 								<!-- End Col -->
 
@@ -201,7 +199,7 @@
 						<li class="list-group-item p-3">
 							<div class="row">
 								<div class="col-sm-4 mb-2 mb-sm-0">
-									<span class="h6">volunteering or organizational experiences</span>
+									<span class="h6">Pengalaman organisasi dan relawan</span>
 								</div>
 								<!-- End Col -->
 
@@ -223,19 +221,19 @@
 					<ul class="list-group list-group-lg">
 						<li class="list-group-item p-2 active">
 							<i class="bi bi-file-earmark-image-fill list-group-icon"></i> <span
-								style="margin-top: -20px">Files</span>
+								style="margin-top: -20px">File pendaftaran</span>
 						</li>
 						<li class="list-group-item p-3">
 							<div class="row">
 								<div class="col-sm-9 mb-2 mb-sm-0">
-									<span class="h6">Proof that already followed our social media</span>
+									<span class="h6">Bukti telah mengikuti sosial media kami</span>
 								</div>
 								<!-- End Col -->
 
 								<div class="col-sm-3 mb-2 mb-sm-0">
 									<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
 										data-bs-target="#uploadFollow"><i class="bi bi-file-earmark-image-fill"></i>
-										check file</button>
+										cek file</button>
 								</div>
 								<!-- End Col -->
 							</div>
@@ -244,13 +242,13 @@
 						<li class="list-group-item p-3">
 							<div class="row">
 								<div class="col-sm-9 mb-2 mb-sm-0">
-									<span class="h6">Proof that already have an account on YBB Apps</span>
+									<span class="h6">Bukti telah mempunyai akun di aplikasi YBB</span>
 								</div>
 								<!-- End Col -->
 
 								<div class="col-sm-3 mb-2 mb-sm-0">
 									<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-										data-bs-target="#uploadApps"><i class="bi bi-file-earmark-image-fill"></i> check
+										data-bs-target="#uploadApps"><i class="bi bi-file-earmark-image-fill"></i> cek
 										file</button>
 								</div>
 								<!-- End Col -->
@@ -260,14 +258,14 @@
 						<li class="list-group-item p-3">
 							<div class="row">
 								<div class="col-sm-9 mb-2 mb-sm-0">
-									<span class="h6">Proof that have subscribed YBB Youtube official account</span>
+									<span class="h6">Bukti telah subscribed akun youtube official YBB </span>
 								</div>
 								<!-- End Col -->
 
 								<div class="col-sm-3 mb-2 mb-sm-0">
 									<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
 										data-bs-target="#uploadYoutube"><i class="bi bi-file-earmark-image-fill"></i>
-										check file</button>
+										cek file</button>
 								</div>
 								<!-- End Col -->
 							</div>
@@ -276,14 +274,14 @@
 						<li class="list-group-item p-3">
 							<div class="row">
 								<div class="col-sm-9 mb-2 mb-sm-0">
-									<span class="h6">Proof that have joined YBB telegram official account</span>
+									<span class="h6">Bukti telah bergabung dalam grup Telegram YBB</span>
 								</div>
 								<!-- End Col -->
 
 								<div class="col-sm-3 mb-2 mb-sm-0">
 									<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
 										data-bs-target="#uploadTelegram"><i class="bi bi-file-earmark-image-fill"></i>
-										check file</button>
+										cek file</button>
 								</div>
 								<!-- End Col -->
 							</div>
@@ -292,15 +290,14 @@
 						<li class="list-group-item p-3">
 							<div class="row">
 								<div class="col-sm-9 mb-2 mb-sm-0">
-									<span class="h6">Proof that have shared this information on your instagram story or
-										instagram post</span>
+									<span class="h6">Bukti telah membagikan informasi via status instagram atau postingan instagram</span>
 								</div>
 								<!-- End Col -->
 
 								<div class="col-sm-3 mb-2 mb-sm-0">
 									<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
 										data-bs-target="#uploadStory"><i class="bi bi-file-earmark-image-fill"></i>
-										check file</button>
+										cek file</button>
 								</div>
 								<!-- End Col -->
 							</div>
@@ -309,13 +306,13 @@
 						<li class="list-group-item p-3">
 							<div class="row">
 								<div class="col-sm-9 mb-2 mb-sm-0">
-									<span class="h6">Proof that have tagged 5 of your friends on the post</span>
+									<span class="h6">Bukti telah menandai 5 teman pada postingan instagram</span>
 								</div>
 								<!-- End Col -->
 
 								<div class="col-sm-3 mb-2 mb-sm-0">
 									<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
-										data-bs-target="#uploadTags"><i class="bi bi-file-earmark-image-fill"></i> check
+										data-bs-target="#uploadTags"><i class="bi bi-file-earmark-image-fill"></i> cek
 										file</button>
 								</div>
 								<!-- End Col -->
@@ -339,7 +336,7 @@
 	<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="detailUserTitle">Files</h5>
+				<h5 class="modal-title" id="detailUserTitle">File</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
@@ -347,7 +344,7 @@
 					class="w-100 h-auto">
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-white" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-white" data-bs-dismiss="modal">Tutup</button>
 			</div>
 		</div>
 	</div>
@@ -359,7 +356,7 @@
 	<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="detailUserTitle">Files</h5>
+				<h5 class="modal-title" id="detailUserTitle">File</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
@@ -367,7 +364,7 @@
 					class="w-100 h-auto">
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-white" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-white" data-bs-dismiss="modal">Tutup</button>
 			</div>
 		</div>
 	</div>
@@ -380,7 +377,7 @@
 	<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="detailUserTitle">Files</h5>
+				<h5 class="modal-title" id="detailUserTitle">File</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
@@ -388,7 +385,7 @@
 					class="w-100 h-auto">
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-white" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-white" data-bs-dismiss="modal">Tutup</button>
 			</div>
 		</div>
 	</div>
@@ -401,7 +398,7 @@
 	<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="detailUserTitle">Files</h5>
+				<h5 class="modal-title" id="detailUserTitle">File</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
@@ -409,7 +406,7 @@
 					class="w-100 h-auto">
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-white" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-white" data-bs-dismiss="modal">Tutup</button>
 			</div>
 		</div>
 	</div>
@@ -422,7 +419,7 @@
 	<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="detailUserTitle">Files</h5>
+				<h5 class="modal-title" id="detailUserTitle">File</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
@@ -430,7 +427,7 @@
 					class="w-100 h-auto">
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-white" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-white" data-bs-dismiss="modal">Tutup</button>
 			</div>
 		</div>
 	</div>
@@ -443,7 +440,7 @@
 	<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="detailUserTitle">Files</h5>
+				<h5 class="modal-title" id="detailUserTitle">File</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
@@ -451,7 +448,7 @@
 					class="w-100 h-auto">
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-white" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-white" data-bs-dismiss="modal">Tutup</button>
 			</div>
 		</div>
 	</div>

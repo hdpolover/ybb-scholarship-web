@@ -18,17 +18,17 @@ class User extends CI_Controller
                 $uri = uri_string();
             }
             $this->session->set_userdata('redirect', $uri);
-            $this->session->set_flashdata('notif_warning', "Please login, to continued");
+            $this->session->set_flashdata('notif_warning', "Harap login ke akunmu untuk melanjutkan");
             redirect('login');
         }
 
         // cek apakah akun user sudah aktif / suspend - 0: BELUM AKTIF - 1: AKTIF - 2: SUSPEND;
         $user = $this->M_auth->get_userByID($this->session->userdata('user_id'));
         if ($user->active == 0) {
-            $this->session->set_flashdata('error', "Hi {$user->name}, please activated your account first");
+            $this->session->set_flashdata('error', "Hi {$user->name}, harap aktivasi akunmu terlebih dahulu");
             redirect(site_url('email-activation'));
         } elseif ($user->active == 2) {
-            $this->session->set_flashdata('error', "Hi {$user->name}, your account has been suspended, please contact admin for more info");
+            $this->session->set_flashdata('error', "Hi {$user->name}, akunmu telah tersuspend, harap hubungi admin kami untuk konfirmasi");
             redirect(site_url('suspend'));
         }
     }
@@ -88,10 +88,10 @@ class User extends CI_Controller
 
                     $this->session->set_userdata($session);
 
-                    $this->session->set_flashdata('notif_success', 'Your profile has been updated');
+                    $this->session->set_flashdata('notif_success', 'Informasi akunmu telah diubah');
                     redirect($this->agent->referrer());
                 } else {
-                    $this->session->set_flashdata('notif_warning', 'You not make any changes to your profile');
+                    $this->session->set_flashdata('notif_warning', 'Kamu tidak mengubah informasi akunmu');
                     redirect($this->agent->referrer());
                 }
             } else {
@@ -107,10 +107,10 @@ class User extends CI_Controller
 
                 $this->session->set_userdata($session);
 
-                $this->session->set_flashdata('notif_success', 'Your profile has been updated');
+                $this->session->set_flashdata('notif_success', 'Informasi akunmu telah diubah');
                 redirect($this->agent->referrer());
             } else {
-                $this->session->set_flashdata('notif_warning', 'You not make any changes to your profile');
+                $this->session->set_flashdata('notif_warning', 'Kamu tidak mengubah informasi akunmu');
                 redirect($this->agent->referrer());
             }
         }
@@ -124,10 +124,10 @@ class User extends CI_Controller
             // delete all uploaded files
             delete_files($path, true);
 
-            $this->session->set_flashdata('notif_success', 'Your picture profile has been reset');
+            $this->session->set_flashdata('notif_success', 'Foto profilmu telah direset');
             redirect($this->agent->referrer());
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is an error when trying reset your picture profile');
+            $this->session->set_flashdata('notif_warning', 'Terjadi kesalahan saat mencoba mereset foto profilmu');
             redirect($this->agent->referrer());
         }
     }
@@ -150,24 +150,24 @@ class User extends CI_Controller
                     $now = date("d F Y - H:i");
                     $email = htmlspecialchars($this->session->userdata("email"), true);
 
-                    $subject = "Password changes";
-                    $message = "Hi, your password for account YBB Foundation Scholarship <b>{$email}</b> has been changes at {$now}. <br>If you don't feel like changing your password, please contact the admin immediately.";
+                    $subject = "Perubahan password";
+                    $message = "Hai, password untuk akun YBB Foundation Scholarship <b>{$email}</b> telah dirubah pada {$now}. <br>Jika kamu tidak merasa melakukan perubahan password, harap hubungi ADMIN YBB Scholarship Program secepatnya!";
 
                     // mengirimemailperubahan password
                     $this->send_email(htmlspecialchars($this->session->userdata("email"), true), $subject, $message);
 
-                    $this->session->set_flashdata('notif_success', 'Your password has been reset');
+                    $this->session->set_flashdata('notif_success', 'Passwordmu berhasil dirubah');
                     redirect($this->agent->referrer());
                 } else {
-                    $this->session->set_flashdata('notif_warning', 'There is an error when trying reset your password');
+                    $this->session->set_flashdata('notif_warning', 'Terjadi kesalahan saat mencoba merubah passwordmu');
                     redirect($this->agent->referrer());
                 }
             } else {
-                $this->session->set_flashdata('notif_warning', 'Password wrong, try again');
+                $this->session->set_flashdata('notif_warning', 'Password salah, coba lagi');
                 redirect($this->agent->referrer());
             }
         } else {
-            $this->session->set_flashdata('notif_warning', 'Password confirmation doesn`t match');
+            $this->session->set_flashdata('notif_warning', 'Konfirmasi password tidak sesuai');
             redirect($this->agent->referrer());
         }
     }
@@ -184,7 +184,7 @@ class User extends CI_Controller
                 $scholar = [
                     'status' => false,
                     'alert' => 'warning',
-                    'message' => 'You not yet apply for YBB scholarship, please go to applicant form to apply',
+                    'message' => 'Kamu belum mendaftaran diri untuk beasiswa, harap daftarkan diri sekarang',
                 ];
                 break;
             // waiting verfication
@@ -192,7 +192,7 @@ class User extends CI_Controller
                 $scholar = [
                     'status' => 1,
                     'alert' => 'info',
-                    'message' => 'Your applicantion for YBB Scholarship Program, has been send. Please wait for our team verified your data',
+                    'message' => 'Berkas pendaftaran beasiswamu telah terkirim, harap tunggu informasi selanjutnya',
                 ];
                 break;
             // accepted
@@ -200,7 +200,7 @@ class User extends CI_Controller
                 $scholar = [
                     'status' => 2,
                     'alert' => 'success',
-                    'message' => '<b>Congratulation</b>. Your applicantion has been approved by YBB Scholarship administration, please wait in few days for our team to reach you',
+                    'message' => '<b>Selamat</b>! Berkas pendaftaran beasiswa telah diterima, harap tunggu Tim kami untuk menghubungimu',
                 ];
                 break;
             // rejected
@@ -208,7 +208,7 @@ class User extends CI_Controller
                 $scholar = [
                     'status' => 3,
                     'alert' => 'danger',
-                    'message' => '<b>Sorry</b>. Your applicantion for YBB scholarship, has been rejected.',
+                    'message' => '<b>Mohon Maaf</b>. Berkas pendaftaran beasiswamu telah kami tolak, jangan putus asa.',
                 ];
                 break;
             
@@ -216,7 +216,7 @@ class User extends CI_Controller
                 $scholar = [
                     'status' => false,
                     'alert' => 'warning',
-                    'message' => 'You not yet apply for YBB scholarship, please go to applicant form to apply',
+                    'message' => 'Kamu belum mendaftaran diri untuk beasiswa, harap daftarkan diri sekarang',
                 ];
                 break;
         }

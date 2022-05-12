@@ -18,7 +18,7 @@ class Scholarship extends CI_Controller
                 $uri = uri_string();
             }
             $this->session->set_userdata('redirect', $uri);
-            $this->session->set_flashdata('notif_warning', "Please login, to continued");
+            $this->session->set_flashdata('notif_warning', "Harap login ke akunmu untuk melanjutkan");
             redirect('login');
         }
     }
@@ -77,10 +77,10 @@ class Scholarship extends CI_Controller
         ];
 
         if ($this->M_scholarship->applyScholarship($uploadData, $scholar_id) == true) {
-            $this->session->set_flashdata('notif_success', 'successfully applied for a scholarship');
+            $this->session->set_flashdata('notif_success', 'Berhasil mendaftarkan diri ke beasiswaA');
             redirect(site_url('user/scholarship'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem with regristration process, try again later');
+            $this->session->set_flashdata('notif_warning', 'Terjadi kesalahan saat mendaftarkan diri ke beasiswa, coba lagi nanti');
             redirect($this->agent->referrer());
         }
     }
@@ -91,7 +91,7 @@ class Scholarship extends CI_Controller
             $this->session->set_flashdata('notif_success', 'Applicant request for YBB Scholarship program has been '.$status);
             redirect(site_url('scholarship/applicant'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying manage applicant, try again later');
+            $this->session->set_flashdata('notif_warning', 'Terjadi kesalahan saat mendaftarkan diri ke beasiswa, coba lagi nanti');
             redirect($this->agent->referrer());
         }
 

@@ -20,7 +20,7 @@ class Authentication extends CI_Controller
                 $uri = uri_string();
             }
             $this->session->set_userdata('redirect', $uri);
-            $this->session->set_flashdata('notif_info', "Login success, welcome");
+            $this->session->set_flashdata('notif_info', "Berhasil login, selamat datang");
             redirect(base_url());
         } else {
             $this->templateauth->view('authentication/login');
@@ -36,7 +36,7 @@ class Authentication extends CI_Controller
                 $uri = uri_string();
             }
             $this->session->set_userdata('redirect', $uri);
-            $this->session->set_flashdata('notif_info', "You already login");
+            $this->session->set_flashdata('notif_info', "Kamu telah login");
             redirect(base_url());
         } else {
             $this->templateauth->view('authentication/daftar');
@@ -52,7 +52,7 @@ class Authentication extends CI_Controller
                 $uri = uri_string();
             }
             $this->session->set_userdata('redirect', $uri);
-            $this->session->set_flashdata('notif_warning', "Please login, to continued");
+            $this->session->set_flashdata('notif_warning', "Berhasil login, anda dapat melanjutkan aktivitas anda");
             redirect(site_url('login'));
         } else {
             $this->templateauth->view('authentication/suspend');
@@ -76,25 +76,25 @@ class Authentication extends CI_Controller
 
                     // cek apakah mengirim permintaan pengiriman email verifikasi
                     if ($this->input->get('act') == "send-email") {
-                        $subject = "Activation code - YBB Foundation Scholarship";
-                        $message = "Your activation code : <br><br><center><h1 style='font-size: 62px;'>{$this->encryption->decrypt($aktivasi->key)}</h1></center><br><br><small class='text-muted'>Your activation code will be valid for 24 hours, please activated your account in this time frame. <span class='text-danger'>If your activation code has been expired, <b>you must redo regristration process</b>.</span></small>";
+                        $subject = "Kode aktivasi - YBB Foundation Scholarship";
+                        $message = "Kode aktivasimu : <br><br><center><h1 style='font-size: 62px;'>{$this->encryption->decrypt($aktivasi->key)}</h1></center><br><br><small class='text-muted'>Kode aktivasimu hanya akan valid selama 1x24 jam. <span class='text-danger'>Jika telah kadaluarsa harap lakukan kembali proses aktivasi akun anda</b>.</span></small>";
 
                         // mengirim email
                         if ($this->send_email($email, $subject, $message) == true) {
-                            $this->session->set_flashdata('success', 'Registration is successful, we have sent an activation code to your email. Please enter the code to activate your account !');
+                            $this->session->set_flashdata('success', 'Pendaftaran berhasil, harap masukkan kode aktivasi yang telah kami kirimkan ke email anda !');
                         } else {
-                            $this->session->set_flashdata('notif_error', 'There is an error when trying sent message to your email !');
+                            $this->session->set_flashdata('notif_error', 'Terjadi kesalahan saat mengirimkan email kode aktivasi anda !');
                             redirect(site_url('email-activation'));
                         }
                     } elseif ($this->input->get('act') == "resend-email") {
-                        $subject = "Activation code - YBB Foundation Scholarship";
-                        $message = "Your activation code : <br><br><center><h1 style='font-size: 62px;'>{$this->encryption->decrypt($aktivasi->key)}</h1></center><br><br><small class='text-muted'>Your activation code will be valid for 24 hours, please activated your account in this time frame. <span class='text-danger'>If your activation code has been expired, please redo activation process.</span></small>";
+                        $subject = "Kode aktivasi - YBB Foundation Scholarship";
+                        $message = "Kode aktivasimu : <br><br><center><h1 style='font-size: 62px;'>{$this->encryption->decrypt($aktivasi->key)}</h1></center><br><br><small class='text-muted'>Kode aktivasimu hanya akan valid selama 1x24 jam. <span class='text-danger'>Jika telah kadaluarsa harap lakukan kembali proses aktivasi akun anda.</span></small>";
 
                         // mengirim email
                         if ($this->send_email($email, $subject, $message) == true) {
-                            $this->session->set_flashdata('success', 'Successfully sent message to your email ' . $email . ' !');
+                            $this->session->set_flashdata('success', 'Berhasil mengirim kan email ke ' . $email . ' !');
                         } else {
-                            $this->session->set_flashdata('notif_error', 'There is an error when trying sent message to your email !');
+                            $this->session->set_flashdata('notif_error', 'Terjadi kesalahan saat mengirimkan email kode aktivasi anda !');
                             redirect(site_url('email-activation'));
                         }
                     }
@@ -103,12 +103,12 @@ class Authentication extends CI_Controller
                     $data['activation_code'] = $this->encryption->decrypt($aktivasi->key);
                     $this->templateauth->view('authentication/aktivasi', $data);
                 } else {
-                    $this->session->set_flashdata('notif_warning', 'Your account already activated !');
+                    $this->session->set_flashdata('notif_warning', 'Akunmu telah teraktivasi !');
                     redirect(base_url());
                 }
 
             } else {
-                $this->session->set_flashdata('notif_error', 'There is an error when trying get your account info !');
+                $this->session->set_flashdata('notif_error', 'Terjadi kesalahan saat mencoba mendapatkan informasi akunmu !');
                 redirect(site_url('login'));
 
             }
@@ -120,7 +120,7 @@ class Authentication extends CI_Controller
             }
             $this->session->unset_userdata('redirect');
             $this->session->set_userdata('redirect', $uri);
-            $this->session->set_flashdata('notif_warning', "Please login, to continued");
+            $this->session->set_flashdata('notif_warning', "Harap login untuk melanjutkan");
             redirect('login');
         }
     }
@@ -139,7 +139,7 @@ class Authentication extends CI_Controller
 
         // cek apakah email terdaftar
         if ($this->M_auth->get_auth($email) == false) {
-            $this->session->set_flashdata('warning', 'Email not associate with any account !');
+            $this->session->set_flashdata('warning', 'Email tidak terdaftar !');
             redirect('login');
         } else {
 
@@ -147,7 +147,7 @@ class Authentication extends CI_Controller
             if (isset($_COOKIE['penalty']) && $_COOKIE['penalty'] == true) {
                 $time_left = ($_COOKIE["expire"]);
                 $time_left = $this->penalty_remaining(date("Y-m-d H:i:s", $time_left));
-                $this->session->set_flashdata('notif_warning', 'Too much request, try again in ' . $time_left . '!');
+                $this->session->set_flashdata('notif_warning', 'Terlalu banyak request, coba lagi dalam ' . $time_left . '!');
                 redirect('login');
             } else {
 
@@ -173,10 +173,10 @@ class Authentication extends CI_Controller
 
                     // cek status dari user yang lagin - 0: BELUM AKTIF - 1: AKTIF - 2: SUSPEND;
                     if ($user->active == "0") {
-                        $this->session->set_flashdata('error', "Hi {$user->name}, please activated your account first");
+                        $this->session->set_flashdata('error', "Hi {$user->name}, harap aktivasi akunmu terlebih dahulu");
                         redirect(site_url('email-activation'));
                     } elseif ($user->active == "2") {
-                        $this->session->set_flashdata('error', "Hi {$user->name}, your account has been suspended, please contact admin for more info");
+                        $this->session->set_flashdata('error', "Hi {$user->name}, akunmu telah tersuspend, harap hubungi admin kami untuk konfirmasi");
                         redirect(site_url('suspend'));
                     } else {
 
@@ -204,10 +204,10 @@ class Authentication extends CI_Controller
                         // USER
                         } elseif ($user->role == 2) {
                             if ($this->session->userdata('redirect')) {
-                                $this->session->set_flashdata('notif_success', 'Hi, login success. Please continue your activities !');
+                                $this->session->set_flashdata('notif_success', 'Hi, login berhasil, anda dapat melanjutkan aktivitas anda !');
                                 redirect($this->session->userdata('redirect'));
                             } else {
-                                $this->session->set_flashdata('notif_success', "Welcome, {$user->name}");
+                                $this->session->set_flashdata('notif_success', "Selamat datang, {$user->name}");
                                 redirect(base_url());
                             }
                         } else {
@@ -230,10 +230,10 @@ class Authentication extends CI_Controller
                             time() + 180
                         );
 
-                        $this->session->set_flashdata('notif_error', 'Too much request, try again in 3 minutes !');
+                        $this->session->set_flashdata('notif_error', 'Terlalu banyak request, coba lagi dalam 3 menit !');
                         redirect('login');
                     } else {
-                        $this->session->set_flashdata('warning', 'Password wrong, attempt left - ' . (3 - $attempt));
+                        $this->session->set_flashdata('warning', 'Password salah, sisa kesempatan - ' . (3 - $attempt));
                         redirect('login');
                     }
                 }
@@ -278,8 +278,8 @@ class Authentication extends CI_Controller
                         $this->session->set_userdata($sessiondata);
 
                         // mengirimkan email selamat bergabung
-                        $subject = "Welcome to YBB Foundation Scholarship";
-                        $message = "Hi {$user->name}, Congratulations on joining the YBB Foundation Scholarship organization, please activate your account by entering the activation code you received in your email inbox.";
+                        $subject = "Selamat bergabung di YBB Foundation Scholarship Programs";
+                        $message = "Hi {$user->name}, Selamat telah bergabund bersama kami di YBB Foundation Scholarship Programs. Harap aktivasi akunmu dengan kode aktivasi yang telah kami kirimkan ke emailmu";
 
                         $this->send_email($email, $subject, $message);
 
@@ -287,19 +287,19 @@ class Authentication extends CI_Controller
                         // mengirimkan user untuk verifikasi email
                         redirect(site_url('email-activation?act=send-email'));
                     } else {
-                        $this->session->set_flashdata('error', 'There is an error when try to send your request !');
+                        $this->session->set_flashdata('error', 'Terjadi kesalahan saat mendaftarkan diri !');
                         redirect($this->agent->referrer());
                     }
                 } else {
-                    $this->session->set_flashdata('warning', 'Email already in use !');
+                    $this->session->set_flashdata('warning', 'Email telah digunakan !');
                     redirect($this->agent->referrer());
                 }
             } else {
-                $this->session->set_flashdata('warning', 'Password doesn`t match !');
+                $this->session->set_flashdata('warning', 'Password tidak sesuai !');
                 redirect($this->agent->referrer());
             }
         } else {
-            $this->session->set_flashdata('warning', 'Invalid email, please enter an valid email address !');
+            $this->session->set_flashdata('warning', 'Email tidal valid, harap masukkan email yang valid !');
             redirect($this->agent->referrer());
         }
     }
@@ -323,20 +323,20 @@ class Authentication extends CI_Controller
                     // memverivikasi email
                     if ($this->M_auth->aktivasi_akun($this->session->userdata('user_id')) == true) {
 
-                        $this->session->set_flashdata('success', "Successfully activated your account, now you can continued to apply for scholarship program !");
+                        $this->session->set_flashdata('success', "Berhasil aktivasi akunmu, anda dapat mendaftarkan diri pada program beasiswa kami sekarang !");
                         redirect(site_url('scholarship'));
                     } else {
-                        $this->session->set_flashdata('notif_error', 'There is an error, please try again later !');
+                        $this->session->set_flashdata('notif_error', 'Terjadi kesalahan, coba lagi nanti !');
                         redirect($this->agent->referrer());
                     }
                 } else {
-                    $this->session->set_flashdata('notif_warning', 'Your activation code is wrong, please enter the correct one !');
+                    $this->session->set_flashdata('notif_warning', 'Kode aktivasi salah, coba lagi !');
                     redirect($this->agent->referrer());
                 }
             } else {
 
                 $this->M_auth->del_user($this->session->userdata('user_id'));
-                $this->session->set_flashdata('error', 'Your activation code has been expired, please redo your regristration process. ');
+                $this->session->set_flashdata('error', 'Kode aktivasi salah, harap ulangi proses pendaftaran. ');
                 redirect(site_url('logout'));
             }
         } else {
@@ -347,7 +347,7 @@ class Authentication extends CI_Controller
             }
             $this->session->unset_userdata('redirect');
             $this->session->set_userdata('redirect', $uri);
-            $this->session->set_flashdata('notif_warning', "Please login, to continued");
+            $this->session->set_flashdata('notif_warning', "Harap login untuk melanjutkan");
             redirect('login');
         }
     }
@@ -538,8 +538,8 @@ class Authentication extends CI_Controller
         $diff->d -= $diff->w * 7;
 
         $string = [
-            'i' => 'minutes ',
-            's' => 'seconds ',
+            'i' => 'Menit ',
+            's' => 'Detik ',
         ];
         $a = null;
         foreach ($string as $k => &$v) {

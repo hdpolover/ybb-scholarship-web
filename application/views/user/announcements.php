@@ -2,7 +2,7 @@
 	<!-- Card -->
 	<div class="card">
 		<div class="card-header">
-			<h4 class="card-header-title">Annnouncements</h4>
+			<h4 class="card-header-title">Pengumuman</h4>
 		</div>
 
 		<!-- Table -->
@@ -10,8 +10,8 @@
 			<table class="table table-borderless table-thead-bordered table-nowrap table-align-middle card-table">
 				<thead class="thead-light">
 					<tr>
-						<th>Announcements</th>
-						<th>Post Date</th>
+						<th>Pengumuman</th>
+						<th>Tanggal</th>
 						<th style="width: 5%;"></th>
 					</tr>
 				</thead>
@@ -44,7 +44,7 @@
 									<?= $val->content;?>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-white" data-bs-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-white" data-bs-dismiss="modal">Tutup</button>
 								</div>
 							</div>
 						</div>
@@ -80,7 +80,7 @@
 									<?= $val->content;?>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-white" data-bs-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-white" data-bs-dismiss="modal">Tutup</button>
 								</div>
 							</div>
 						</div>
@@ -115,7 +115,7 @@
 									<?= $val->content;?>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-white" data-bs-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-white" data-bs-dismiss="modal">Tutup</button>
 								</div>
 							</div>
 						</div>

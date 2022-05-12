@@ -5,8 +5,8 @@
     			<div class="flex-grow-1 mx-auto" style="max-width: 28rem;">
     				<!-- Heading -->
     				<div class="text-center mb-5 mb-md-7">
-    					<h1 class="h2">Reset your password</h1>
-    					<p>Enter your new password for your account</p>
+    					<h1 class="h2">Reset password</h1>
+    					<p>Masukkan password baru untuk akunmu</p>
     				</div>
     				<!-- End Heading -->
 
@@ -15,7 +15,7 @@
     					class="js-validate needs-validation" novalidate>
     					<!-- Form -->
     					<div class="mb-3">
-    						<label class="form-label" for="signupModalFormSignupEmail">Your email</label>
+    						<label class="form-label" for="signupModalFormSignupEmail">Email</label>
     						<div class="input-group input-group-merge">
     							<div class="input-group-prepend input-group-text" id="inputGroupMergeEmail">
     								<i class="bi-envelope-open"></i>
@@ -23,7 +23,7 @@
     							<input type="email" class="form-control form-control-lg" name="email"
     								id="signupModalFormSignupEmail" value="<?= $email; ?>" aria-label="<?= $email; ?>"
     								aria-describedby="inputGroupMergeEmail" required readonly>
-    							<span class="invalid-feedback">Please enter a valid email address.</span>
+    							<span class="invalid-feedback">Masukkan email dengan benar.</span>
     						</div>
     					</div>
     					<!-- End Form -->
@@ -51,14 +51,13 @@
     							</a>
     						</div>
 
-    						<span class="invalid-feedback">Your password is invalid. Please try again.</span>
+    						<span class="invalid-feedback">Masukkan password dengan benar.</span>
     					</div>
     					<!-- End Form -->
 
     					<!-- Form -->
     					<div class="mb-3">
-    						<label class="form-label" for="signupModalFormSignupConfirmPassword">Confirm
-    							password</label>
+    						<label class="form-label" for="signupModalFormSignupConfirmPassword">Konfirmasi password</label>
 
     						<div class="input-group input-group-merge" data-hs-validation-validate-class>
     							<div class="input-group-prepend input-group-text">
@@ -80,7 +79,7 @@
     							</a>
     						</div>
 
-    						<span class="invalid-feedback">Password does not match the confirm password.</span>
+    						<span class="invalid-feedback">Password tidak sesuai.</span>
     					</div>
     					<!-- End Form -->
 

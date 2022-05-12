@@ -11,8 +11,7 @@
 			<form action="<?= site_url('user/changePassword'); ?>" method="POST">
 				<!-- Form -->
 				<div class="row mb-4">
-					<label for="currentPasswordLabel" class="col-sm-3 col-form-label form-label">Current
-						password</label>
+					<label for="currentPasswordLabel" class="col-sm-3 col-form-label form-label">Password saat ini</label>
 
 					<div class="col-sm-9">
 						<input type="password" class="form-control form-control-sm" name="currentPassword" id="currentPasswordLabel"
@@ -23,7 +22,7 @@
 				<hr>
 				<!-- Form -->
 				<div class="row mb-4">
-					<label for="newPassword" class="col-sm-3 col-form-label form-label">New password</label>
+					<label for="newPassword" class="col-sm-3 col-form-label form-label">Password baru</label>
 
 					<div class="col-sm-9">
 						<input type="password" class="form-control form-control-sm" name="newPassword" id="newPassword" minlength="8"
@@ -34,8 +33,7 @@
 
 				<!-- Form -->
 				<div class="row mb-4">
-					<label for="confirmNewPasswordLabel" class="col-sm-3 col-form-label form-label">Confirm new
-						password</label>
+					<label for="confirmNewPasswordLabel" class="col-sm-3 col-form-label form-label">Konfirmasi password baru</label>
 
 					<div class="col-sm-9">
 						<div class="mb-3">
@@ -44,19 +42,19 @@
 								aria-label="Confirm your new password" required>
 						</div>
 
-						<h5>Password requirements:</h5>
+						<h5>Persyaratan password:</h5>
 
-						<p class="card-text small">Ensure that these requirements are met:</p>
+						<p class="card-text small">Pastikan telah:</p>
 
 						<ul class="small">
-							<li>Minimum 8 characters long - the more, the better</li>
+							<li>Minimal 8 karakter</li>
 						</ul>
 					</div>
 				</div>
 				<!-- End Form -->
 
 				<div class="d-flex justify-content-end gap-3">
-					<button type="submit" class="btn btn-primary">Update Password</button>
+					<button type="submit" class="btn btn-primary">Ubah password</button>
 				</div>
 			</form>
 			<!-- End Form -->

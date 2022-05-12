@@ -23,7 +23,7 @@
     					<div
     						class="container d-md-flex align-items-md-center vh-md-70 content-space-t-5 content-space-b-3 content-space-md-0">
     						<div class="w-100 text-center">
-    							<h5 class="text-white">Welcome to</h5>
+    							<h5 class="text-white">Selamat datang di</h5>
     							<h2 class="display-7 text-white mb-0">Youth Break the
     								Boundaries<br><small class="display-7">Foundation
     									Scholarship</small></h2>
@@ -78,8 +78,8 @@
     		<div class="container content-space-2 content-space-lg-3">
 
     			<div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5">
-    				<span class="text-cap">overview</span>
-    				<h2>What Who We Are and What We Do</h2>
+    				<span class="text-cap">Apa itu YBB</span>
+    				<h2>Apa itu YBB dan apa yang kami lakukan</h2>
     			</div>
 
     			<div class="overflow-hidden">
@@ -120,8 +120,8 @@
     		<div class="container content-space-1 content-space-lg-3">
     			<!-- Heading -->
     			<div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
-    				<span class="text-cap text-white">Benefits</span>
-    				<h2 class="h2 text-white-70">What will you get when join us</h2>
+    				<span class="text-cap text-white">Keuntungan</span>
+    				<h2 class="h2 text-white-70">Apa yang kamu dapat saat bergabung</h2>
     			</div>
     			<!-- End Heading -->
 
@@ -188,8 +188,8 @@
     		style="background: url(<?= base_url();?>assets/svg/components/abstract-shapes-9.svg) center no-repeat;">
     		<!-- Heading -->
     		<div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
-    			<span class="text-cap">Our Gallery</span>
-    			<h2>See documentation about what we do</h2>
+    			<span class="text-cap">Galeri kegiatan</span>
+    			<h2>Lihat galeri mengenai kegiatan yang kami lakukan</h2>
     		</div>
     		<div class="row justify-content-center">
     			<?php foreach ($home_gallery as $val):?>
@@ -218,8 +218,8 @@
     		style="background: url(<?= base_url();?>assets/svg/components/abstract-shapes-9.svg) center no-repeat;">
     		<!-- Heading -->
     		<div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
-    			<span class="text-cap">Contact Us</span>
-    			<h2>Contact us by Whatsapp or Email</h2>
+    			<span class="text-cap">Hubungi Kami</span>
+    			<h2>Hubungi kami melalui Whatsapp atau Email</h2>
     		</div>
 
     		<div class="row justify-content-center">
@@ -248,7 +248,7 @@
 
     					<div class="card-footer pt-0">
     						<span class="card-link"
-    							onclick="window.location.href=`mailto:<?= $web_whatsapp;?>`">Contact</span>
+    							onclick="window.location.href=`mailto:<?= $web_whatsapp;?>`">Hubungi</span>
     					</div>
     				</a>
     				<!-- End Card -->
@@ -307,7 +307,7 @@
 
     					<div class="card-footer pt-0">
     						<span class="card-link"
-    							onclick="window.location.href=`https://wa.me/<?= $web_whatsapp;?>?text=I'm%20interested%20to%20become%20YBB%20Contributor`">Contact</span>
+    							onclick="window.location.href=`https://wa.me/<?= $web_whatsapp;?>?text=I'm%20interested%20to%20become%20YBB%20Contributor`">Hubungi</span>
     					</div>
     				</a>
     				<!-- End Card -->

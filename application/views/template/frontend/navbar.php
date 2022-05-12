@@ -52,7 +52,7 @@
 						data-hs-mega-menu-item-options='{"desktop": { "maxWidth": "20rem"}}'>
 						<a id="docsMegaMenu"
 							class="hs-mega-menu-invoker nav-link dropdown-toggle <?= ($this->uri->segment(1) == "user" ? "active" : "") ?>"
-							href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Your Account</a>
+							href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Akun Saya</a>
 
 						<!-- Mega Menu -->
 						<div class="hs-sub-menu hs-position-right dropdown-menu" aria-labelledby="docsMegaMenu"
@@ -62,14 +62,14 @@
 								href="<?= site_url('dashboard'); ?>">Admin Dashboard</a>
 							<?php else:?>
 							<a class="dropdown-item <?= ($this->uri->segment(1) == "user" ? "active" : "") ?>"
-								href="<?= site_url('user'); ?>">Profile</a>
+								href="<?= site_url('user'); ?>">Profil</a>
 							<a class="dropdown-item <?= ($this->uri->segment(2) == "scholarship" ? "active" : "") ?>"
-								href="<?= site_url('user/scholarship'); ?>">Scholarship</a>
+								href="<?= site_url('user/scholarship'); ?>">Beasiswa</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item <?= ($this->uri->segment(2) == "settings" ? "active" : "") ?>"
-								href="<?= site_url('user/settings'); ?>">Account Setting</a>
+								href="<?= site_url('user/settings'); ?>">Pengaturan akun</a>
 							<?php endif;?>
-							<a class="dropdown-item " href="<?= site_url('logout'); ?>">Logout</a>
+							<a class="dropdown-item " href="<?= site_url('logout'); ?>">Keluar</a>
 						</div>
 						<!-- End Mega Menu -->
 					</li>
@@ -110,28 +110,28 @@
 						<!-- Landings -->
 						<li class="nav-item">
 							<a class="nav-link <?= (empty($this->uri->segment(1)) || $this->uri->segment(1) == 'home' ? "active" : "") ?>"
-								href="<?= base_url(); ?>" aria-current="page" role="button">Home</a>
+								href="<?= base_url(); ?>" aria-current="page" role="button">Beranda</a>
 						</li>
 						<!-- End Landings -->
 
 						<!-- Landings -->
 						<li class="nav-item">
 							<a class="nav-link <?= ($this->uri->segment(1) == "announcements" ? "active" : "") ?>"
-								href="<?= site_url('announcements'); ?>" role="button">Announcements</a>
+								href="<?= site_url('announcements'); ?>" role="button">Pengumuman</a>
 						</li>
 						<!-- End Landings -->
 
 						<!-- Landings -->
 						<li class="nav-item">
 							<a class="nav-link <?= ($this->uri->segment(1) == "timeline" ? "active" : "") ?>"
-								href="<?= site_url('timeline'); ?>" role="button">Timeline</a>
+								href="<?= site_url('timeline'); ?>" role="button">Jadwal</a>
 						</li>
 						<!-- End Landings -->
 
 						<!-- Landings -->
 						<li class="nav-item">
 							<a class="nav-link <?= ($this->uri->segment(1) == "about-us" ? "active" : "") ?>"
-								href="<?= site_url('about-us'); ?>" role="button">About Us</a>
+								href="<?= site_url('about-us'); ?>" role="button">Tentang</a>
 						</li>
 						<!-- End Landings -->
 
@@ -145,14 +145,14 @@
 						<!-- Landings -->
 						<li class="nav-item">
 							<a class="nav-link <?= ($this->uri->segment(1) == "other-programs" ? "active" : "") ?>"
-								href="<?= site_url('other-programs'); ?>" role="button">Other Programs</a>
+								href="<?= site_url('other-programs'); ?>" role="button">Program</a>
 						</li>
 						<!-- End Landings -->
 
 						<!-- Landings -->
 						<li class="nav-item">
 							<a class="nav-link <?= ($this->uri->segment(1) == "contribute" ? "active" : "") ?>"
-								href="<?= site_url('contribute'); ?>" role="button">Contribute</a>
+								href="<?= site_url('contribute'); ?>" role="button">Kontribusi</a>
 						</li>
 						<!-- End Landings -->
 
@@ -160,7 +160,7 @@
 						<!-- Button -->
 						<li class="nav-item">
 							<a class="btn btn-<?= (empty($this->uri->segment(1)) ? "light" : "primary") ?> btn-transition"
-								href="<?= site_url('login'); ?>">Join Now</a>
+								href="<?= site_url('login'); ?>">Gabung</a>
 						</li>
 						<!-- End Button -->
 						<?php endif; ?>

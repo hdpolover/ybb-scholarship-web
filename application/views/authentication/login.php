@@ -8,9 +8,6 @@
                     <div class="mb-4">
                         <img class="avatar avatar-xl avatar-4x3" src="<?= base_url(); ?>assets/svg/brands/mailchimp-white.svg" alt="Logo">
                     </div>
-
-                    <blockquote class="blockquote blockquote-light">“ It has many landing page variations to choose
-                        from, which one is always a big advantage. ”</blockquote>
                 </figure>
                 <!-- End Blockquote -->
             </div>
@@ -21,8 +18,8 @@
             <div class="flex-grow-1 mx-auto" style="max-width: 28rem;">
                 <!-- Heading -->
                 <div class="text-center mb-5 mb-md-7">
-                    <h1 class="h2">Welcome back</h1>
-                    <p>Login to manage your account.</p>
+                    <h1 class="h2">Selamat datang</h1>
+                    <p>Masuk ke akun anda.</p>
                 </div>
                 <!-- End Heading -->
 
@@ -30,13 +27,13 @@
                 <form action="<?= site_url('authentication/proses_login'); ?>" method="POST" class="js-validate needs-validation" novalidate>
                     <!-- Form -->
                     <div class="mb-3">
-                        <label class="form-label" for="signupModalFormSignupEmail">Your email</label>
+                        <label class="form-label" for="signupModalFormSignupEmail">Email</label>
                         <div class="input-group input-group-merge">
                             <div class="input-group-prepend input-group-text" id="inputGroupMergeEmail">
                                 <i class="bi-envelope-open"></i>
                             </div>
                             <input type="email" class="form-control form-control-lg" name="email" id="signupModalFormSignupEmail" placeholder="email@site.com" aria-label="email@site.com" aria-describedby="inputGroupMergeEmail" required>
-                            <span class="invalid-feedback">Please enter a valid email address.</span>
+                            <span class="invalid-feedback">Masukkan email dengan benar.</span>
                         </div>
                     </div>
                     <!-- End Form -->
@@ -60,18 +57,18 @@
                             </a>
                         </div>
 
-                        <span class="invalid-feedback">Your password is invalid. Please try again.</span>
+                        <span class="invalid-feedback">Password tidak valid, masukkan password dengan benar.</span>
 
-                        <a class="form-label-link" href="<?= site_url('forgot-password');?>">Forgot Password?</a>
+                        <a class="form-label-link" href="<?= site_url('forgot-password');?>">Lupa password?</a>
                     </div>
                     <!-- End Form -->
 
                     <div class="d-grid mb-3">
-                        <button type="submit" class="btn btn-primary btn-lg">Log in</button>
+                        <button type="submit" class="btn btn-primary btn-lg">Masuk</button>
                     </div>
 
                     <div class="text-center">
-                        <p>Don't have an account yet? <a class="link" href="<?= site_url('join-now'); ?>">Sign up here</a></p>
+                        <p>Belum punya akun? <a class="link" href="<?= site_url('join-now'); ?>">Daftar sekarang</a></p>
                     </div>
                 </form>
                 <!-- End Form -->

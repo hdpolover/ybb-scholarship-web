@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>YBB Scholarship</title>
+    <title><?= $web_title;?></title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?= base_url(); ?>assets/images/icon-white.png">
@@ -72,7 +72,7 @@
 
                 <div class="ms-auto">
                     <a class="link link-sm link-secondary" href="<?= base_url(); ?>">
-                        <i class="bi-chevron-left small ms-1"></i> Go to homepage
+                        <i class="bi-chevron-left small ms-1"></i> Ke beranda
                     </a>
                 </div>
             </nav>

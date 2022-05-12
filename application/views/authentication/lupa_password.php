@@ -5,8 +5,8 @@
     			<div class="flex-grow-1 mx-auto" style="max-width: 28rem;">
     				<!-- Heading -->
     				<div class="text-center mb-5 mb-md-7">
-    					<h1 class="h2">Forgot password?</h1>
-    					<p>Enter your email address below and we'll get you back on track.</p>
+    					<h1 class="h2">Lupa password?</h1>
+    					<p>Masukkan email akunmu untuk melanjutkan proses lupa password.</p>
     				</div>
     				<!-- End Heading -->
 
@@ -16,23 +16,22 @@
     					<!-- Form -->
     					<div class="mb-3">
     						<div class="d-flex justify-content-between align-items-center">
-    							<label class="form-label" for="signupModalFormResetPasswordEmail" tabindex="0">Your
-    								email</label>
+    							<label class="form-label" for="signupModalFormResetPasswordEmail" tabindex="0">Email</label>
 
     							<a class="form-label-link" href="<?= site_url('login'); ?>">
-    								<i class="bi-chevron-left small ms-1"></i> Back to Log in
+    								<i class="bi-chevron-left small ms-1"></i> Kembali ke halaman login
     							</a>
     						</div>
 
     						<input type="email" class="form-control form-control-lg" name="email"
     							id="signupModalFormResetPasswordEmail" tabindex="1"
     							placeholder="Enter your email address" aria-label="Enter your email address" required>
-    						<span class="invalid-feedback">Please enter a valid email address.</span>
+    						<span class="invalid-feedback">Masukkan email dengan benar.</span>
     					</div>
     					<!-- End Form -->
 
     					<div class="d-grid mb-3">
-    						<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    						<button type="submit" class="btn btn-primary btn-lg">Kirimkan email</button>
     					</div>
     				</form>
     				<!-- End Form -->

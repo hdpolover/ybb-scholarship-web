@@ -3,8 +3,8 @@
 	<div class="w-lg-75 text-center mx-lg-auto">
 		<!-- Heading -->
 		<div class="mb-5 mb-md-10">
-			<h1 class="display-4">About Us</h1>
-			<p class="lead">An introduction about our couse</p>
+			<h1 class="display-4">Tentang Kami</h1>
+			<p class="lead">Penjelasan tentang apa yang kami lakukan</p>
 		</div>
 		<!-- End Heading -->
 	</div>

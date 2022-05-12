@@ -76,7 +76,7 @@
 	<?php if(!empty($op_content)):?>
 	<!-- Heading -->
 	<div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
-		<span class="text-cap">Other Programs</span>
+		<span class="text-cap">Program kami</span>
 		<h2><?= $op_desc;?></h2>
 	</div>
 	<!-- End Heading -->
@@ -84,7 +84,7 @@
 
 	<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 mb-5 justify-content-center">
 		<?php if(empty($op_content)):?>
-		<h4 class="modal-title text-center">Sorry, we couldn't find any content for this page</h4>
+		<h4 class="modal-title text-center">Mohon maaf, tidak dapat menemukan satupun program</h4>
 		<?php else:?>
 		<?php foreach ($op_content as $val):?>
 		<div class="col mb-5">
@@ -100,8 +100,7 @@
 				</div>
 
 				<div class="card-footer pt-0">
-					<a class="card-link cursor" data-bs-toggle="modal" data-bs-target="#detail-<?= $val->id;?>">Read
-						more <i class="bi-chevron-right small ms-1"></i></a>
+					<a class="card-link cursor" data-bs-toggle="modal" data-bs-target="#detail-<?= $val->id;?>">Baca <i class="bi-chevron-right small ms-1"></i></a>
 				</div>
 			</div>
 			<!-- End Card -->

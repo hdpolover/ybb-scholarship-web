@@ -2,8 +2,8 @@
 <div class="bg-dark" style="background-image: url(<?= base_url();?>assets/svg/components/wave-pattern-light.svg);">
 	<div class="container content-space-2 content-space-b-3 content-space-t-lg-5">
 	<div class="w-lg-65 text-center mx-lg-auto">
-		<h1 class="text-white mb-0">Announcements</h1>
-		<span class="badge bg-warning text-dark rounded-pill mb-3">Read our latest announcements</span>
+		<h1 class="text-white mb-0">Pengumuman</h1>
+		<span class="badge bg-warning text-dark rounded-pill mb-3">Baca pengumuman terbaru dari kami</span>
 	</div>
 	</div>
 </div>
@@ -14,15 +14,15 @@
 	<?php if(!empty($op_content)):?>
 	<!-- Heading -->
 	<div class="w-md-75 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
-		<span class="text-cap">Announcements</span>
-		<h2>Our latest announcements</h2>
+		<span class="text-cap">Pengumuman</span>
+		<h2>Pengumuman terbaru kami</h2>
 	</div>
 	<!-- End Heading -->
 	<?php endif;?>
 
 	<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 mb-5 justify-content-center">
 		<?php if(empty($announcement)):?>
-		<h4 class="modal-title text-center">Sorry, we couldn't find any content for this page</h4>
+		<h4 class="modal-title text-center">Mohon maaf, tidak dapat menemukan satupun pengumuman terbaru</h4>
 		<?php else:?>
 		<?php foreach ($announcement as $val):?>
 		<div class="col mb-5">
@@ -35,8 +35,7 @@
 				</div>
 
 				<div class="card-footer pt-0">
-					<a class="card-link cursor" data-bs-toggle="modal" data-bs-target="#detail-<?= $val->id;?>">Read
-						more <i class="bi-chevron-right small ms-1"></i></a>
+					<a class="card-link cursor" data-bs-toggle="modal" data-bs-target="#detail-<?= $val->id;?>">Baca<i class="bi-chevron-right small ms-1"></i></a>
 				</div>
 			</div>
 			<!-- End Card -->

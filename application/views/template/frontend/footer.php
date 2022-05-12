@@ -18,7 +18,7 @@
 
 				<!-- List -->
 				<ul class="list-unstyled list-py-1">
-					<li><a class="link-sm link-light"><i class="bi-geo-alt-fill me-1"></i> East Java - Indonesia</a>
+					<li><a class="link-sm link-light"><i class="bi-geo-alt-fill me-1"></i> Jawa Timur - Indonesia</a>
 					</li>
 					<li><a class="link-sm link-light" href="tel:1-062-109-9222"><i
 								class="bi-telephone-inbound-fill me-1"></i> +1 (062) 109-9222</a></li>
@@ -33,25 +33,24 @@
 			<!-- End Col -->
 
 			<div class="col-sm mb-7 mb-sm-0">
-				<h5 class="text-white mb-3">Information</h5>
+				<h5 class="text-white mb-3">Informasi</h5>
 
 				<!-- List -->
 				<ul class="list-unstyled list-py-1 mb-0">
-					<li><a class="link-sm link-light" href="<?= site_url('announcement'); ?>">Announcement <i
+					<li><a class="link-sm link-light" href="<?= site_url('announcement'); ?>">Pengumuman <i
 								class="bi-box-arrow-up-right small ms-1"></i></a></li>
-					<li><a class="link-sm link-light" href="<?= site_url('scholarship'); ?>">Scholarship</a></li>
-					<li><a class="link-sm link-light" href="<?= site_url('our-story'); ?>">Our Story</a></li>
+					<li><a class="link-sm link-light" href="<?= site_url('scholarship'); ?>">Beasiswa</a></li>
 				</ul>
 				<!-- End List -->
 			</div>
 			<!-- End Col -->
 
 			<div class="col-sm">
-				<h5 class="text-white mb-3">Help Center</h5>
+				<h5 class="text-white mb-3">Pusat Bantuan</h5>
 
 				<!-- List -->
 				<ul class="list-unstyled list-py-1 mb-0">
-					<li><a class="link-sm link-light" href="<?= site_url('contribute'); ?>">Support</a></li>
+					<li><a class="link-sm link-light" href="<?= site_url('contribute'); ?>">Contribute</a></li>
 					<li><a class="link-sm link-light" href="<?= site_url('faq'); ?>">FAQ</a></li>
 				</ul>
 				<!-- End List -->
@@ -59,15 +58,15 @@
 			<!-- End Col -->
 
 			<div class="col-sm">
-				<h5 class="text-white mb-3">Account</h5>
+				<h5 class="text-white mb-3">Akun</h5>
 
 				<!-- List -->
 				<ul class="list-unstyled list-py-1 mb-5">
 					<li><a class="link-sm link-light" href="<?= site_url('faq'); ?>"><i
-								class="bi-question-circle-fill me-1"></i> Help</a>
+								class="bi-question-circle-fill me-1"></i> Bantuan</a>
 					</li>
 					<li><a class="link-sm link-light" href="<?= site_url('user'); ?>"><i
-								class="bi-person-circle me-1"></i> Your Account</a>
+								class="bi-person-circle me-1"></i> Akunku</a>
 					</li>
 				</ul>
 				<!-- End List -->
@@ -83,10 +82,7 @@
 				<!-- Socials -->
 				<ul class="list-inline list-separator list-separator-light mb-0">
 					<li class="list-inline-item">
-						<a class="link-sm link-light" href="<?= site_url('privacy-policy'); ?>">Privacy &amp; Policy</a>
-					</li>
-					<li class="list-inline-item">
-						<a class="link-sm link-light" href="<?= site_url('terms'); ?>">Terms</a>
+						<a class="link-sm link-light" href="<?= site_url('privacy-policy'); ?>">Kebijakan &amp; Privasi</a>
 					</li>
 				</ul>
 				<!-- End Socials -->
