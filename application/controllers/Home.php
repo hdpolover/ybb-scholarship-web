@@ -19,6 +19,9 @@ class Home extends CI_Controller {
 		$data['home_benefit'] = $this->M_home->get_homeSection('benefit');
 		$data['home_gallery'] = $this->M_home->get_homeSection('gallery');
 
+        $data['web_whatsapp'] = $this->M_home->get_settingsValue('web_whatsapp');
+        $data['web_email'] = $this->M_home->get_settingsValue('web_email');
+
 		// statistik
 		$data['statistik'] = $this->M_home->get_statistik();
 

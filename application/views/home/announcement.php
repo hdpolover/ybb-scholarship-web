@@ -31,6 +31,7 @@
 				<div class="card-body">
 					<h5><?= $val->subject;?></h5>
 					<p class="card-text"><?= substr(strip_tags($val->content), 0, 100);?>...</p>
+					<h6 class="mb-0"><?= date("d M F - H:i", $val->created_at);?></h6>
 				</div>
 
 				<div class="card-footer pt-0">

@@ -17,10 +17,18 @@
 <!-- Clients -->
 <div class="container position-relative zi-2">
 	<div class="row justify-content-center mt-n5">
+		<div class="col-lg-2 d-none d-lg-inline-block mt-lg-n10">
+			<!-- Logo -->
+			<div class="avatar avatar-xxl avatar-circle shadow-sm p-2 mx-auto">
+				<img class="avatar-img" src="<?= base_url();?>assets/images/logo/duta-pelajar.png">
+			</div>
+			<!-- End Logo -->
+		</div>
+
 		<div class="col-3 col-lg-2 d-none d-sm-inline-block mt-n10">
 			<!-- Logo -->
-			<div class="avatar avatar-xl avatar-circle shadow-sm p-4 mx-auto">
-				<img class="avatar-img" src="<?= base_url();?>assets/svg/brands/behance-icon.svg"
+			<div class="avatar avatar-xl avatar-circle shadow-sm p-2 mx-auto">
+				<img class="avatar-img" src="<?= base_url();?>assets/images/logo/ybb.png"
 					alt="Image Description">
 			</div>
 			<!-- End Logo -->
@@ -28,8 +36,8 @@
 
 		<div class="col-lg-2 d-none d-lg-inline-block mt-lg-n8">
 			<!-- Logo -->
-			<div class="avatar avatar-xxl avatar-circle shadow-sm p-4 mx-auto">
-				<img class="avatar-img" src="<?= base_url();?>assets/svg/brands/google-icon.svg"
+			<div class="avatar avatar-xxl avatar-circle shadow-sm p-2 mx-auto">
+				<img class="avatar-img" src="<?= base_url();?>assets/images/logo/iys.png"
 					alt="Image Description">
 			</div>
 			<!-- End Logo -->
@@ -37,24 +45,24 @@
 
 		<div class="col-3 col-lg-2 d-none d-sm-inline-block mt-n4">
 			<!-- Logo -->
-			<div class="avatar avatar-xl avatar-circle shadow-sm p-4 mx-auto">
-				<img class="avatar-img" src="<?= base_url();?>assets/svg/brands/asana-icon.svg">
+			<div class="avatar avatar-xl avatar-circle shadow-sm p-2 mx-auto">
+				<img class="avatar-img" src="<?= base_url();?>assets/images/logo/ybb-school.png">
 			</div>
 			<!-- End Logo -->
 		</div>
 
 		<div class="col-3 col-lg-2 d-none d-sm-inline-block mt-n7">
 			<!-- Logo -->
-			<div class="avatar avatar-xl avatar-circle shadow-sm p-4 mx-auto">
-				<img class="avatar-img" src="<?= base_url();?>assets/svg/brands/slack-icon.svg">
+			<div class="avatar avatar-xl avatar-circle shadow-sm p-2 mx-auto">
+				<img class="avatar-img" src="<?= base_url();?>assets/images/logo/ybb-edu.png">
 			</div>
 			<!-- End Logo -->
 		</div>
 
 		<div class="col-lg-2 d-none d-lg-inline-block mt-lg-n10">
 			<!-- Logo -->
-			<div class="avatar avatar-xxl avatar-circle shadow-sm p-4 mx-auto">
-				<img class="avatar-img" src="<?= base_url();?>assets/svg/brands/dropbox-icon.svg"
+			<div class="avatar avatar-xxl avatar-circle shadow-sm p-2 mx-auto">
+				<img class="avatar-img" src="<?= base_url();?>assets/images/logo/iys.png"
 					alt="Image Description">
 			</div>
 			<!-- End Logo -->
