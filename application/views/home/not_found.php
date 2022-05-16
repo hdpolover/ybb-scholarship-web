@@ -7,10 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
-    <title>Error 404 | YBB Foundation Scholarship</title>
+    <title><?= ($this->uri->segment(1) ? ucwords(str_replace('-', ' ', $this->uri->segment(1)) . ' ' . ($this->uri->segment(2) ? str_replace('-', ' ', $this->uri->segment(2)) : "") . " - ".$web_title) : $web_title); ?></title>
+
+	<meta name="description" content="<?= $web_desc; ?>">
+	<meta property="og:title"
+		content="<?= ($this->uri->segment(1) ? ucwords(str_replace('-', ' ', $this->uri->segment(1)) . ' ' . ($this->uri->segment(2) ? str_replace('-', ' ', $this->uri->segment(2)) : "") . $web_title) : $web_title); ?>">
+	<meta property="og:description" content="<?= $web_desc; ?>">
+	<meta property="og:image"
+		content="<?= base_url(); ?>assets/images/<?= $web_icon?>">
+	<meta property="og:url" content="<?= base_url(uri_string()) ?>">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="<?= base_url(); ?>assets/images/icon-white.png">
+    <link rel="shortcut icon" href="<?= base_url(); ?>assets/images/<?= $web_icon_white;?>">
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -47,7 +55,7 @@
 
             <div class="mb-4">
                 <p class="fs-4 mb-0">Oops! Looks like you followed a bad link.</p>
-                <p class="fs-4">If you think this is a problem with us, please <a class="link" href="#">tell us</a>.</p>
+                <p class="fs-4">If you think this is a problem with us, please <a class="link" href="mailto:ngodingin.indonesia@gmail.com">tell us</a>.</p>
             </div>
 
             <a class="btn btn-primary" href="<?= base_url(); ?>">Go back home</a>
@@ -61,33 +69,33 @@
         <div class="container pb-5 content-space-b-sm-1">
             <div class="row justify-content-between align-items-center">
                 <div class="col-sm mb-3 mb-sm-0">
-                    <p class="small mb-0">&copy; YBB Scholarship Program 2021 supported by Ngodingin Indonesia</p>
+                    <p class="small mb-0">&copy; <?= $web_title;?> 2021 supported by Ngodingin Indonesia</p>
                 </div>
 
                 <div class="col-sm-auto">
                     <!-- Socials -->
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item">
-                            <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                            <a class="btn btn-soft-secondary btn-xs btn-icon" href="<?= prep_url($web_facebook); ?>">
                                 <i class="bi-facebook"></i>
                             </a>
                         </li>
 
                         <li class="list-inline-item">
-                            <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
-                                <i class="bi-google"></i>
+                            <a class="btn btn-soft-secondary btn-xs btn-icon" href="<?= prep_url($web_instagram); ?>">
+                                <i class="bi-instagram"></i>
                             </a>
                         </li>
 
                         <li class="list-inline-item">
-                            <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                            <a class="btn btn-soft-secondary btn-xs btn-icon" href="<?= prep_url($web_twitter); ?>">
                                 <i class="bi-twitter"></i>
                             </a>
                         </li>
 
                         <li class="list-inline-item">
-                            <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
-                                <i class="bi-github"></i>
+                            <a class="btn btn-soft-secondary btn-xs btn-icon" href="<?= prep_url($web_youtube); ?>">
+                                <i class="bi-youtube"></i>
                             </a>
                         </li>
                     </ul>

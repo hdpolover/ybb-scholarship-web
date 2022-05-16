@@ -37,6 +37,50 @@ class Admin extends CI_Controller
         $this->templateback->view('admin/dashboard', $data);
     }
 
+    public function statistik()
+    {   
+
+        // statistik
+        $data['statistik'] = $this->M_home->get_statistik();
+
+        // school chart
+        $statChartSchool = $this->M_admin->getChartSchool();
+        foreach($statChartSchool as $val):
+            $data['arrChartSchool']['school'][] = "'".$val->school."'";
+            $data['arrChartSchool']['jmlPeserta'][] = $val->count;
+        endforeach;
+
+        // field of study chart
+        $statChartField = $this->M_admin->getChartFieldStudy();
+        foreach($statChartField as $val):
+            $data['arrChartField']['fieldStudy'][] = "'".$val->field_study."'";
+            $data['arrChartField']['jmlPeserta'][] = $val->count;
+        endforeach;
+
+        // current gpa chart
+        $statChartGPA = $this->M_admin->getChartGPA();
+        foreach($statChartGPA as $val):
+            $data['arrChartGPA']['gpa'][] = "'".$val->current_gpa."'";
+            $data['arrChartGPA']['jmlPeserta'][] = $val->count;
+        endforeach;
+
+        // semester chart
+        $statChartSemester = $this->M_admin->getChartSemester();
+        foreach($statChartSemester as $val):
+            $data['arrChartSemester']['semester'][] = "'Semester ".$val->semester."'";
+            $data['arrChartSemester']['jmlPeserta'][] = $val->count;
+        endforeach;
+
+        // gender chart
+        $statChartGender = $this->M_admin->getChartGender();
+        foreach ($statChartGender as $val):
+            $data['arrChartGender']['gender'][] = "'".$val->gender."'";
+            $data['arrChartGender']['jmlPeserta'][] = $val->count;
+        endforeach;
+        
+        $this->templateback->view('admin/statistik', $data);
+    }
+
     public function userList()
     {
         $data['users'] = $this->M_admin->getUserlist();
@@ -66,7 +110,7 @@ class Admin extends CI_Controller
                 $data['web_logo'] = $this->M_home->get_settingsValue('web_logo');
                 $data['web_desc'] = $this->M_home->get_settingsValue('web_desc');
                 $data['web_address'] = $this->M_home->get_settingsValue('web_address');
-                $data['web_phone'] = $this->M_home->get_settingsValue('web_phone');
+                $data['web_whatsapp'] = $this->M_home->get_settingsValue('web_whatsapp');
                 $data['web_facebook'] = $this->M_home->get_settingsValue('web_facebook');
                 $data['web_instagram'] = $this->M_home->get_settingsValue('web_instagram');
                 $data['web_twitter'] = $this->M_home->get_settingsValue('web_twitter');
@@ -709,6 +753,18 @@ class Admin extends CI_Controller
         }
     }
 
+    // basic
+
+    function changeBasicInfo()
+    {
+        if ($this->M_admin->changeBasicInfo() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly changes basic information');
+            redirect(site_url('settings/website?page=basic'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying changes basic information, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
 
     // FUNCTION PRIVATE
     // MAILER SENDER

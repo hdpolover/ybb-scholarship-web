@@ -46,6 +46,10 @@
   						<a class="nav-link <?= ($this->uri->segment(1) == "dashboard" ? "active" : "") ?>"
   							href="<?= site_url('dashboard'); ?>">Dashboard</a>
   					</li>
+  					<li class="nav-item" id="tour-dashboard">
+  						<a class="nav-link <?= ($this->uri->segment(1) == "statistik" ? "active" : "") ?>"
+  							href="<?= site_url('statistik'); ?>">Statistik</a>
+  					</li>
 
   					<li class="nav-item my-2 my-lg-5"></li>
 

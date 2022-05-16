@@ -97,42 +97,38 @@
         			</div>
 
         			<div class="col-sm-auto">
-        				<!-- Socials -->
-        				<ul class="list-inline mb-0">
-        					<li class="list-inline-item">
-        						<a class="btn btn-soft-light btn-xs btn-icon"
-        							href="<?= prep_url('https://facebook.com'); ?>">
-        							<i class="bi-facebook"></i>
-        						</a>
-        					</li>
+						<!-- Socials -->
+						<ul class="list-inline mb-0">
+							<li class="list-inline-item">
+								<a class="btn btn-soft-light btn-xs btn-icon" href="<?= prep_url($web_facebook); ?>">
+									<i class="bi-facebook"></i>
+								</a>
+							</li>
 
-        					<li class="list-inline-item">
-        						<a class="btn btn-soft-light btn-xs btn-icon"
-        							href="<?= prep_url('https://instagram.com'); ?>">
-        							<i class="bi-instagram"></i>
-        						</a>
-        					</li>
+							<li class="list-inline-item">
+								<a class="btn btn-soft-light btn-xs btn-icon" href="<?= prep_url($web_instagram); ?>">
+									<i class="bi-instagram"></i>
+								</a>
+							</li>
 
-        					<li class="list-inline-item">
-        						<a class="btn btn-soft-light btn-xs btn-icon"
-        							href="<?= prep_url('https://twitter.com'); ?>">
-        							<i class="bi-twitter"></i>
-        						</a>
-        					</li>
+							<li class="list-inline-item">
+								<a class="btn btn-soft-light btn-xs btn-icon" href="<?= prep_url($web_twitter); ?>">
+									<i class="bi-twitter"></i>
+								</a>
+							</li>
 
-        					<li class="list-inline-item">
-        						<a class="btn btn-soft-light btn-xs btn-icon"
-        							href="<?= prep_url('https://youtubet.com'); ?>">
-        							<i class="bi-youtube"></i>
-        						</a>
-        					</li>
-        				</ul>
-        				<!-- End Socials -->
+							<li class="list-inline-item">
+								<a class="btn btn-soft-light btn-xs btn-icon" href="<?= prep_url($web_youtube); ?>">
+									<i class="bi-youtube"></i>
+								</a>
+							</li>
+						</ul>
+						<!-- End Socials -->
         			</div>
         		</div>
 
         		<!-- Copyright -->
-        		<div class="w-md-85 text-lg-center mx-lg-auto">
+				<div class="w-md-85 text-lg-center mx-lg-auto d-none">
         			<p class="text-white-50 small">&copy; YBB Foundation Scholarship. 2022 Ngodingin. All rights
         				reserved.</p>
         			<p class="text-white-50 small">When you visit or interact with our sites, services or tools, we or

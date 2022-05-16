@@ -92,25 +92,25 @@
 				<!-- Socials -->
 				<ul class="list-inline mb-0">
 					<li class="list-inline-item">
-						<a class="btn btn-soft-light btn-xs btn-icon" href="<?= prep_url('https://facebook.com'); ?>">
+						<a class="btn btn-soft-light btn-xs btn-icon" href="<?= prep_url($web_facebook); ?>">
 							<i class="bi-facebook"></i>
 						</a>
 					</li>
 
 					<li class="list-inline-item">
-						<a class="btn btn-soft-light btn-xs btn-icon" href="<?= prep_url('https://instagram.com'); ?>">
+						<a class="btn btn-soft-light btn-xs btn-icon" href="<?= prep_url($web_instagram); ?>">
 							<i class="bi-instagram"></i>
 						</a>
 					</li>
 
 					<li class="list-inline-item">
-						<a class="btn btn-soft-light btn-xs btn-icon" href="<?= prep_url('https://twitter.com'); ?>">
+						<a class="btn btn-soft-light btn-xs btn-icon" href="<?= prep_url($web_twitter); ?>">
 							<i class="bi-twitter"></i>
 						</a>
 					</li>
 
 					<li class="list-inline-item">
-						<a class="btn btn-soft-light btn-xs btn-icon" href="<?= prep_url('https://youtubet.com'); ?>">
+						<a class="btn btn-soft-light btn-xs btn-icon" href="<?= prep_url($web_youtube); ?>">
 							<i class="bi-youtube"></i>
 						</a>
 					</li>
@@ -120,7 +120,7 @@
 		</div>
 
 		<!-- Copyright -->
-		<div class="w-md-85 text-lg-center mx-lg-auto">
+		<div class="w-md-85 text-lg-center mx-lg-auto d-none">
 			<p class="text-white-50 small">&copy; YBB Foundation Scholarship. 2022 Ngodingin. All rights reserved.</p>
 			<p class="text-white-50 small">When you visit or interact with our sites, services or tools, we or our
 				authorised service providers may use cookies for storing information to help provide you with a better,
@@ -164,6 +164,7 @@
 <script src="<?= base_url(); ?>assets/vendor/fslightbox/index.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/appear/dist/appear.min.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/circles.js/circles.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/imask/dist/imask.min.js"></script>
 
 <!-- JS Front -->
 <script src="<?= base_url(); ?>assets/js/theme.min.js"></script>
@@ -222,6 +223,11 @@
 			duration: 650,
 			once: true
 		});
+
+
+		// INITIALIZATION OF INPUT MASK
+		// =======================================================
+		HSCore.components.HSMask.init('.js-input-mask')
 
 
 		// INITIALIZATION OF SWIPER

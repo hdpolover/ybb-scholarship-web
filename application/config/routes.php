@@ -62,6 +62,7 @@ $route['logout'] = 'authentication/logout';
 
 // admin
 $route['dashboard'] = 'admin';
+$route['statistik'] = 'admin/statistik';
 $route['users'] = 'admin/userList';
 $route['information/announcement'] = 'admin/announcement';
 $route['information/timeline'] = 'admin/timeline';
@@ -76,6 +77,8 @@ $route['about-us'] = 'home/aboutUs';
 $route['faq'] = 'home/faq';
 $route['other-programs'] = 'home/otherPrograms';
 $route['contribute'] = 'home/contribute';
+
+$route['privacy-policy'] = 'home/privacy';
 
 $route['404_override'] = 'home/notFound';
 $route['translate_uri_dashes'] = FALSE;

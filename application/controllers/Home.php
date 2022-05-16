@@ -79,6 +79,26 @@ class Home extends CI_Controller {
 
 	public function notFound()
 	{
-		$this->load->view('home/not_found');
+        $data['web_icon'] = $this->M_home->get_settingsValue('web_icon');
+        $data['web_icon_white'] = $this->M_home->get_settingsValue('web_icon_white');
+        $data['web_logo'] = $this->M_home->get_settingsValue('web_logo');
+        $data['web_logo_white'] = $this->M_home->get_settingsValue('web_logo_white');
+
+        $data['web_title'] = $this->M_home->get_settingsValue('web_title');
+        $data['web_desc'] = $this->M_home->get_settingsValue('web_desc');
+        $data['web_address'] = $this->M_home->get_settingsValue('web_address');
+
+        $data['web_whatsapp'] = $this->M_home->get_settingsValue('web_whatsapp');
+        $data['web_facebook'] = $this->M_home->get_settingsValue('web_facebook');
+        $data['web_instagram'] = $this->M_home->get_settingsValue('web_instagram');
+        $data['web_twitter'] = $this->M_home->get_settingsValue('web_twitter');
+        $data['web_youtube'] = $this->M_home->get_settingsValue('web_youtube');
+
+		$this->load->view('home/not_found', $data);
+	}
+
+	public function privacy()
+	{
+		$this->templatefront->view('home/privacy');
 	}
 }

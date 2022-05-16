@@ -6,11 +6,19 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<!-- Title -->
-	<title>YBB Scholarship</title>
+    <!-- Title -->
+    <title><?= ($this->uri->segment(1) ? ucwords(str_replace('-', ' ', $this->uri->segment(1)) . ' ' . ($this->uri->segment(2) ? str_replace('-', ' ', $this->uri->segment(2)) : "") . " - ".$web_title) : $web_title); ?></title>
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="<?= base_url(); ?>assets/images/icon-white.png">
+	<meta name="description" content="<?= $web_desc; ?>">
+	<meta property="og:title"
+		content="<?= ($this->uri->segment(1) ? ucwords(str_replace('-', ' ', $this->uri->segment(1)) . ' ' . ($this->uri->segment(2) ? str_replace('-', ' ', $this->uri->segment(2)) : "") . $web_title) : $web_title); ?>">
+	<meta property="og:description" content="<?= $web_desc; ?>">
+	<meta property="og:image"
+		content="<?= base_url(); ?>assets/images/<?= $web_icon?>">
+	<meta property="og:url" content="<?= base_url(uri_string()) ?>">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="<?= base_url(); ?>assets/images/<?= $web_icon_white;?>">
 
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -52,7 +60,7 @@
 
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-
+	<script src="<?= base_url();?>assets/js/apexchart.js"></script>
 </head>
 
 

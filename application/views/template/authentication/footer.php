@@ -7,6 +7,8 @@
 <!-- JS Front -->
 <script src="<?= base_url(); ?>assets/js/theme.min.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/hs-file-attach/dist/hs-file-attach.min.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/imask/dist/imask.min.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/hs-quantity-counter/dist/hs-quantity-counter.min.js"></script>
 <!-- JS Plugins Init. -->
 <script>
 	(function () {
@@ -30,6 +32,15 @@
 		// INITIALIZATION OF FILE ATTACH
 		// =======================================================
 		new HSFileAttach('.js-file-attach')
+
+
+		// INITIALIZATION OF INPUT MASK
+		// =======================================================
+		HSCore.components.HSMask.init('.js-input-mask')
+
+		// INITIALIZATION OF  QUANTITY COUNTER
+		// =======================================================
+		new HSQuantityCounter('.js-quantity-counter')
 	})()
 
 </script>

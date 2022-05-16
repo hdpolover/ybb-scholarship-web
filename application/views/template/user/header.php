@@ -12,17 +12,19 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
-
     <!-- Title -->
+    <title><?= ($this->uri->segment(1) ? ucwords(str_replace('-', ' ', $this->uri->segment(1)) . ' ' . ($this->uri->segment(2) ? str_replace('-', ' ', $this->uri->segment(2)) : "") . " - ".$web_title) : $web_title); ?></title>
 
-    <title><?= $web_title;?></title>
-
-
+	<meta name="description" content="<?= $web_desc; ?>">
+	<meta property="og:title"
+		content="<?= ($this->uri->segment(1) ? ucwords(str_replace('-', ' ', $this->uri->segment(1)) . ' ' . ($this->uri->segment(2) ? str_replace('-', ' ', $this->uri->segment(2)) : "") . $web_title) : $web_title); ?>">
+	<meta property="og:description" content="<?= $web_desc; ?>">
+	<meta property="og:image"
+		content="<?= base_url(); ?>assets/images/<?= $web_icon?>">
+	<meta property="og:url" content="<?= base_url(uri_string()) ?>">
 
     <!-- Favicon -->
-
-    <link rel="shortcut icon" href="<?= base_url(); ?>assets/images/icon-white.png">
+    <link rel="shortcut icon" href="<?= base_url(); ?>assets/images/<?= $web_icon_white;?>">
 
 
 

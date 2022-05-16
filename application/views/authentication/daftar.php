@@ -7,8 +7,8 @@
     				<!-- Blockquote -->
     				<figure class="text-center">
     					<div class="mb-4">
-    						<img class="avatar avatar-xl avatar-4x3"
-    							src="<?= base_url(); ?>assets/svg/brands/mailchimp-white.svg" alt="Logo">
+    						<img class="avatar avatar-xxl avatar-4x3"
+    							src="<?= base_url(); ?>assets/images/<?= $web_logo_white;?>" alt="Logo">
     					</div>
 
     					<blockquote class="blockquote blockquote-light">“ Ayo bergabung bersama kami di YBB Scholarship Programs dan dapatkan berbagai keuntungan untukmu. ”</blockquote>

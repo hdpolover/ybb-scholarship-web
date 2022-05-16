@@ -38,7 +38,7 @@ class M_scholarship extends CI_Model
             'current_address' => $current_address,
             'field_study' => $field_study,
             'school' => $school,
-            'current_gpa' => $current_gpa,
+            'current_gpa' => str_replace(',', '.', $current_gpa),
             'semester' => $semester,
             'about' => $about,
             'dream_come' => $dream_come,

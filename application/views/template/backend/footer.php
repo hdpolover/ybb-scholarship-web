@@ -32,6 +32,7 @@
 <script src="<?= base_url(); ?>assets/vendor/swiper/swiper-bundle.min.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/prism/prism.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/fslightbox/index.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/imask/dist/imask.min.js"></script>
 
 <!-- JS Front -->
 <script src="<?= base_url(); ?>assets/js/theme.min.js"></script>
@@ -97,6 +98,11 @@
 			duration: 650,
 			once: true
 		});
+
+
+		// INITIALIZATION OF INPUT MASK
+		// =======================================================
+		HSCore.components.HSMask.init('.js-input-mask')
 
 
 		// INITIALIZATION OF SWIPER

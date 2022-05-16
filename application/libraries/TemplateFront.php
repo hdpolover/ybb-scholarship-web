@@ -16,9 +16,20 @@ class TemplateFront
 
     function view($content, $data = null)
     {
+        $data['web_icon'] = $this->getSettingsValue('web_icon');
+        $data['web_icon_white'] = $this->getSettingsValue('web_icon_white');
+        $data['web_logo'] = $this->getSettingsValue('web_logo');
+        $data['web_logo_white'] = $this->getSettingsValue('web_logo_white');
+
         $data['web_title'] = $this->getSettingsValue('web_title');
         $data['web_desc'] = $this->getSettingsValue('web_desc');
+        $data['web_address'] = $this->getSettingsValue('web_address');
 
+        $data['web_whatsapp'] = $this->getSettingsValue('web_whatsapp');
+        $data['web_facebook'] = $this->getSettingsValue('web_facebook');
+        $data['web_instagram'] = $this->getSettingsValue('web_instagram');
+        $data['web_twitter'] = $this->getSettingsValue('web_twitter');
+        $data['web_youtube'] = $this->getSettingsValue('web_youtube');
 
         $this->_ci->load->view('template/frontend/header', $data);
         $this->_ci->load->view('template/alert', $data);

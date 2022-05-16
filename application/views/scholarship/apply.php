@@ -20,7 +20,9 @@
 
 							<div class="mb-5 text-center">
 
-								<p class="text-primary"><b>Perhatian !</b> Kamu dapat melakukan proses pendaftaran nanti,<br> jika berkas atau informasi yang dibutuhkan belum lengkap.<br> Untuk mengakses halaman ini, login ke akunmu dan mengarah ke menu "Beasiswa".</p>
+								<p class="text-primary"><b>Perhatian !</b> Kamu dapat melakukan proses pendaftaran
+									nanti,<br> jika berkas atau informasi yang dibutuhkan belum lengkap.<br> Untuk
+									mengakses halaman ini, login ke akunmu dan mengarah ke menu "Beasiswa".</p>
 
 							</div>
 							<hr class="mb-4">
@@ -44,9 +46,11 @@
 
 							<div class="border-top d-flex justify-content-between pt-5">
 
-								<a href="<?= site_url('user');?>" class="btn btn-primary"><i class="bi bi-person-circle"></i> Kembali kehalaman profil</a>
+								<a href="<?= site_url('user');?>" class="btn btn-primary"><i
+										class="bi bi-person-circle"></i> Kembali kehalaman profil</a>
 
-								<button type="button" class="btn btn-primary" onclick="scholarFormNext(1,2)">Saya mengerti <i class="bi bi-vector-pen"></i></button>
+								<button type="button" class="btn btn-primary" onclick="scholarFormNext(1,2)">Saya
+									mengerti <i class="bi bi-vector-pen"></i></button>
 
 							</div>
 
@@ -69,7 +73,8 @@
 						<div class="card-body">
 
 							<div class="mb-3">
-								<p>Sebelum mengisi formulir, harap pastikan telah mengikuti akun media sosial dibawah ini:
+								<p>Sebelum mengisi formulir, harap pastikan telah mengikuti akun media sosial dibawah
+									ini:
 
 									<ul>
 
@@ -132,7 +137,8 @@
 
 								</p>
 
-								<p>Dan pastikan telah menyebarkan informasi beasiswa ini, terutama pada postingan instagram dan status instagram kamu</p>
+								<p>Dan pastikan telah menyebarkan informasi beasiswa ini, terutama pada postingan
+									instagram dan status instagram kamu</p>
 
 							</div>
 
@@ -144,7 +150,8 @@
 									Sebelumnya</button>
 
 								<button type="button" class="btn btn-primary btn-sm"
-									onclick="scholarFormNext(2,3)">Selanjutnya <i class="bi bi-caret-right"></i></button>
+									onclick="scholarFormNext(2,3)">Selanjutnya <i
+										class="bi bi-caret-right"></i></button>
 
 							</div>
 
@@ -204,7 +211,8 @@
 									Sebelumnya</button>
 
 								<button type="button" class="btn btn-primary btn-sm"
-									onclick="scholarFormNext(3,4)">Selanjutnya <i class="bi bi-caret-right"></i></button>
+									onclick="scholarFormNext(3,4)">Selanjutnya <i
+										class="bi bi-caret-right"></i></button>
 
 							</div>
 
@@ -239,8 +247,8 @@
 								<label class="form-label" for="formFullName">Nama lengkap <small
 										class="text-danger">*</small></label>
 
-								<input type="text" id="formFullName" class="form-control form-control-sm" name="full_name"
-									value="<?= $this->session->userdata('name');?>" required>
+								<input type="text" id="formFullName" class="form-control form-control-sm"
+									name="full_name" value="<?= $this->session->userdata('name');?>" required>
 
 							</div>
 
@@ -249,8 +257,9 @@
 								<label class="form-label" for="formDateBirth">Tanggal lahir <small
 										class="text-danger">*</small></label>
 								<div class="input-group mb-3">
-									<input type="date" id="formDateBirth" class="form-control form-control-sm" name="date_birth"
-										placeholder="Your answer" aria-describedby="basic-formDateBirth" required>
+									<input type="date" id="formDateBirth" class="form-control form-control-sm"
+										name="date_birth" placeholder="Your answer"
+										aria-describedby="basic-formDateBirth" required>
 									<span class="input-group-text" id="basic-formDateBirth"><i
 											class="bi bi-calendar3"></i></span>
 								</div>
@@ -285,8 +294,8 @@
 								<label class="form-label" for="formFieldOfStudy">Jurusan/Prodi/Fakultas <small
 										class="text-danger">*</small></label>
 
-								<input type="text" id="formFieldOfStudy" class="form-control form-control-sm" name="field_study"
-									placeholder="Your answer" required>
+								<input type="text" id="formFieldOfStudy" class="form-control form-control-sm"
+									name="field_study" placeholder="Your answer" required>
 
 							</div>
 
@@ -295,8 +304,8 @@
 								<label class="form-label" for="formSchoolCollage">Sekolah / Universitas<small
 										class="text-danger">*</small></label>
 
-								<input type="text" id="formSchoolCollage" class="form-control form-control-sm" name="school"
-									placeholder="Your answer" required>
+								<input type="text" id="formSchoolCollage" class="form-control form-control-sm"
+									name="school" placeholder="Your answer" required>
 
 							</div>
 
@@ -305,9 +314,10 @@
 								<label class="form-label" for="formCurrentGPA">GPA Saat ini <small
 										class="text-danger">*</small></label>
 
-								<input type="text" id="formCurrentGPA" class="form-control form-control-sm" name="current_gpa"
-									maxlength="4" placeholder="Your answer" required>
-
+								<input type="text" id="formCurrentGPA"
+									class="js-input-mask form-control form-control-sm" name="current_gpa"
+									placeholder="Your answer" required data-hs-mask-options='{ "mask": "0.00" }'>
+								<small class="text-danger">Format GPA 0.00 (3.98)</small>
 							</div>
 
 							<div class="mb-3 pb-4 border-bottom">
@@ -315,8 +325,43 @@
 								<label class="form-label" for="formSemester">Semester <small
 										class="text-danger">*</small></label>
 
-								<input type="text" id="formSemester" class="form-control form-control-sm" name="semester"
-									placeholder="Your answer" required>
+								<!-- <input type="number" id="formSemester" class="form-control form-control-sm"
+									name="semester" placeholder="Your answer" required> -->
+								<!-- Quantity -->
+								<div class="quantity-counter">
+									<div class="js-quantity-counter row align-items-center">
+										<div class="col">
+											<!-- <span class="d-block small">Select quantity</span> -->
+											<input class="js-result form-control form-control-quantity-counter" name="semester"
+												type="text" value="1">
+										</div>
+										<!-- End Col -->
+
+										<div class="col-auto">
+											<a class="js-minus btn btn-outline-secondary btn-xs btn-icon rounded-circle"
+												href="javascript:;">
+												<svg width="8" height="2" viewBox="0 0 8 2" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M0 1C0 0.723858 0.223858 0.5 0.5 0.5H7.5C7.77614 0.5 8 0.723858 8 1C8 1.27614 7.77614 1.5 7.5 1.5H0.5C0.223858 1.5 0 1.27614 0 1Z"
+														fill="currentColor" />
+												</svg>
+											</a>
+											<a class="js-plus btn btn-outline-secondary btn-xs btn-icon rounded-circle"
+												href="javascript:;">
+												<svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M4 0C4.27614 0 4.5 0.223858 4.5 0.5V3.5H7.5C7.77614 3.5 8 3.72386 8 4C8 4.27614 7.77614 4.5 7.5 4.5H4.5V7.5C4.5 7.77614 4.27614 8 4 8C3.72386 8 3.5 7.77614 3.5 7.5V4.5H0.5C0.223858 4.5 0 4.27614 0 4C0 3.72386 0.223858 3.5 0.5 3.5H3.5V0.5C3.5 0.223858 3.72386 0 4 0Z"
+														fill="currentColor" />
+												</svg>
+											</a>
+										</div>
+										<!-- End Col -->
+									</div>
+									<!-- End Row -->
+								</div>
+								<!-- End Quantity -->
 
 							</div>
 
@@ -325,27 +370,29 @@
 								<label class="form-label" for="formAboutYourself">Ceritakan tentang dirimu <small
 										class="text-danger">*</small></label>
 
-								<textarea type="text" id="formAboutYourself" class="form-control form-control-sm" name="about" rows="3"
-									placeholder="Your answer" required></textarea>
+								<textarea type="text" id="formAboutYourself" class="form-control form-control-sm"
+									name="about" rows="3" placeholder="Your answer" required></textarea>
 
 							</div>
 
 							<div class="mb-3 pb-4 border-bottom">
 
-								<label class="form-label" for="formDreamComeTrue">Apa mimpi terbesarmu dan bagaimana caramu untuk mewujudkannya? <small class="text-danger">*</small></label>
+								<label class="form-label" for="formDreamComeTrue">Apa mimpi terbesarmu dan bagaimana
+									caramu untuk mewujudkannya? <small class="text-danger">*</small></label>
 
-								<textarea type="text" id="formDreamComeTrue" class="form-control form-control-sm" name="dream_come"
-									rows="3" placeholder="Your answer" required></textarea>
+								<textarea type="text" id="formDreamComeTrue" class="form-control form-control-sm"
+									name="dream_come" rows="3" placeholder="Your answer" required></textarea>
 
 							</div>
 
 							<div class="mb-3 pb-4 border-bottom">
 
-								<label class="form-label" for="formVolunteer">Apakah kamu mempunyai pengalaman organisasi atau relawan? jika iya ceritakan <small
+								<label class="form-label" for="formVolunteer">Apakah kamu mempunyai pengalaman
+									organisasi atau relawan? jika iya ceritakan <small
 										class="text-danger">*</small></label>
 
-								<textarea type="text" id="formVolunteer" class="form-control form-control-sm" name="volunteer" rows="3"
-									placeholder="Your answer" required></textarea>
+								<textarea type="text" id="formVolunteer" class="form-control form-control-sm"
+									name="volunteer" rows="3" placeholder="Your answer" required></textarea>
 
 							</div>
 
@@ -357,7 +404,8 @@
 									Sebelumnya</button>
 
 								<button type="button" class="btn btn-primary btn-sm"
-									onclick="scholarFormNext(4,5)">Selanjutnya <i class="bi bi-caret-right"></i></button>
+									onclick="scholarFormNext(4,5)">Selanjutnya <i
+										class="bi bi-caret-right"></i></button>
 
 							</div>
 
@@ -383,7 +431,8 @@
 
 							<div class="mb-3 pb-4 border-bottom">
 
-								<p>Sebelum mengisi formulir, harap pastikan telah mengikuti akun media sosial dibawah ini:
+								<p>Sebelum mengisi formulir, harap pastikan telah mengikuti akun media sosial dibawah
+									ini:
 
 									<ul>
 
@@ -446,72 +495,77 @@
 
 								</p>
 
-								<p>Dan pastikan telah menyebarkan informasi beasiswa ini, terutama pada postingan instagram dan status instagram kamu</p>
+								<p>Dan pastikan telah menyebarkan informasi beasiswa ini, terutama pada postingan
+									instagram dan status instagram kamu</p>
 
 							</div>
 
 							<div class="mb-3 pb-4 border-bottom">
 
 								<label for="followedAccount" class="js-file-attach form-label"
-									data-hs-file-attach-options='{"textTarget": "[for=\"customFile\"]", "allowTypes": [".png", ".jpeg", ".jpg"]}'>Bukti telah mengikuti sosial media kami <small
-										class="text-danger">*</small></label>
+									data-hs-file-attach-options='{"textTarget": "[for=\"customFile\"]", "allowTypes": [".png", ".jpeg", ".jpg"]}'>Bukti
+									telah mengikuti sosial media kami <small class="text-danger">*</small></label>
 
-								<input class="form-control form-control-sm" type="file" id="followedAccount" name="upload_follow"
-									accept="image/*" required>
+								<input class="form-control form-control-sm" type="file" id="followedAccount"
+									name="upload_follow" accept="image/*" required>
 								<small class="text-secondary">Unggah jpg, png, or jpeg file</small>
 							</div>
 
 							<div class="mb-3 pb-4 border-bottom">
 
 								<label for="registerApp" class="js-file-attach form-label"
-									data-hs-file-attach-options='{"textTarget": "[for=\"customFile\"]", "allowTypes": [".png", ".jpeg", ".jpg"]}'>Bukti telah mempunyai akun di aplikasi YBB <small
-										class="text-danger">*</small></label>
+									data-hs-file-attach-options='{"textTarget": "[for=\"customFile\"]", "allowTypes": [".png", ".jpeg", ".jpg"]}'>Bukti
+									telah mempunyai akun di aplikasi YBB <small class="text-danger">*</small></label>
 
-								<input class="form-control form-control-sm" type="file" id="registerApp" name="upload_apps"
-									accept="image/*" required>
+								<input class="form-control form-control-sm" type="file" id="registerApp"
+									name="upload_apps" accept="image/*" required>
 								<small class="text-secondary">Unggah jpg, png, or jpeg file</small>
 							</div>
 
 							<div class="mb-3 pb-4 border-bottom">
 
 								<label for="subscribedYoutube" class="js-file-attach form-label"
-									data-hs-file-attach-options='{"textTarget": "[for=\"customFile\"]", "allowTypes": [".png", ".jpeg", ".jpg"]}'>Bukti telah subscribed akun youtube official YBB <small
+									data-hs-file-attach-options='{"textTarget": "[for=\"customFile\"]", "allowTypes": [".png", ".jpeg", ".jpg"]}'>Bukti
+									telah subscribed akun youtube official YBB <small
 										class="text-danger">*</small></label>
 
-								<input class="form-control form-control-sm" type="file" id="subscribedYoutube" name="upload_youtube"
-									accept="image/*" required>
+								<input class="form-control form-control-sm" type="file" id="subscribedYoutube"
+									name="upload_youtube" accept="image/*" required>
 								<small class="text-secondary">Unggah jpg, png, or jpeg file</small>
 							</div>
 
 							<div class="mb-3 pb-4 border-bottom">
 
 								<label for="joinedTelegram" class="js-file-attach form-label"
-									data-hs-file-attach-options='{"textTarget": "[for=\"customFile\"]", "allowTypes": [".png", ".jpeg", ".jpg"]}'>Bukti telah bergabung dalam grup Telegram YBB<small
-										class="text-danger">*</small></label>
+									data-hs-file-attach-options='{"textTarget": "[for=\"customFile\"]", "allowTypes": [".png", ".jpeg", ".jpg"]}'>Bukti
+									telah bergabung dalam grup Telegram YBB<small class="text-danger">*</small></label>
 
-								<input class="form-control form-control-sm" type="file" id="joinedTelegram" name="upload_telegram"
-									accept="image/*" required>
+								<input class="form-control form-control-sm" type="file" id="joinedTelegram"
+									name="upload_telegram" accept="image/*" required>
 								<small class="text-secondary">Unggah jpg, png, or jpeg file</small>
 							</div>
 
 							<div class="mb-3 pb-4 border-bottom">
 
 								<label for="sharedInstagram" class="js-file-attach form-label"
-									data-hs-file-attach-options='{"textTarget": "[for=\"customFile\"]", "allowTypes": [".png", ".jpeg", ".jpg"]}'>Bukti telah membagikan informasi via status instagram atau postingan instagram <small class="text-danger">*</small></label>
+									data-hs-file-attach-options='{"textTarget": "[for=\"customFile\"]", "allowTypes": [".png", ".jpeg", ".jpg"]}'>Bukti
+									telah membagikan informasi via status instagram atau postingan instagram <small
+										class="text-danger">*</small></label>
 
-								<input class="form-control form-control-sm" type="file" id="sharedInstagram" name="upload_story"
-									accept="image/*" required>
+								<input class="form-control form-control-sm" type="file" id="sharedInstagram"
+									name="upload_story" accept="image/*" required>
 								<small class="text-secondary">Unggah jpg, png, or jpeg file</small>
 							</div>
 
 							<div class="mb-3 pb-4 border-bottom">
 
 								<label for="taggedFriends" class="js-file-attach form-label"
-									data-hs-file-attach-options='{"textTarget": "[for=\"customFile\"]", "allowTypes": [".png", ".jpeg", ".jpg"]}'>Bukti telah menandai 5 teman pada postingan instagram <small
+									data-hs-file-attach-options='{"textTarget": "[for=\"customFile\"]", "allowTypes": [".png", ".jpeg", ".jpg"]}'>Bukti
+									telah menandai 5 teman pada postingan instagram <small
 										class="text-danger">*</small></label>
 
-								<input class="form-control form-control-sm" type="file" id="taggedFriends" name="upload_tags"
-									accept="image/*" required>
+								<input class="form-control form-control-sm" type="file" id="taggedFriends"
+									name="upload_tags" accept="image/*" required>
 								<small class="text-secondary">Unggah jpg, png, or jpeg file</small>
 							</div>
 

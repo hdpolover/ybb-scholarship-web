@@ -8,6 +8,50 @@ class M_admin extends CI_Model
         parent::__construct();
     }
 
+    // chart
+    function getChartFieldStudy(){
+        $this->db->select('field_study, COUNT(*) as count');
+        $this->db->from('tb_scholarship');
+        $this->db->group_by("field_study");
+        return $this->db->get()->result();
+    }
+
+    function getChartSchool()
+    {
+        $this->db->select('school, COUNT(*) as count');
+        $this->db->from('tb_scholarship');
+        $this->db->group_by("school");
+        return $this->db->get()->result();
+    }
+
+    function getChartGPA()
+    {
+        $this->db->select('current_gpa, COUNT(*) as count');
+        $this->db->from('tb_scholarship');
+        $this->db->group_by("current_gpa");
+        return $this->db->get()->result();
+    }
+
+    function getChartSemester()
+    {
+        $this->db->select('semester, COUNT(*) as count');
+        $this->db->from('tb_scholarship');
+        $this->db->group_by("semester");
+        return $this->db->get()->result();
+    }
+
+    function getChartGender()
+    {
+        $this->db->select('a.gender, COUNT(a.user_id) as count');
+        $this->db->from('tb_user a');
+        $this->db->join('tb_auth b', 'a.user_id = b.user_id');
+        $this->db->where('b.role', 2);
+        $this->db->group_by('gender');
+        return $this->db->get()->result();
+    }
+
+
+
     function countDashboard(){
         $users = $this->db->get_where('tb_auth', ['active' => 1])->num_rows();
         $members = $this->db->get_where('tb_scholarship', ['status' => 2])->num_rows();
@@ -549,4 +593,43 @@ class M_admin extends CI_Model
 
         return true;
     }
+
+    // basic
+    function changeBasicInfo()
+    {
+        $web_title = $this->input->post('web_title');
+        $this->db->where('key', 'web_title');
+        $this->db->update('tb_settings', ['value' => $web_title]);
+
+        $web_desc = $this->input->post('web_desc');
+        $this->db->where('key', 'web_desc');
+        $this->db->update('tb_settings', ['value' => $web_desc]);
+
+        $web_address = $this->input->post('web_address');
+        $this->db->where('key', 'web_address');
+        $this->db->update('tb_settings', ['value' => $web_address]);
+
+        $web_whatsapp = $this->input->post('web_whatsapp');
+        $this->db->where('key', 'web_whatsapp');
+        $this->db->update('tb_settings', ['value' => $web_whatsapp]);
+
+        $web_facebook = $this->input->post('web_facebook');
+        $this->db->where('key', 'web_facebook');
+        $this->db->update('tb_settings', ['value' => $web_facebook]);
+
+        $web_instagram = $this->input->post('web_instagram');
+        $this->db->where('key', 'web_instagram');
+        $this->db->update('tb_settings', ['value' => $web_instagram]);
+
+        $web_twitter = $this->input->post('web_twitter');
+        $this->db->where('key', 'web_twitter');
+        $this->db->update('tb_settings', ['value' => $web_twitter]);
+
+        $web_youtube = $this->input->post('web_youtube');
+        $this->db->where('key', 'web_youtube');
+        $this->db->update('tb_settings', ['value' => $web_youtube]);
+
+        return true;
+    }
+
 }
