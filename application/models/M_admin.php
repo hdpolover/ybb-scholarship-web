@@ -50,6 +50,21 @@ class M_admin extends CI_Model
         return $this->db->get()->result();
     }
 
+    function getChartDaily()
+    {
+        $this->db->select('created_at, COUNT(created_at) as count');
+        $this->db->from('tb_scholarship');
+        $this->db->group_by('created_at');
+        return $this->db->get()->result();
+    }
+
+    function getChartDailyAccount()
+    {
+        $this->db->select('created_at, COUNT(created_at) as count');
+        $this->db->from('tb_auth');
+        $this->db->group_by('created_at');
+        return $this->db->get()->result();
+    }
 
 
     function countDashboard(){
@@ -628,6 +643,38 @@ class M_admin extends CI_Model
         $web_youtube = $this->input->post('web_youtube');
         $this->db->where('key', 'web_youtube');
         $this->db->update('tb_settings', ['value' => $web_youtube]);
+
+        return true;
+    }
+
+    // mailer
+    function changeMailerInfo()
+    {
+        if($this->session->userdata('role') == 0):
+            $mailer_mode = $this->input->post('mailer_mode');
+            $this->db->where('key', 'mailer_mode');
+            $this->db->update('tb_settings', ['value' => $mailer_mode]);
+
+            $mailer_host = $this->input->post('mailer_host');
+            $this->db->where('key', 'mailer_host');
+            $this->db->update('tb_settings', ['value' => $mailer_host]);
+
+            $mailer_port = $this->input->post('mailer_port');
+            $this->db->where('key', 'mailer_port');
+            $this->db->update('tb_settings', ['value' => $mailer_port]);
+        endif;
+
+        $mailer_alias = $this->input->post('mailer_alias');
+        $this->db->where('key', 'mailer_alias');
+        $this->db->update('tb_settings', ['value' => $mailer_alias]);
+
+        $mailer_username = $this->input->post('mailer_username');
+        $this->db->where('key', 'mailer_username');
+        $this->db->update('tb_settings', ['value' => $mailer_username]);
+
+        $mailer_password = $this->input->post('mailer_password');
+        $this->db->where('key', 'mailer_password');
+        $this->db->update('tb_settings', ['value' => $mailer_password]);
 
         return true;
     }

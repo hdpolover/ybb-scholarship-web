@@ -4,7 +4,7 @@
 
 		<div class="col-md-6 col-sm-12">
 
-			<form action="<?= site_url('scholarship/applyScholarship');?>" method="POST" enctype="multipart/form-data">
+			<form action="<?= site_url('scholarship/applyScholarship');?>" method="POST" enctype="multipart/form-data" class="js-validate needs-validation" novalidate>
 
 				<div id="halaman-1">
 
@@ -332,7 +332,7 @@
 									<div class="js-quantity-counter row align-items-center">
 										<div class="col">
 											<!-- <span class="d-block small">Select quantity</span> -->
-											<input class="js-result form-control form-control-quantity-counter" name="semester"
+											<input class="js-result form-control form-control-quantity-counter"id="formSemester" name="semester"
 												type="text" value="1">
 										</div>
 										<!-- End Col -->

@@ -96,6 +96,7 @@ class M_auth extends CI_Model
             'user_id' => $user_id,
             'email' => $email,
             'password' => password_hash($password, PASSWORD_DEFAULT),
+            'created_at' => time()
         ];
 
         $this->db->insert('tb_auth', $auth);

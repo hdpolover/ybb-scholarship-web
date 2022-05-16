@@ -340,9 +340,9 @@ class Mailer{
                                           <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
                                           <p style="font-size: 14px; line-height: 140%;"><span
                                               style="font-size: 22px; line-height: 30.8px; font-family: Cabin, sans-serif;"><strong><span
-                                                  style="line-height: 30.8px; font-size: 22px;">Thanks.</span></strong></span><br /><span
+                                                  style="line-height: 30.8px; font-size: 22px;">Terima kasih, salam.</span></strong></span><br /><span
                                               style="font-size: 18px; line-height: 25.2px; font-family: Cabin, sans-serif;">YBB
-                                              Foundation</span></p>
+                                              Foundation Team</span></p>
                                         </div>
 
                                       </td>

@@ -384,19 +384,19 @@ class Authentication extends CI_Controller
             $email = htmlspecialchars($this->input->post("email"), true);
 
             // setting data untuk dikirim ke email
-            $subject = "Recovery Password Request - YBB Foundation Scholarship";
-            $message = 'Hi, we receive and recovery password request for <b>' . $email . '</b>.<br> Please click button down below to continued this process! <br><hr><br><center><a href="' . base_url() . 'recovery-password/' . $token . '" style="background-color: #377dff;border:none;color:#fff;padding:15px 32px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;">recovery password</a></center><br><br>Or click this link:<br>' . base_url() . 'recovery-password/' . $token . '<br><br><small class="text-muted">This link will be available for 24 Hours, if this link is expired. Please redo your recovery password request </small>';
+            $subject = "Permintaan reset password - YBB Foundation Scholarship";
+            $message = 'Hai, kami menerima permintaan reset password untuk email <b>' . $email . '</b>.<br> Harap click tombol dibawah ini untuk melanjutkan proses reset password! <br><hr><br><center><a href="' . base_url() . 'recovery-password/' . $token . '" style="background-color: #377dff;border:none;color:#fff;padding:15px 32px;text-align:center;text-decoration:none;display:inline-block;font-size:16px;">Reset Password</a></center><br><br>atau click link dibawah ini: <br>' . base_url() . 'recovery-password/' . $token . '<br><br><small class="text-muted">Link tersebut hanya akan valid selama 24 jam, jika link telah kadaluarsa, harap mengulang proses reset password</small>';
 
             // mengirim ke email
             if ($this->send_email($email, $subject, $message) == true) {
-                $this->session->set_flashdata('success', 'Successfully sent email, check your email inbox or spam folder');
+                $this->session->set_flashdata('success', 'Berhasil mengirim email, cek kotak masuk atau folder spam di emailmu');
                 redirect($this->agent->referrer());
             } else {
-                $this->session->set_flashdata('error', 'There was an error sending the password recovery link to your email !');
+                $this->session->set_flashdata('error', 'Terjadi kesalahan, saat mencoba mengirim link reset password ke emailmu!');
                 redirect($this->agent->referrer());
             }
         } else {
-            $this->session->set_flashdata('error', 'Can`t find account by email ' . $this->input->post("email") . ' !');
+            $this->session->set_flashdata('error', 'Tidak dapat menemukan akun dengan email ' . $this->input->post("email") . ' !');
             redirect($this->agent->referrer());
         }
     }
@@ -406,7 +406,7 @@ class Authentication extends CI_Controller
 
         // cek apakah token valid
         if ($this->M_auth->get_tokenRecovery($token) == false) {
-            $this->session->set_flashdata('error', 'The token link is not recognized, please do the account recovery process if this still happens');
+            $this->session->set_flashdata('error', 'Token link tidak diketahui, harap mengulang permintaan reset password jika hal ini masih terjadi');
             redirect(site_url('login'));
         } else {
 
@@ -427,7 +427,7 @@ class Authentication extends CI_Controller
                 // menghapus token recovery, meminta mengulangi proses
                 $this->M_auth->del_token($user->user_id, 2);
 
-                $this->session->set_flashdata('error', 'The password recovery URL token for your account has exceeded the limit. Please do the password recovery process again.');
+                $this->session->set_flashdata('error', 'Token reset password telah kadaluarsa, harap melakukan proses reset password kembali.');
                 redirect(site_url('forgot-password'));
             }
         }
@@ -456,25 +456,25 @@ class Authentication extends CI_Controller
                     $now = date("d F Y - H:i");
                     $email = htmlspecialchars($this->input->post("email"), true);
 
-                    $subject = "Password changes";
-                    $message = "Hi, your password for account YBB Foundation Scholarship <b>{$email}</b> has been changes at {$now}. <br>If you don't feel like changing your password, please contact the admin immediately.";
+                    $subject = "Perubahan password - YBB Foundation Scholarship Programs";
+                    $message = "Hai, password untuk akun YBB Foundation Scholarship Programs dengan email <b>{$email}</b> telah dirubah pada {$now}. <br>Jika kamu merasa tidak melakukan perubahan tersebut, harap segera hubungi admin kami.";
 
                     // mengirimemailperubahan password
                     $this->send_email(htmlspecialchars($this->input->post("email"), true), $subject, $message);
 
                     // menghapus session
-                    $this->session->set_flashdata('success', 'Successfully changed your password, please login using your new password');
+                    $this->session->set_flashdata('success', 'Berhasil mengubah password akunmu, harap login dengan password barumu');
                     redirect(site_url('login'));
                 } else {
-                    $this->session->set_flashdata('notif_error', 'Failed to reset your password, please try again');
+                    $this->session->set_flashdata('notif_error', 'Terjadi kesalahan saat mencoba mengubah passwordmu, coba lagi nanti');
                     redirect($this->agent->referrer());
                 }
             } else {
-                $this->session->set_flashdata('notif_warning', 'Confirm password is not the same');
+                $this->session->set_flashdata('notif_warning', 'Konfirmasi password tidak sama');
                 redirect($this->agent->referrer());
             }
         } else {
-            $this->session->set_flashdata('error', 'Email not recognized, please contact admin if this happens.');
+            $this->session->set_flashdata('error', 'Email tidak diketahui, hubungi admin jika ini masih terjadi.');
             redirect($this->agent->referrer());
         }
     }

@@ -28,6 +28,26 @@ class Admin extends CI_Controller
         }
     }
 
+    public function export(){
+        
+        $data = $this->input->get('data');
+
+        switch ($data) {
+            case 'scholarshipApplicants':
+                $this->excel->exportScholarship('applicants');
+                break;
+
+            case 'scholarshipMembers':
+                $this->excel->exportScholarship('members');
+                break;
+            
+            default:
+                echo "cant find";
+                break;
+        }
+
+    }
+
     public function index()
     {
         $count = $this->M_admin->countDashboard();
@@ -77,6 +97,21 @@ class Admin extends CI_Controller
             $data['arrChartGender']['gender'][] = "'".$val->gender."'";
             $data['arrChartGender']['jmlPeserta'][] = $val->count;
         endforeach;
+
+        // daiily chart
+        $statChartDaily = $this->M_admin->getChartDaily();
+        foreach ($statChartDaily as $val):
+            $data['arrChartDaily']['created_at'][] = "'".date("Y-m-d\TH:i:s\.v\Z", $val->created_at)."'";
+            $data['arrChartDaily']['jmlPeserta'][] = $val->count;
+        endforeach;
+
+        // daily  account chart
+        $statChartDailyAccount = $this->M_admin->getChartDailyAccount();
+        foreach ($statChartDailyAccount as $val):
+            $data['arrChartDailyAccount']['created_at'][] = "'".date("Y-m-d\TH:i:s\.v\Z", $val->created_at)."'";
+            $data['arrChartDailyAccount']['jmlPeserta'][] = $val->count;
+        endforeach;
+
         
         $this->templateback->view('admin/statistik', $data);
     }
@@ -762,6 +797,29 @@ class Admin extends CI_Controller
             redirect(site_url('settings/website?page=basic'));
         } else {
             $this->session->set_flashdata('notif_warning', 'There is a problem when trying changes basic information, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    // mailer
+
+    function changeMailerInfo()
+    {
+        if ($this->M_admin->changeMailerInfo() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly changes mailer information');
+            redirect(site_url('settings/website?page=mailer'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying changes mailer information, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
+
+    function testMailer(){
+        if ($this->send_email($this->input->post('email'), 'Test email mailer for YBB Foundation Scholarship website', 'This is a Test Email on '.date('d M Y - H:i:s')) == true) {
+            $this->session->set_flashdata('success', 'Succesfuly test mailer for current setting');
+            redirect(site_url('settings/website?page=mailer'));
+        } else {
+            $this->session->set_flashdata('warning', 'There is a problem when trying test mailer, try again later');
             redirect($this->agent->referrer());
         }
     }

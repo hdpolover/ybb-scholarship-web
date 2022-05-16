@@ -2,7 +2,9 @@
 <div class="docs-page-header">
 	<div class="row align-items-center">
 		<div class="col-sm">
-			<h1 class="docs-page-header-title">Scholarship Members</h1>
+			<h1 class="docs-page-header-title">Scholarship Members
+				<a href="<?= site_url('admin/export?data=scholarshipMembers');?>" class="btn btn-success btn-sm float-end"><i class="bi bi-file-earmark-spreadsheet"></i> export</a>
+			</h1>
 			<p class="docs-page-header-text">List of all user that has been approved for scholarship
 				programs.</p>
 		</div>

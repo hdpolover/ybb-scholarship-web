@@ -44,6 +44,12 @@
         </div>
     </div>
 <div class="row">
+	<div class="col-md-12 com-sm-12 mb-4">
+		<div class="card card-body">
+			<h4 class="card-title">Registered Participans and Scholarship new Applicant per Day</h4>
+			<div id="chartGraphRegister"></div>
+		</div>
+	</div>
 	<div class="col-md-6 com-sm-12 mb-4">
 		<div class="card card-body">
 			<h4 class="card-title">Applicants by Field of Study</h4>
@@ -173,6 +179,35 @@
 			}]
 		};
 
+		var graphRegister = {
+		    series: [{
+		        name: 'Register Account',
+		        data: [<?= implode(',', $arrChartDailyAccount['jmlPeserta']) ?>]
+		    }, {
+		        name: 'Apply Scholarship',
+		        data: [<?= implode(',', $arrChartDaily['jmlPeserta']) ?>]
+		    }],
+		    chart: {
+		        height: 350,
+		        type: 'area'
+		    },
+		    dataLabels: {
+		        enabled: false
+		    },
+		    stroke: {
+		        curve: 'straight'
+		    },
+		    xaxis: {
+		        type: 'datetime',
+		        categories: [<?= implode(',', $arrChartDaily['created_at']) ?>]
+		    },
+		    tooltip: {
+		        x: {
+		            format: 'dd/MM/yy HH:mm'
+		        },
+		    },
+		};
+
 
 		var chartGraphSchool = new ApexCharts(document.querySelector("#chartGraphSchool"),
 			graphSchool);
@@ -184,12 +219,15 @@
 			graphSemester);
 		var chartGraphGender = new ApexCharts(document.querySelector("#chartGraphGender"),
 			graphGender);
+		var chartGraphRegister = new ApexCharts(document.querySelector("#chartGraphRegister"),
+			graphRegister);
 
 		chartGraphSchool.render();
         chartGraphFieldStudy.render();
         chartGraphGPA.render();
         chartGraphSemester.render();
         chartGraphGender.render();
+        chartGraphRegister.render();
 
 	})
 

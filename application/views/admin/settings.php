@@ -48,6 +48,7 @@
         </a>
         <!-- End Card -->
     </div>
+    <?php endif;?>
     <!-- End Col -->
     <div class="col mb-4">
         <!-- Card -->
@@ -61,7 +62,6 @@
         <!-- End Card -->
     </div>
     <!-- End Col -->
-    <?php endif;?>
 </div>
 <!-- End Row -->
 

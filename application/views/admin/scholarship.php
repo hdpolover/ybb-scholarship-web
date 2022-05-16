@@ -2,7 +2,9 @@
 <div class="docs-page-header">
 	<div class="row align-items-center">
 		<div class="col-sm">
-			<h1 class="docs-page-header-title">Scholarship Applicant</h1>
+			<h1 class="docs-page-header-title">Scholarship Applicant
+				<a href="<?= site_url('admin/export?data=scholarshipApplicants');?>" class="btn btn-success btn-sm float-end"><i class="bi bi-file-earmark-spreadsheet"></i> export</a>
+			</h1>
 			<p class="docs-page-header-text">List of all user that has been send their applicant for scholarship
 				programs.</p>
 		</div>
@@ -51,17 +53,17 @@
 									switch ($user->status) {
 										case 1:
 											$class = 'warning';
-											$status = 'waiting verification';
+											$status = 'Menunggu verifikasi berkas';
 											break;
 
 										case 2:
 											$class = 'success';
-											$status = 'approved';
+											$status = 'Lolos tahap wawancara';
 											break;
 
 										case 3:
 											$class = 'danger';
-											$status = 'rejected';
+											$status = 'Ditolak';
 											break;
 										
 										default:

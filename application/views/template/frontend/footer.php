@@ -20,8 +20,7 @@
 				<ul class="list-unstyled list-py-1">
 					<li><a class="link-sm link-light"><i class="bi-geo-alt-fill me-1"></i> Jawa Timur - Indonesia</a>
 					</li>
-					<li><a class="link-sm link-light" href="tel:1-062-109-9222"><i
-								class="bi-telephone-inbound-fill me-1"></i> +1 (062) 109-9222</a></li>
+					<li><a class="link-sm link-light" href="https://wa.me/<?= $web_whatsapp;?>" target="_blank"><i class="bi-telephone-inbound-fill me-1"></i> <?= $web_whatsapp;?></a></li>
 				</ul>
 				<!-- End List -->
 
