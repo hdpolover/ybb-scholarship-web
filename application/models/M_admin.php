@@ -68,8 +68,8 @@ class M_admin extends CI_Model
 
 
     function countDashboard(){
-        $users = $this->db->get_where('tb_auth', ['active' => 1])->num_rows();
-        $members = $this->db->get_where('tb_scholarship', ['status' => 2])->num_rows();
+        $users = $this->db->get_where('tb_auth', ['active' => 1, 'role' => 2])->num_rows();
+        $members = $this->db->get_where('tb_scholarship', ['status' => 2, 'is_deleted' => 0])->num_rows();
 
         return ['users' => $users, 'members' => $members];
     }

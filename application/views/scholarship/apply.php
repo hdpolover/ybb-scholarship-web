@@ -78,33 +78,43 @@
 
 									<ul>
 
-										<li>@youtbreaktheboundaries: <a
+										<li>@youthbreaktheboundaries: <a
 												href="https://www.instagram.com/youthbreaktheboundaries/"
-												target="_blank">https://www.instagram.com/youthbreaktheboundaries/</a>
+												target="_blank">https://www.instagram.com/youthbreaktheboundaries</a>
 
 										</li>
 
-										<li>@ybbedu.id: <a href="https://www.instagram.com/ybbedu.id"
+										<li>@ybbedu.id: <a href="https://www.instagram.com/ybbedu.id/"
 												target="_blank">https://www.instagram.com/ybbedu.id</a></li>
 
 										<li>@istanbulyouthsummit: <a
-												href="https://www.instagram.com/istanbulyouthsummit"
+												href="https://www.instagram.com/istanbulyouthsummit/"
 												target="_blank">https://www.instagram.com/istanbulyouthsummit</a></li>
 
-										<li>@ybbkoreanschool: <a href="https://www.instagram.com/meysummit"
+										<li>@meysummit: <a
+												href="https://www.instagram.com/meysummit/"
 												target="_blank">https://www.instagram.com/meysummit</a></li>
 
-										<li>@ybbturkishschool: <a href="https://www.instagram.com/cairoyouthsummit"
-												target="_blank">https://www.instagram.com/turkishyouthsummit</a></li>
+										<li>@cairoyouthsummit: <a href="https://www.instagram.com/cairoyouthsummit"
+												target="_blank">https://www.instagram.com/cairoyouthsummit</a></li>
+
+										<li>@ybbenglishschool: <a href="https://www.instagram.com/ybbenglishschool"
+												target="_blank">https://www.instagram.com/ybbenglishschool/</a></li>
+
+										<li>@ybbturkishschool: <a href="https://www.instagram.com/ybbturkishschool"
+												target="_blank">https://www.instagram.com/ybbturkishschool</a></li>
 
 										<li>@ybbarabicschool: <a href="https://www.instagram.com/ybbarabicschool"
 												target="_blank">https://www.instagram.com/ybbarabicschool</a></li>
 
-										<li>@ybbenglishschool: <a href="https://www.instagram.com/ybbschool"
-												target="_blank">https://www.instagram.com/ybbschool</a></li>
+										<li>@ybbkoreanschool: <a href="https://www.instagram.com/ybbkoreanschool"
+												target="_blank">https://www.instagram.com/ybbkoreanschool</a></li>
 
 										<li>@ybbstore: <a href="https://www.instagram.com/ybbstore"
 												target="_blank">https://www.instagram.com/ybbstore</a></li>
+
+										<li>@dutapelajar.ybb: <a href="https://instagram.com/dutapelajar.ybb"
+												target="_blank">https://instagram.com/dutapelajar.ybb</a></li>
 
 									</ul>
 
@@ -115,8 +125,8 @@
 									Pengguna android: <a href="https://bit.ly/ybbAndroidApp"
 										target="_blank">https://bit.ly/ybbAndroidApp</a><br>
 
-									Pengguna Iphone: <a href="https://bit.ly/YBBIOSApp"
-										target="_blank">https://bit.ly/YBBIOSApp</a>
+									Pengguna Iphone: <a href="https://bit.ly/YBBiOSApps"
+										target="_blank">https://bit.ly/YBBiOSApps</a>
 
 								</p>
 
@@ -124,7 +134,7 @@
 
 									Pastikan telah subscribed pada akun youtube YBB kami:<br>
 
-									Youtube: <a href="https://bit.ly/YouTUbeYBB">https://bit.ly/YouTUbeYBB</a>
+									Youtube: <a href="https://bit.ly/YouTubeYBB">https://bit.ly/YouTubeYBB</a>
 
 								</p>
 
@@ -436,33 +446,43 @@
 
 									<ul>
 
-										<li>@youtbreaktheboundaries: <a
+										<li>@youthbreaktheboundaries: <a
 												href="https://www.instagram.com/youthbreaktheboundaries/"
-												target="_blank">https://www.instagram.com/youthbreaktheboundaries/</a>
+												target="_blank">https://www.instagram.com/youthbreaktheboundaries</a>
 
 										</li>
 
-										<li>@ybbedu.id: <a href="https://www.instagram.com/ybbedu.id"
+										<li>@ybbedu.id: <a href="https://www.instagram.com/ybbedu.id/"
 												target="_blank">https://www.instagram.com/ybbedu.id</a></li>
 
 										<li>@istanbulyouthsummit: <a
-												href="https://www.instagram.com/istanbulyouthsummit"
+												href="https://www.instagram.com/istanbulyouthsummit/"
 												target="_blank">https://www.instagram.com/istanbulyouthsummit</a></li>
 
-										<li>@ybbkoreanschool: <a href="https://www.instagram.com/meysummit"
+										<li>@meysummit: <a
+												href="https://www.instagram.com/meysummit/"
 												target="_blank">https://www.instagram.com/meysummit</a></li>
 
-										<li>@ybbturkishschool: <a href="https://www.instagram.com/cairoyouthsummit"
-												target="_blank">https://www.instagram.com/turkishyouthsummit</a></li>
+										<li>@cairoyouthsummit: <a href="https://www.instagram.com/cairoyouthsummit"
+												target="_blank">https://www.instagram.com/cairoyouthsummit</a></li>
+
+										<li>@ybbenglishschool: <a href="https://www.instagram.com/ybbenglishschool"
+												target="_blank">https://www.instagram.com/ybbenglishschool/</a></li>
+
+										<li>@ybbturkishschool: <a href="https://www.instagram.com/ybbturkishschool"
+												target="_blank">https://www.instagram.com/ybbturkishschool</a></li>
 
 										<li>@ybbarabicschool: <a href="https://www.instagram.com/ybbarabicschool"
 												target="_blank">https://www.instagram.com/ybbarabicschool</a></li>
 
-										<li>@ybbenglishschool: <a href="https://www.instagram.com/ybbschool"
-												target="_blank">https://www.instagram.com/ybbschool</a></li>
+										<li>@ybbkoreanschool: <a href="https://www.instagram.com/ybbkoreanschool"
+												target="_blank">https://www.instagram.com/ybbkoreanschool</a></li>
 
 										<li>@ybbstore: <a href="https://www.instagram.com/ybbstore"
 												target="_blank">https://www.instagram.com/ybbstore</a></li>
+
+										<li>@dutapelajar.ybb: <a href="https://instagram.com/dutapelajar.ybb"
+												target="_blank">https://instagram.com/dutapelajar.ybb</a></li>
 
 									</ul>
 
@@ -473,8 +493,8 @@
 									Pengguna android: <a href="https://bit.ly/ybbAndroidApp"
 										target="_blank">https://bit.ly/ybbAndroidApp</a><br>
 
-									Pengguna Iphone: <a href="https://bit.ly/YBBIOSApp"
-										target="_blank">https://bit.ly/YBBIOSApp</a>
+									Pengguna Iphone: <a href="https://bit.ly/YBBiOSApps"
+										target="_blank">https://bit.ly/YBBiOSApps</a>
 
 								</p>
 
@@ -482,7 +502,7 @@
 
 									Pastikan telah subscribed pada akun youtube YBB kami:<br>
 
-									Youtube: <a href="https://bit.ly/YouTUbeYBB">https://bit.ly/YouTUbeYBB</a>
+									Youtube: <a href="https://bit.ly/YouTubeYBB">https://bit.ly/YouTubeYBB</a>
 
 								</p>
 
