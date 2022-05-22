@@ -4,7 +4,8 @@
 
 		<div class="col-md-6 col-sm-12">
 
-			<form action="<?= site_url('scholarship/applyScholarship');?>" method="POST" enctype="multipart/form-data" class="js-validate needs-validation" novalidate>
+			<form action="<?= site_url('scholarship/applyScholarship');?>" method="POST" enctype="multipart/form-data"
+				class="js-validate needs-validation" novalidate>
 
 				<div id="halaman-1">
 
@@ -91,8 +92,7 @@
 												href="https://www.instagram.com/istanbulyouthsummit/"
 												target="_blank">https://www.instagram.com/istanbulyouthsummit</a></li>
 
-										<li>@meysummit: <a
-												href="https://www.instagram.com/meysummit/"
+										<li>@meysummit: <a href="https://www.instagram.com/meysummit/"
 												target="_blank">https://www.instagram.com/meysummit</a></li>
 
 										<li>@cairoyouthsummit: <a href="https://www.instagram.com/cairoyouthsummit"
@@ -149,6 +149,10 @@
 
 								<p>Dan pastikan telah menyebarkan informasi beasiswa ini, terutama pada postingan
 									instagram dan status instagram kamu</p>
+
+								<p>Upload Twibbon di feed dan story Instagram kamu dan jangan lupa tag ig
+									@youthbreaktheboundaries dengan caption tujuan kamu "Mengapa Ingin Mendaftar
+									Beasiswa YBB". Download twibbon disini: <a href="https://bit.ly/twibbonBeasiswaPemudaYBB" target="_blank">https://bit.ly/twibbonBeasiswaPemudaYBB</a></p>
 
 							</div>
 
@@ -342,8 +346,8 @@
 									<div class="js-quantity-counter row align-items-center">
 										<div class="col">
 											<!-- <span class="d-block small">Select quantity</span> -->
-											<input class="js-result form-control form-control-quantity-counter"id="formSemester" name="semester"
-												type="text" value="1">
+											<input class="js-result form-control form-control-quantity-counter"
+												id="formSemester" name="semester" type="text" value="1">
 										</div>
 										<!-- End Col -->
 
@@ -459,8 +463,7 @@
 												href="https://www.instagram.com/istanbulyouthsummit/"
 												target="_blank">https://www.instagram.com/istanbulyouthsummit</a></li>
 
-										<li>@meysummit: <a
-												href="https://www.instagram.com/meysummit/"
+										<li>@meysummit: <a href="https://www.instagram.com/meysummit/"
 												target="_blank">https://www.instagram.com/meysummit</a></li>
 
 										<li>@cairoyouthsummit: <a href="https://www.instagram.com/cairoyouthsummit"
@@ -517,6 +520,10 @@
 
 								<p>Dan pastikan telah menyebarkan informasi beasiswa ini, terutama pada postingan
 									instagram dan status instagram kamu</p>
+
+								<p>Upload Twibbon di feed dan story Instagram kamu dan jangan lupa tag ig
+									@youthbreaktheboundaries dengan caption tujuan kamu "Mengapa Ingin Mendaftar
+									Beasiswa YBB". Download twibbon disini: <a href="https://bit.ly/twibbonBeasiswaPemudaYBB" target="_blank">https://bit.ly/twibbonBeasiswaPemudaYBB</a></p>
 
 							</div>
 
@@ -586,6 +593,18 @@
 
 								<input class="form-control form-control-sm" type="file" id="taggedFriends"
 									name="upload_tags" accept="image/*" required>
+								<small class="text-secondary">Unggah jpg, png, or jpeg file</small>
+							</div>
+
+							<div class="mb-3 pb-4 border-bottom">
+
+								<label for="twibbonUpload" class="js-file-attach form-label"
+									data-hs-file-attach-options='{"textTarget": "[for=\"customFile\"]", "allowTypes": [".png", ".jpeg", ".jpg"]}'>Bukti
+									telah memposting Twibbon<small
+										class="text-danger">*</small></label>
+
+								<input class="form-control form-control-sm" type="file" id="twibbonUpload"
+									name="upload_twibbon" accept="image/*" required>
 								<small class="text-secondary">Unggah jpg, png, or jpeg file</small>
 							</div>
 

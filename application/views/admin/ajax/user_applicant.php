@@ -260,6 +260,23 @@
 				</div>
 			</div>
 			<!-- End Accordion Item -->
+			<!-- Accordion Item -->
+			<div class="accordion-item">
+				<div class="accordion-header" id="upload_twibbon">
+					<a class="accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#collapseUploadTwibbon"
+						aria-expanded="false" aria-controls="collapseUploadTwibbon">
+						Proof that have upload Twibbon on instagram post
+					</a>
+				</div>
+				<div id="collapseUploadTwibbon" class="accordion-collapse collapse" aria-labelledby="upload_twibbon"
+					data-bs-parent="#accordionApplicant">
+					<div class="accordion-body">
+						<img src="<?= base_url().$scholar->upload_twibbon;?>"
+							alt="<?= base_url().$scholar->upload_twibbon;?>" class="w-100 h-auto border">
+					</div>
+				</div>
+			</div>
+			<!-- End Accordion Item -->
 		</div>
 		<!-- End Accordion -->
 	</div>

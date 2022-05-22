@@ -64,6 +64,7 @@ class Scholarship extends CI_Controller
         $upload_telegram = $this->uploader->uploadImageMulti($_FILES['upload_telegram'], 'upload_telegram', $path);
         $upload_story = $this->uploader->uploadImageMulti($_FILES['upload_story'], 'upload_story', $path);
         $upload_tags = $this->uploader->uploadImageMulti($_FILES['upload_tags'], 'upload_tags', $path);
+        $upload_twibbon = $this->uploader->uploadImageMulti($_FILES['upload_twibbon'], 'upload_twibbon', $path);
 
         $uploadData = [
             'scholar_id' => $scholar_id,
@@ -73,7 +74,8 @@ class Scholarship extends CI_Controller
             'upload_youtube' => $upload_youtube['filename'],
             'upload_telegram' => $upload_telegram['filename'],
             'upload_story' => $upload_story['filename'],
-            'upload_tags' => $upload_tags['filename']
+            'upload_tags' => $upload_tags['filename'],
+            'upload_twibbon' => $upload_twibbon['filename']
         ];
 
         if ($this->M_scholarship->applyScholarship($uploadData, $scholar_id) == true) {
@@ -85,7 +87,8 @@ class Scholarship extends CI_Controller
         }
     }
 
-    function manageApplicant(){
+    public function manageApplicant()
+    {
         $status = $this->input->post('status');
         if ($this->M_scholarship->manageApplicant() == true) {
             $this->session->set_flashdata('notif_success', 'Applicant request for YBB Scholarship program has been '.$status);
@@ -94,6 +97,5 @@ class Scholarship extends CI_Controller
             $this->session->set_flashdata('notif_warning', 'Terjadi kesalahan saat mendaftarkan diri ke beasiswa, coba lagi nanti');
             redirect($this->agent->referrer());
         }
-
     }
 }

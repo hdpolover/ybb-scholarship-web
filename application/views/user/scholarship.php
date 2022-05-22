@@ -319,6 +319,22 @@
 							</div>
 							<!-- End Row -->
 						</li>
+						<li class="list-group-item p-3">
+							<div class="row">
+								<div class="col-sm-9 mb-2 mb-sm-0">
+									<span class="h6">Bukti telah upload Twibbon pada postingan instagram</span>
+								</div>
+								<!-- End Col -->
+
+								<div class="col-sm-3 mb-2 mb-sm-0">
+									<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+										data-bs-target="#uploadTwibbon"><i class="bi bi-file-earmark-image-fill"></i> cek
+										file</button>
+								</div>
+								<!-- End Col -->
+							</div>
+							<!-- End Row -->
+						</li>
 					</ul>
 					<!-- End List Striped -->
 				</div>
@@ -453,3 +469,25 @@
 		</div>
 	</div>
 </div>
+
+
+<!-- Modal -->
+<div id="uploadTwibbon" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="detailUserTitle"
+	aria-hidden="true">
+	<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="detailUserTitle">File</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<img src="<?= base_url().$scholar->upload_twibbon;?>" alt="<?= base_url().$scholar->upload_twibbon;?>"
+					class="w-100 h-auto">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-white" data-bs-dismiss="modal">Tutup</button>
+			</div>
+		</div>
+	</div>
+</div>
+
