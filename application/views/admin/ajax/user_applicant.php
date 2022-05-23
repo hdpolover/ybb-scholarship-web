@@ -265,14 +265,13 @@
 				<div class="accordion-header" id="upload_twibbon">
 					<a class="accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#collapseUploadTwibbon"
 						aria-expanded="false" aria-controls="collapseUploadTwibbon">
-						Proof that have upload Twibbon on instagram post
+						Link Twibbon on instagram post applicant
 					</a>
 				</div>
 				<div id="collapseUploadTwibbon" class="accordion-collapse collapse" aria-labelledby="upload_twibbon"
 					data-bs-parent="#accordionApplicant">
 					<div class="accordion-body">
-						<img src="<?= base_url().$scholar->upload_twibbon;?>"
-							alt="<?= base_url().$scholar->upload_twibbon;?>" class="w-100 h-auto border">
+						<a href="<?= $scholar->upload_twibbon;?>" class="text-primary" target="_blank">Open link</a>
 					</div>
 				</div>
 			</div>

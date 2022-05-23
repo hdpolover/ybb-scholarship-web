@@ -34,9 +34,7 @@
 									selected for the program, our team will be in contact with you.</p>
 
 								<p>Before filling the form, make sure that you have read all the requirements and make
-									sure that you are eligible for the scholarship. Read here <a
-										href="https://bit.ly/jobdeskinterniys23-1"
-										target="_blank">https://bit.ly/jobdeskinterniys23-1</a>
+									sure that you are eligible for the scholarship.
 								</p>
 
 								<p>Thank you very much for signifying your interest in joining the program.</p>
@@ -598,14 +596,12 @@
 
 							<div class="mb-3 pb-4 border-bottom">
 
-								<label for="twibbonUpload" class="js-file-attach form-label"
-									data-hs-file-attach-options='{"textTarget": "[for=\"customFile\"]", "allowTypes": [".png", ".jpeg", ".jpg"]}'>Bukti
-									telah memposting Twibbon<small
+								<label for="twibbonUpload" class="form-label">Link telah memposting Twibbon<small
 										class="text-danger">*</small></label>
 
-								<input class="form-control form-control-sm" type="file" id="twibbonUpload"
-									name="upload_twibbon" accept="image/*" required>
-								<small class="text-secondary">Unggah jpg, png, or jpeg file</small>
+								<input class="form-control form-control-sm" type="text" id="twibbonUpload"
+									name="upload_twibbon" placeholder="Jawaban anda" required>
+								<small class="text-secondary">Kirimkan link postingan instagram</small>
 							</div>
 
 							<div class="border-top d-flex justify-content-between pt-5">

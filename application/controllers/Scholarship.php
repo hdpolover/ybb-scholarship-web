@@ -64,7 +64,6 @@ class Scholarship extends CI_Controller
         $upload_telegram = $this->uploader->uploadImageMulti($_FILES['upload_telegram'], 'upload_telegram', $path);
         $upload_story = $this->uploader->uploadImageMulti($_FILES['upload_story'], 'upload_story', $path);
         $upload_tags = $this->uploader->uploadImageMulti($_FILES['upload_tags'], 'upload_tags', $path);
-        $upload_twibbon = $this->uploader->uploadImageMulti($_FILES['upload_twibbon'], 'upload_twibbon', $path);
 
         $uploadData = [
             'scholar_id' => $scholar_id,
@@ -75,7 +74,7 @@ class Scholarship extends CI_Controller
             'upload_telegram' => $upload_telegram['filename'],
             'upload_story' => $upload_story['filename'],
             'upload_tags' => $upload_tags['filename'],
-            'upload_twibbon' => $upload_twibbon['filename']
+            'upload_twibbon' => $this->input->post('upload_twibbon')
         ];
 
         if ($this->M_scholarship->applyScholarship($uploadData, $scholar_id) == true) {
