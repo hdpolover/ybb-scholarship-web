@@ -18,7 +18,7 @@ class Admin extends CI_Controller
                 $uri = uri_string();
             }
             $this->session->set_userdata('redirect', $uri);
-            $this->session->set_flashdata('notif_warning', "Please login, to continued");
+            $this->session->set_flashdata('notif_warning', "Please login to continue");
             redirect('login');
         }
 
@@ -231,7 +231,7 @@ class Admin extends CI_Controller
             $this->load->view('admin/ajax/user_detail', $data);
 
 		} else {
-			echo "<center class='py-5'><h4>There is an error when trying get user datail !</h4></center>";
+			echo "<center class='py-5'><h4>There is an error when trying get user's datails!</h4></center>";
 		}
     }
 
@@ -245,7 +245,7 @@ class Admin extends CI_Controller
             $this->load->view('admin/ajax/user_applicant', $data);
 
 		} else {
-			echo "<center class='py-5'><h4>There is an error when trying get user applicant data`s !</h4></center>";
+			echo "<center class='py-5'><h4>There is an error when trying get user applicant's data!</h4></center>";
 		}
     }
 
@@ -259,7 +259,7 @@ class Admin extends CI_Controller
             $this->load->view('admin/ajax/edit_hero', $data);
 
 		} else {
-			echo "<center class='py-5'><h4>There is an error when trying get hero data`s !</h4></center>";
+			echo "<center class='py-5'><h4>There is an error when trying get hero's data!</h4></center>";
 		}
     }
 
@@ -273,7 +273,7 @@ class Admin extends CI_Controller
             $this->load->view('admin/ajax/edit_annoucement', $data);
 
 		} else {
-			echo "<center class='py-5'><h4>There is an error when trying get user applicant data`s !</h4></center>";
+			echo "<center class='py-5'><h4>There is an error when trying get user applicant's data!</h4></center>";
 		}
     }
 
@@ -281,10 +281,10 @@ class Admin extends CI_Controller
     {
         $subject = $this->input->post('subject');
         if ($this->M_admin->addAnnouncement() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly post announcement '.$subject);
+            $this->session->set_flashdata('notif_success', 'Succesfuly posted the announcement '.$subject);
             redirect(site_url('information/announcement'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying post announcement, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to post the announcement, try again later');
             redirect($this->agent->referrer());
         }
     }
@@ -293,10 +293,10 @@ class Admin extends CI_Controller
     {
         $subject = $this->input->post('subject');
         if ($this->M_admin->editAnnouncement() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly edit announcement '.$subject);
+            $this->session->set_flashdata('notif_success', 'Succesfuly editted the  announcement '.$subject);
             redirect(site_url('information/announcement'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit announcement, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to edit the announcement, try again later');
             redirect($this->agent->referrer());
         }
     }
@@ -305,10 +305,10 @@ class Admin extends CI_Controller
     {
         $subject = $this->input->post('subject');
         if ($this->M_admin->deleteAnnouncement() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly delete announcement '.$subject);
+            $this->session->set_flashdata('notif_success', 'Succesfuly deleted announcement '.$subject);
             redirect(site_url('information/announcement'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying delete announcement, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to delete the announcement, try again later');
             redirect($this->agent->referrer());
         }
     }
@@ -317,10 +317,10 @@ class Admin extends CI_Controller
 
     function changeContribute(){
         if ($this->M_admin->changeContribute() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly changes contribute content page');
+            $this->session->set_flashdata('notif_success', 'Succesfuly changed contribute content page');
             redirect(site_url('settings/website?page=contribute'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying changes contribute content page, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to change contribute content page, try again later');
             redirect($this->agent->referrer());
         }
     }
@@ -330,10 +330,10 @@ class Admin extends CI_Controller
     function addFaq()
     {
         if ($this->M_admin->addFaq() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly add new faq content');
+            $this->session->set_flashdata('notif_success', 'Succesfuly added a new faq content');
             redirect(site_url('settings/website?page=faq'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying add new faq,content try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to add new faq content, try again later');
             redirect($this->agent->referrer());
         }
     }
@@ -341,10 +341,10 @@ class Admin extends CI_Controller
     function editFaq()
     {
         if ($this->M_admin->editFaq() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly edit faq ');
+            $this->session->set_flashdata('notif_success', 'Succesfuly editted a faq ');
             redirect(site_url('settings/website?page=faq'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit faq, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to edit faq, try again later');
             redirect($this->agent->referrer());
         }
     }
@@ -352,10 +352,10 @@ class Admin extends CI_Controller
     function deleteFaq()
     {
         if ($this->M_admin->deleteFaq() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly delete faq ');
+            $this->session->set_flashdata('notif_success', 'Succesfuly deleted a faq ');
             redirect(site_url('settings/website?page=faq'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying delete faq, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to delete faq, try again later');
             redirect($this->agent->referrer());
         }
     }
@@ -365,10 +365,10 @@ class Admin extends CI_Controller
     function changeAboutContent()
     {
         if ($this->M_admin->changeAboutContent() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly changes about content page');
+            $this->session->set_flashdata('notif_success', 'Succesfuly changed the about content page');
             redirect(site_url('settings/website?page=about'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying changes about content page, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to change the about content page, try again later');
             redirect($this->agent->referrer());
         }
     }
@@ -383,10 +383,10 @@ class Admin extends CI_Controller
             
             if ($upload == true) {
                 if ($this->M_admin->addAboutGallery($upload['filename']) == true) {
-                    $this->session->set_flashdata('notif_success', 'Succesfuly add new Gallery Item');
+                    $this->session->set_flashdata('notif_success', 'Succesfuly added new Gallery Item');
                     redirect(site_url('settings/website?page=about'));
                 } else {
-                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying add new Gallery Item, try again later');
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying to add new Gallery Item, try again later');
                     redirect($this->agent->referrer());
                 }
             } else {
@@ -407,10 +407,10 @@ class Admin extends CI_Controller
             
             if ($upload == true) {
                 if ($this->M_admin->editAboutGallery($upload['filename']) == true) {
-                    $this->session->set_flashdata('notif_success', 'Succesfuly edit Gallery Item ');
+                    $this->session->set_flashdata('notif_success', 'Succesfuly editted the Gallery Item ');
                     redirect(site_url('settings/website?page=about'));
                 } else {
-                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit Gallery Item, try again later');
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying to edit the Gallery Item, try again later');
                     redirect($this->agent->referrer());
                 }
             } else {
@@ -419,10 +419,10 @@ class Admin extends CI_Controller
             }
         } else {
             if ($this->M_admin->editAboutGallery($this->input->post('old_image')) == true) {
-                $this->session->set_flashdata('notif_success', 'Succesfuly edit Gallery Item ');
+                $this->session->set_flashdata('notif_success', 'Succesfuly editted the Gallery Item ');
                 redirect(site_url('settings/website?page=about'));
             } else {
-                $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit Gallery Item, try again later');
+                $this->session->set_flashdata('notif_warning', 'There is a problem when trying to edit the Gallery Item, try again later');
                 redirect($this->agent->referrer());
             }
         }
@@ -431,10 +431,10 @@ class Admin extends CI_Controller
     function deleteAboutGallery()
     {
         if ($this->M_admin->deleteAboutGallery() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly delete Gallery Item ');
+            $this->session->set_flashdata('notif_success', 'Succesfuly deleted the Gallery Item ');
             redirect(site_url('settings/website?page=about'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying delete Gallery Item, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to delete the Gallery Item, try again later');
             redirect($this->agent->referrer());
         }
     }
@@ -449,10 +449,10 @@ class Admin extends CI_Controller
             
             if ($upload == true) {
                 if ($this->M_admin->changeOtherProgramContent($upload['filename']) == true) {
-                    $this->session->set_flashdata('notif_success', 'Succesfuly changes other program content page');
+                    $this->session->set_flashdata('notif_success', 'Succesfuly changed the other program content page');
                     redirect(site_url('settings/website?page=programs'));
                 } else {
-                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying changes other program content page, try again later');
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying to change the other program content page, try again later');
                     redirect($this->agent->referrer());
                 }
             } else {
@@ -461,10 +461,10 @@ class Admin extends CI_Controller
             }
         } else {
             if ($this->M_admin->changeOtherProgramContent(false) == true) {
-                $this->session->set_flashdata('notif_success', 'Succesfuly changes other program content page');
+                $this->session->set_flashdata('notif_success', 'Succesfuly changed the other program content page');
                 redirect(site_url('settings/website?page=programs'));
             } else {
-                $this->session->set_flashdata('notif_warning', 'There is a problem when trying changes other program content page, try again later');
+                $this->session->set_flashdata('notif_warning', 'There is a problem when trying to change the other program content page, try again later');
                 redirect($this->agent->referrer());
             }
         }
@@ -480,10 +480,10 @@ class Admin extends CI_Controller
             
             if ($upload == true) {
                 if ($this->M_admin->addOtherProgramContent($upload['filename']) == true) {
-                    $this->session->set_flashdata('notif_success', 'Succesfuly add new Other Program Content');
+                    $this->session->set_flashdata('notif_success', 'Succesfuly added a new Other Program Content');
                     redirect(site_url('settings/website?page=programs'));
                 } else {
-                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying add new Other Program Content, try again later');
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying to add a new Other Program Content, try again later');
                     redirect($this->agent->referrer());
                 }
             } else {
@@ -504,10 +504,10 @@ class Admin extends CI_Controller
             
             if ($upload == true) {
                 if ($this->M_admin->editOtherProgramContent($upload['filename']) == true) {
-                    $this->session->set_flashdata('notif_success', 'Succesfuly edit Other Program Content ');
+                    $this->session->set_flashdata('notif_success', 'Succesfuly editted the Other Program Content ');
                     redirect(site_url('settings/website?page=programs'));
                 } else {
-                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit Other Program Content, try again later');
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying to edit the Other Program Content, try again later');
                     redirect($this->agent->referrer());
                 }
             } else {
@@ -516,10 +516,10 @@ class Admin extends CI_Controller
             }
         } else {
             if ($this->M_admin->editOtherProgramContent($this->input->post('old_image')) == true) {
-                $this->session->set_flashdata('notif_success', 'Succesfuly edit Other Program Content ');
+                $this->session->set_flashdata('notif_success', 'Succesfuly editted the Other Program Content ');
                 redirect(site_url('settings/website?page=programs'));
             } else {
-                $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit Other Program Content, try again later');
+                $this->session->set_flashdata('notif_warning', 'There is a problem when trying to edit the Other Program Content, try again later');
                 redirect($this->agent->referrer());
             }
         }
@@ -528,10 +528,10 @@ class Admin extends CI_Controller
     function deleteOtherProgramContent()
     {
         if ($this->M_admin->deleteOtherProgramContent() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly delete Other Program Content ');
+            $this->session->set_flashdata('notif_success', 'Succesfuly deleted the Other Program Content ');
             redirect(site_url('settings/website?page=programs'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying delete Other Program Content, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to delete the Other Program Content, try again later');
             redirect($this->agent->referrer());
         }
     }
@@ -541,10 +541,10 @@ class Admin extends CI_Controller
     function changeHomeContent()
     {
         if ($this->M_admin->changeHomeContent() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly changes home content page');
+            $this->session->set_flashdata('notif_success', 'Succesfuly changed the home content page');
             redirect(site_url('settings/website?page=home'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying changes home content page, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to change the home content page, try again later');
             redirect($this->agent->referrer());
         }
     }
@@ -557,10 +557,10 @@ class Admin extends CI_Controller
             
             if ($upload == true) {
                 if ($this->M_admin->addHomeBenefit($upload['filename']) == true) {
-                    $this->session->set_flashdata('notif_success', 'Succesfuly add new Benefit Component');
+                    $this->session->set_flashdata('notif_success', 'Succesfuly added the new Benefit Component');
                     redirect(site_url('settings/website?page=home'));
                 } else {
-                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying add new Benefit Component, try again later');
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying to add the new Benefit Component, try again later');
                     redirect($this->agent->referrer());
                 }
             } else {
@@ -581,10 +581,10 @@ class Admin extends CI_Controller
             
             if ($upload == true) {
                 if ($this->M_admin->editHomeBenefit($upload['filename']) == true) {
-                    $this->session->set_flashdata('notif_success', 'Succesfuly edit Benefit Component ');
+                    $this->session->set_flashdata('notif_success', 'Succesfuly editted the Benefit Component ');
                     redirect(site_url('settings/website?page=home'));
                 } else {
-                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit Benefit Component, try again later');
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying to edit the Benefit Component, try again later');
                     redirect($this->agent->referrer());
                 }
             } else {
@@ -593,10 +593,10 @@ class Admin extends CI_Controller
             }
         } else {
             if ($this->M_admin->editHomeBenefit($this->input->post('old_image')) == true) {
-                $this->session->set_flashdata('notif_success', 'Succesfuly edit Benefit Component ');
+                $this->session->set_flashdata('notif_success', 'Succesfuly editted the Benefit Component ');
                 redirect(site_url('settings/website?page=home'));
             } else {
-                $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit Benefit Component, try again later');
+                $this->session->set_flashdata('notif_warning', 'There is a problem when trying to edit the Benefit Component, try again later');
                 redirect($this->agent->referrer());
             }
         }
@@ -605,10 +605,10 @@ class Admin extends CI_Controller
     function deleteHomeBenefit()
     {
         if ($this->M_admin->deleteHomeBenefit() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly delete Benefit Component ');
+            $this->session->set_flashdata('notif_success', 'Succesfuly deleted Benefit Component ');
             redirect(site_url('settings/website?page=home'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying delete Benefit Component, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to delete the Benefit Component, try again later');
             redirect($this->agent->referrer());
         }
     }
@@ -622,10 +622,10 @@ class Admin extends CI_Controller
             
             if ($upload == true) {
                 if ($this->M_admin->addHomeGallery($upload['filename']) == true) {
-                    $this->session->set_flashdata('notif_success', 'Succesfuly add new Gallery Item');
+                    $this->session->set_flashdata('notif_success', 'Succesfuly added a new Gallery Item');
                     redirect(site_url('settings/website?page=home'));
                 } else {
-                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying add new Gallery Item, try again later');
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying to add the new Gallery Item, try again later');
                     redirect($this->agent->referrer());
                 }
             } else {
@@ -646,10 +646,10 @@ class Admin extends CI_Controller
             
             if ($upload == true) {
                 if ($this->M_admin->editHomeGallery($upload['filename']) == true) {
-                    $this->session->set_flashdata('notif_success', 'Succesfuly edit Gallery Item ');
+                    $this->session->set_flashdata('notif_success', 'Succesfuly editted the Gallery Item ');
                     redirect(site_url('settings/website?page=home'));
                 } else {
-                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit Gallery Item, try again later');
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying to edit the Gallery Item, try again later');
                     redirect($this->agent->referrer());
                 }
             } else {
@@ -658,10 +658,10 @@ class Admin extends CI_Controller
             }
         } else {
             if ($this->M_admin->editHomeGallery($this->input->post('old_image')) == true) {
-                $this->session->set_flashdata('notif_success', 'Succesfuly edit Gallery Item ');
+                $this->session->set_flashdata('notif_success', 'Succesfuly editted the Gallery Item ');
                 redirect(site_url('settings/website?page=home'));
             } else {
-                $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit Gallery Item, try again later');
+                $this->session->set_flashdata('notif_warning', 'There is a problem when trying to edit the Gallery Item, try again later');
                 redirect($this->agent->referrer());
             }
         }
@@ -670,10 +670,10 @@ class Admin extends CI_Controller
     function deleteHomeGallery()
     {
         if ($this->M_admin->deleteHomeGallery() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly delete Gallery Item ');
+            $this->session->set_flashdata('notif_success', 'Succesfuly deleted the Gallery Item ');
             redirect(site_url('settings/website?page=home'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying delete Gallery Item, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to delete the Gallery Item, try again later');
             redirect($this->agent->referrer());
         }
     }
@@ -688,10 +688,10 @@ class Admin extends CI_Controller
                 $icon = $this->uploader->uploadImageMulti($_FILES['icon'], 'icon', $path);
 
                 if ($this->M_admin->addHomeHero($upload['filename'], $icon['filename']) == true) {
-                    $this->session->set_flashdata('notif_success', 'Succesfuly add new Hero Component');
+                    $this->session->set_flashdata('notif_success', 'Succesfuly added a new Hero Component');
                     redirect(site_url('settings/website?page=home'));
                 } else {
-                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying add new Hero Component, try again later');
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying to add the new Hero Component, try again later');
                     redirect($this->agent->referrer());
                 }
             } else {
@@ -715,10 +715,10 @@ class Admin extends CI_Controller
 
                 if ($this->M_admin->editHomeHero($upload['filename'], $icon['filename']) == true) {
 
-                    $this->session->set_flashdata('notif_success', 'Succesfuly add new Hero Component');
+                    $this->session->set_flashdata('notif_success', 'Succesfuly added the new Hero Component');
                     redirect(site_url('settings/website?page=home'));
                 } else {
-                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit new Hero Component, try again later');
+                    $this->session->set_flashdata('notif_warning', 'There is a problem when trying to edit the new Hero Component, try again later');
                     redirect($this->agent->referrer());
                 }
             } else {
@@ -731,10 +731,10 @@ class Admin extends CI_Controller
             $icon = $this->uploader->uploadImageMulti($_FILES['icon'], 'icon', $path);
 
             if ($this->M_admin->editHomeHero($this->input->post('old_image'), $icon['filename']) == true) {
-                $this->session->set_flashdata('notif_success', 'Succesfuly add new Hero Component');
+                $this->session->set_flashdata('notif_success', 'Succesfuly added the new Hero Component');
                 redirect(site_url('settings/website?page=home'));
             } else {
-                $this->session->set_flashdata('notif_warning', 'There is a problem when trying edit new Hero Component, try again later');
+                $this->session->set_flashdata('notif_warning', 'There is a problem when trying to edit the new Hero Component, try again later');
                 redirect($this->agent->referrer());
             }
         }
@@ -743,10 +743,10 @@ class Admin extends CI_Controller
     function deleteHomeHero($id)
     {
         if ($this->M_admin->deleteHomeHero($id) == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly delete Hero Component ');
+            $this->session->set_flashdata('notif_success', 'Succesfuly deleted the Hero Component ');
             redirect(site_url('settings/website?page=home'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying delete Hero Component, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to delete the Hero Component, try again later');
             redirect($this->agent->referrer());
         }
     }
@@ -756,10 +756,10 @@ class Admin extends CI_Controller
     function addTimeline()
     {
         if ($this->M_admin->addTimeline() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly add Timeline ');
+            $this->session->set_flashdata('notif_success', 'Succesfuly added a Timeline ');
             redirect(site_url('information/timeline'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying add Timeline, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to add the Timeline, try again later');
             redirect($this->agent->referrer());
         }
 
@@ -768,10 +768,10 @@ class Admin extends CI_Controller
     function editTimeline()
     {
         if ($this->M_admin->editTimeline() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly change Timeline ');
+            $this->session->set_flashdata('notif_success', 'Succesfuly changed the Timeline ');
             redirect(site_url('information/timeline'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying change Timeline, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to change the Timeline, try again later');
             redirect($this->agent->referrer());
         }
 
@@ -780,10 +780,10 @@ class Admin extends CI_Controller
     function deleteTimeline()
     {
         if ($this->M_admin->deleteTimeline() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly delete Timeline ');
+            $this->session->set_flashdata('notif_success', 'Succesfuly deleted the Timeline ');
             redirect(site_url('information/timeline'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying delete Timeline, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to delete the Timeline, try again later');
             redirect($this->agent->referrer());
         }
     }
@@ -793,10 +793,10 @@ class Admin extends CI_Controller
     function changeBasicInfo()
     {
         if ($this->M_admin->changeBasicInfo() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly changes basic information');
+            $this->session->set_flashdata('notif_success', 'Succesfuly changed basic information');
             redirect(site_url('settings/website?page=basic'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying changes basic information, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to change basic information, try again later');
             redirect($this->agent->referrer());
         }
     }
@@ -806,20 +806,20 @@ class Admin extends CI_Controller
     function changeMailerInfo()
     {
         if ($this->M_admin->changeMailerInfo() == true) {
-            $this->session->set_flashdata('notif_success', 'Succesfuly changes mailer information');
+            $this->session->set_flashdata('notif_success', 'Succesfuly changed mailer information');
             redirect(site_url('settings/website?page=mailer'));
         } else {
-            $this->session->set_flashdata('notif_warning', 'There is a problem when trying changes mailer information, try again later');
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to change mailer information, try again later');
             redirect($this->agent->referrer());
         }
     }
 
     function testMailer(){
         if ($this->send_email($this->input->post('email'), 'Test email mailer for YBB Foundation Scholarship website', 'This is a Test Email on '.date('d M Y - H:i:s')) == true) {
-            $this->session->set_flashdata('success', 'Succesfuly test mailer for current setting');
+            $this->session->set_flashdata('success', 'Succesfuly tested mailer for the current setting');
             redirect(site_url('settings/website?page=mailer'));
         } else {
-            $this->session->set_flashdata('warning', 'There is a problem when trying test mailer, try again later');
+            $this->session->set_flashdata('warning', 'There is a problem when trying to test mailer, try again later');
             redirect($this->agent->referrer());
         }
     }

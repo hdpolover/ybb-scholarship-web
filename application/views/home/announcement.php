@@ -22,7 +22,7 @@
 
 	<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 mb-5 justify-content-center">
 		<?php if(empty($announcement)):?>
-		<h4 class="modal-title text-center">Mohon maaf, tidak dapat menemukan satupun pengumuman terbaru</h4>
+		<h4 class="modal-title text-center">Mohon maaf, tidak dapat menemukan pengumuman terbaru</h4>
 		<?php else:?>
 		<?php foreach ($announcement as $val):?>
 		<div class="col mb-5">

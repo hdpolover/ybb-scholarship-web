@@ -3,7 +3,7 @@
 	<div class="row align-items-center">
 		<div class="col-sm">
 			<h1 class="docs-page-header-title">Website Settings for contribute page</h1>
-			<p class="docs-page-header-text">Manage contribute page content in here.</p>
+			<p class="docs-page-header-text">Manage contribute page contents.</p>
 		</div>
 	</div>
 </div>

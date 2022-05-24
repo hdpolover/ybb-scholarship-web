@@ -48,7 +48,7 @@
   					</li>
   					<li class="nav-item" id="tour-dashboard">
   						<a class="nav-link <?= ($this->uri->segment(1) == "statistik" ? "active" : "") ?>"
-  							href="<?= site_url('statistik'); ?>">Statistik</a>
+  							href="<?= site_url('statistik'); ?>">Statistics</a>
   					</li>
 
   					<li class="nav-item my-2 my-lg-5"></li>
@@ -74,7 +74,7 @@
   					</li>
   					<li class="nav-item" id="tour-applicant">
   						<a class="nav-link <?= ($this->uri->segment(2) == "applicant" ? "active" : "") ?>"
-  							href="<?= site_url('scholarship/applicant'); ?>">Applicant
+  							href="<?= site_url('scholarship/applicant'); ?>">Applicants
   							<?php if($countScholar > 0):?>
   							<span class="ms-auto badge bg-primary"><?= $countScholar;?></span>
   							<?php endif;?>
@@ -92,7 +92,7 @@
   					</li>
   					<li class="nav-item" id="tour-announcement">
   						<a class="nav-link <?= ($this->uri->segment(2) == "announcement" ? "active" : "") ?>"
-  							href="<?= site_url('information/announcement'); ?>">Announcement</a>
+  							href="<?= site_url('information/announcement'); ?>">Announcements</a>
   					</li>
   					<li class="nav-item" id="tour-announcement">
   						<a class="nav-link <?= ($this->uri->segment(2) == "timeline" ? "active" : "") ?>"

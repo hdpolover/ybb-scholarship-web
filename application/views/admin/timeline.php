@@ -3,7 +3,7 @@
 	<div class="row align-items-center">
 		<div class="col-sm">
 			<h1 class="docs-page-header-title">Timeline</h1>
-			<p class="docs-page-header-text">Manage Timeline information in here.</p>
+			<p class="docs-page-header-text">Manage Timeline information.</p>
 		</div>
 	</div>
 </div>
@@ -16,7 +16,7 @@
 			<div class="card-header">
 				<h4 class="card-title">Manage Timeline
 					<button type="button" class="btn btn-primary btn-xs float-end" data-bs-toggle="modal"
-						data-bs-target="#tambah">Add new Timeline</button>
+						data-bs-target="#tambah">Add new</button>
 				</h4>
 			</div>
 			<div class="card-body">
@@ -26,7 +26,7 @@
 							<th width="10%">No.</th>
 							<th width="25%">Action</th>
 							<th>Title</th>
-							<th>period</th>
+							<th>Period</th>
 							<th>Desc</th>
 						</tr>
 					</thead>
@@ -92,7 +92,7 @@
 														class="text-secondary">(optional)</small></label>
 												<textarea type="text" id="inputDescription" class="form-control"
 													rows="4" name="desc"
-													placeholder="Other Program Description"><?= $val->desc;?></textarea>
+													placeholder="Description"><?= $val->desc;?></textarea>
 											</div>
 
 											<div class="modal-footer px-0 pb-0">
@@ -121,7 +121,7 @@
 										<form action="<?= site_url('admin/deleteTimeline');?>" method="post"
 											class="js-validate need-validate" novalidate>
 											<input type="hidden" name="id" value="<?= $val->id;?>">
-											<p>Are you sure want to delete this?</p>
+											<p>Are you sure you want to delete this?</p>
 											<div class="modal-footer px-0 pb-0">
 												<button type="button" class="btn btn-white btn-sm"
 													data-bs-dismiss="modal">Cancel</button>
@@ -170,12 +170,12 @@
 						<label for="inputDescription">Description <small
 								class="text-secondary">(optional)</small></label>
 						<textarea type="text" id="inputDescription" class="form-control" rows="4" name="desc"
-							placeholder="Other Program Description"></textarea>
+							placeholder="Description"></textarea>
 					</div>
 
 					<div class="modal-footer px-0 pb-0">
 						<button type="button" class="btn btn-white btn-sm" data-bs-dismiss="modal">Cancel</button>
-						<button type="submit" class="btn btn-primary btn-sm">Add new Timeline</button>
+						<button type="submit" class="btn btn-primary btn-sm">Publish</button>
 					</div>
 				</form>
 			</div>

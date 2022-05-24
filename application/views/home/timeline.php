@@ -3,7 +3,7 @@
 	<div class="container content-space-2 content-space-b-3 content-space-t-lg-5">
 		<div class="w-lg-65 text-center mx-lg-auto">
 			<h1 class="text-white mb-0">Jadwal</h1>
-			<span class="badge bg-warning text-dark rounded-pill mb-3">Jadwal kegiatan YBB Scholarship Programs</span>
+			<span class="badge bg-warning text-dark rounded-pill mb-3">Jadwal kegiatan YBB Scholarship Program</span>
 		</div>
 	</div>
 </div>

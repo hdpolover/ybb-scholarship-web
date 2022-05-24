@@ -3,7 +3,7 @@
 	<div class="row align-items-center">
 		<div class="col-sm">
 			<h1 class="docs-page-header-title">Mailer Settings for Mailer information</h1>
-			<p class="docs-page-header-text">Manage Mailer information in here.</p>
+			<p class="docs-page-header-text">Manage Mailer information.</p>
 		</div>
 	</div>
 </div>
@@ -65,7 +65,7 @@
 			<h4>Test Mailler Config</h4>
 			<form action="<?= site_url('admin/testMailer');?>" method="post" class="js-validate needs-validation" novalidate>
 				<div class="mb-3">
-					<label for="inputEmailTestingMailer">Input email for testing <small
+					<label for="inputEmailTestingMailer">Input an email for testing <small
 							class="text-danger">*</small></label>
 					<input type="mail" class="form-control form-control-sm" name="email" placeholder="Input Email"
 						required>

@@ -21,7 +21,7 @@
 
 							<div class="mb-5 text-center">
 
-								<p class="text-primary"><b>Perhatian !</b> Kamu dapat melakukan proses pendaftaran
+								<p class="text-primary"><b>Perhatian!</b> Kamu dapat melakukan proses pendaftaran
 									nanti,<br> jika berkas atau informasi yang dibutuhkan belum lengkap.<br> Untuk
 									mengakses halaman ini, login ke akunmu dan mengarah ke menu "Beasiswa".</p>
 
@@ -29,17 +29,13 @@
 							<hr class="mb-4">
 							<div class="mb-3">
 
-								<p>We appreciate your interest in being a apart of Youth Break the Boundaries (YBB)
-									scholarship Program! All applications will be reviewed. If your application is
-									selected for the program, our team will be in contact with you.</p>
+								<p>Kami mengapresiasi minat kamu untuk menjadi bagian dari Youth Break the Boundaries (YBB)
+									scholarship Program! Semua aplikasi beasiswa akan direview. Jika aplikasimu lolos terpilih untuk program kami, tim kami akan menghubungimu.</p>
 
-								<p>Before filling the form, make sure that you have read all the requirements and make
-									sure that you are eligible for the scholarship. Read here <a
-										href="https://bit.ly/jobdeskinterniys23-1"
-										target="_blank">https://bit.ly/jobdeskinterniys23-1</a>
+								<p>Sebelum mengisi formulir, pastikan kamu sudah membaca semua persyaratan dan pastikan juga kamu masuk dalam kategori penerima beasiswa.
 								</p>
 
-								<p>Thank you very much for signifying your interest in joining the program.</p>
+								<p>Terima kasih banyak.</p>
 
 								<p>INSIPER THE NEXT!</p>
 
@@ -48,7 +44,7 @@
 							<div class="border-top d-flex justify-content-between pt-5">
 
 								<a href="<?= site_url('user');?>" class="btn btn-primary"><i
-										class="bi bi-person-circle"></i> Kembali kehalaman profil</a>
+										class="bi bi-person-circle"></i> Kembali ke halaman profil</a>
 
 								<button type="button" class="btn btn-primary" onclick="scholarFormNext(1,2)">Saya
 									mengerti <i class="bi bi-vector-pen"></i></button>
@@ -132,7 +128,7 @@
 
 								<p>
 
-									Pastikan telah subscribed pada akun youtube YBB kami:<br>
+									Pastikan telah subscribe pada akun youtube YBB kami:<br>
 
 									Youtube: <a href="https://bit.ly/YouTubeYBB">https://bit.ly/YouTubeYBB</a>
 
@@ -148,7 +144,7 @@
 								</p>
 
 								<p>Dan pastikan telah menyebarkan informasi beasiswa ini, terutama pada postingan
-									instagram dan status instagram kamu</p>
+									instagram dan status instagram kamu.</p>
 
 								<p>Upload Twibbon di feed dan story Instagram kamu dan jangan lupa tag ig
 									@youthbreaktheboundaries dengan caption tujuan kamu "Mengapa Ingin Mendaftar
@@ -282,7 +278,7 @@
 
 							<div class="mb-3 pb-4 border-bottom">
 
-								<label class="form-label" for="formWhatsappNumber">Whatsapp <small
+								<label class="form-label" for="formWhatsappNumber">WhatsApp <small
 										class="text-danger">*</small></label>
 								<div class="input-group mb-3">
 									<span class="input-group-text" id="basic-formWhatsappNumber">+62</span>
@@ -402,7 +398,7 @@
 							<div class="mb-3 pb-4 border-bottom">
 
 								<label class="form-label" for="formVolunteer">Apakah kamu mempunyai pengalaman
-									organisasi atau relawan? jika iya ceritakan <small
+									organisasi atau relawan? jika iya, ceritakan. <small
 										class="text-danger">*</small></label>
 
 								<textarea type="text" id="formVolunteer" class="form-control form-control-sm"
