@@ -17,7 +17,7 @@
 	</div>
 
 	<div class="mb-4">
-		<label for="inputSubTitle" class="input-label">Sub Title
+		<label for="inputSubTitle" class="input-label">Subtitle
 			<small class="text-secondary">(optional)</small></label>
 		<input class="form-control form-control-sm" type="text" id="inputSubTitle" name="sub_title"
 			value="<?= $hero->desc;?>">

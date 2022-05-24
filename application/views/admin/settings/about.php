@@ -3,7 +3,7 @@
 	<div class="row align-items-center">
 		<div class="col-sm">
 			<h1 class="docs-page-header-title">Website Settings for about page</h1>
-			<p class="docs-page-header-text">Manage about page content in here.</p>
+			<p class="docs-page-header-text">Manage about page contents.</p>
 		</div>
 	</div>
 </div>
@@ -14,7 +14,7 @@
 	<div class="col-md-8">
 		<div class="card">
 			<div class="card-header">
-				<h4 class="card-title">Manage About content
+				<h4 class="card-title">Manage About contents
 					<a class="btn btn-ghost-secondary btn-sm float-end" href="<?= site_url('about-us'); ?>"
 						target="_blank">
 						Preview <i class="bi-box-arrow-up-right ms-1"></i>
@@ -33,10 +33,9 @@
 						<label class="form-label" for="inputAbout">About <small class="text-danger">*</small></label>
 						<textarea type="text" id="inputAbout" class="form-control" rows="4" name="web_about"
 							placeholder="About" required><?= $web_about;?></textarea>
-						<small class="text-secondary">If you insert an emoji or special characters and it become <b>???</b>, its
-							mean that
-							emoji
-							or special characters not yet supported and please change it to another
+						<small class="text-secondary">If you insert an emoji or special characters and it becomes <b>???</b>, it means that
+							the emoji
+							or special character is not yet supported and please change it to another
 							alternative.</small>
 					</div>
 					<div class="card-footer px-0">
@@ -45,7 +44,7 @@
 				</form>
 			</div>
 			<div class="card-header">
-				<h4 class="card-title">Manage Gallery component
+				<h4 class="card-title">Manage Gallery components
 					<button type="button" class="btn btn-primary btn-xs float-end" data-bs-toggle="modal"
 						data-bs-target="#tambah">Add new Gallery item</button>
 				</h4>
@@ -84,7 +83,7 @@
 							<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h4 class="modal-title" id="detailUserTitle">Edit FAQ content</h4>
+										<h4 class="modal-title" id="detailUserTitle">Edit Gallery Content</h4>
 										<button type="button" class="btn-close" data-bs-dismiss="modal"
 											aria-label="Close"></button>
 									</div>
@@ -126,7 +125,7 @@
 										<form action="<?= site_url('admin/deleteAboutGallery');?>" method="post"
 											class="js-validate need-validate" novalidate>
 											<input type="hidden" name="id" value="<?= $val->id;?>">
-											<p>Are you sure want to delete this Gallery Item?</p>
+											<p>Are you sure you want to delete this Gallery Item?</p>
 											<div class="modal-footer px-0 pb-0">
 												<button type="button" class="btn btn-white btn-sm"
 													data-bs-dismiss="modal">Cancel</button>

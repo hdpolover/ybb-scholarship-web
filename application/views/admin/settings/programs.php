@@ -3,7 +3,7 @@
 	<div class="row align-items-center">
 		<div class="col-sm">
 			<h1 class="docs-page-header-title">Website Settings for Other Programs Page</h1>
-			<p class="docs-page-header-text">Manage other programs page content in here.</p>
+			<p class="docs-page-header-text">Manage other programs page contents.</p>
 		</div>
 	</div>
 </div>
@@ -14,7 +14,7 @@
 	<div class="col-md-8">
 		<div class="card">
 			<div class="card-header">
-				<h4 class="card-title">Manage OtherProgram
+				<h4 class="card-title">Manage Other Programs
 					<a class="btn btn-ghost-secondary btn-sm float-end" href="<?= site_url('other-programs'); ?>"
 						target="_blank">
 						Preview <i class="bi-box-arrow-up-right ms-1"></i>
@@ -42,7 +42,7 @@
 				</form>
 			</div>
 			<div class="card-header">
-				<h4 class="card-title">Manage Other Program Content
+				<h4 class="card-title">Manage Other Program Contents
 					<button type="button" class="btn btn-primary btn-xs float-end" data-bs-toggle="modal"
 						data-bs-target="#tambah">Add new Other Program Content</button>
 				</h4>
@@ -74,7 +74,7 @@
 							<td><?= $val->title;?></td>
 							<td>
 								<button type="button" class="btn btn-primary btn-xs" data-bs-toggle="modal"
-									data-bs-target="#detail-<?= $val->id;?>">Read detail</button>
+									data-bs-target="#detail-<?= $val->id;?>">Read details</button>
 							</td>
 						</tr>
 
@@ -144,7 +144,7 @@
 										<form action="<?= site_url('admin/deleteOtherProgramContent');?>" method="post"
 											class="js-validate need-validate" novalidate>
 											<input type="hidden" name="id" value="<?= $val->id;?>">
-											<p>Are you sure want to delete this content?</p>
+											<p>Are you sure you want to delete this content?</p>
 											<div class="modal-footer px-0 pb-0">
 												<button type="button" class="btn btn-white btn-sm"
 													data-bs-dismiss="modal">Cancel</button>
@@ -162,7 +162,7 @@
 								role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h4 class="modal-title" id="detailUserTitle">Detail</h4>
+										<h4 class="modal-title" id="detailUserTitle">Details</h4>
 										<button type="button" class="btn-close" data-bs-dismiss="modal"
 											aria-label="Close"></button>
 									</div>

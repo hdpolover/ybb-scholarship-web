@@ -3,7 +3,7 @@
     <div class="row align-items-center">
         <div class="col-sm">
             <h1 class="docs-page-header-title">Website Settings</h1>
-            <p class="docs-page-header-text">Manage all information about your website in here.</p>
+            <p class="docs-page-header-text">Manage all information for the system.</p>
         </div>
     </div>
 </div>
@@ -100,7 +100,7 @@
             <img class="card-img p-2" src="<?= base_url(); ?>assets/svg/design-system/docs-tooltips.svg" alt="Image Description">
             <div class="card-body">
                 <h4 class="card-title text-inherit">FAQ</h4>
-                <p class="card-text small text-body">Manage list of FAQ.</p>
+                <p class="card-text small text-body">Manage list of FAQs.</p>
             </div>
         </a>
         <!-- End Card -->

@@ -2,8 +2,8 @@
 <div class="docs-page-header">
 	<div class="row align-items-center">
 		<div class="col-sm">
-			<h1 class="docs-page-header-title">Users list</h1>
-			<p class="docs-page-header-text">List of all user that has been registered on system.</p>
+			<h1 class="docs-page-header-title">Users</h1>
+			<p class="docs-page-header-text">List of all users that are registered on the system.</p>
 		</div>
 	</div>
 </div>
@@ -31,7 +31,7 @@
 							<td class="text-center"><?= $no++; ?></td>
 							<td>
 								<button type="button" data-bs-toggle="modal" id="<?= $user->user_id; ?>" data-bs-target="#detailUser"
-									class="btn btn-info btn-xs selector"><i class="bi bi-eye"></i> detail</button>
+									class="btn btn-info btn-xs selector"><i class="bi bi-eye"></i> details</button>
 							</td>
 							<td><b><?= $user->name; ?></b></td>
 							<td><a href="mailto:<?= $user->email; ?>"><?= $user->email; ?></a></td>
@@ -74,7 +74,7 @@
 	<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="detailUserTitle">User information</h5>
+				<h5 class="modal-title" id="detailUserTitle">User's information</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">

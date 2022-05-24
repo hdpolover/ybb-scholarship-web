@@ -3,7 +3,7 @@
 	<div class="row align-items-center">
 		<div class="col-sm">
 			<h1 class="docs-page-header-title">Website Settings for landing page</h1>
-			<p class="docs-page-header-text">Manage landing page content in here.</p>
+			<p class="docs-page-header-text">Manage landing page contents.</p>
 		</div>
 	</div>
 </div>
@@ -69,7 +69,7 @@
 											<div class="w-100 text-center">
 												<button class="btn btn-secondary btn-xs position-absolute"
 													style="top: 10px; right: 10px;">default</button>
-												<h5 class="text-white">Welcome to</h5>
+												<h5 class="text-white">Welcome to the </h5>
 												<h2 class="display-7 text-white mb-0">Youth Break the
 													Boundaries<br><small class="display-7">Foundation
 														Scholarship</small></h2>
@@ -145,10 +145,10 @@
 							class="js-validate need-validate" novalidate>
 							<div class="mb-3">
 								<div class="alert alert-primary" role="alert">
-									<small>If you insert an emoji or special characters and it become <b>???</b>, its
-										mean that
+									<small>If you insert an emoji or special character and it becomes <b>???</b>, it
+										means that the
 										emoji
-										or special characters not yet supported and please change it to another
+										or special character is not yet supported and please change it to another
 										alternative.</small>
 								</div>
 								<label class="form-label" for="inputAbout">Home Synopsis <small
@@ -271,7 +271,7 @@
 												<form action="<?= site_url('admin/deleteHomeBenefit');?>" method="post"
 													class="js-validate need-validate" novalidate>
 													<input type="hidden" name="id" value="<?= $val->id;?>">
-													<p>Are you sure want to delete this Benefit Item?</p>
+													<p>Are you sure you want to delete this Benefit Item?</p>
 													<div class="modal-footer px-0 pb-0">
 														<button type="button" class="btn btn-white btn-sm"
 															data-bs-dismiss="modal">Cancel</button>
@@ -423,7 +423,7 @@
 												<form action="<?= site_url('admin/deleteHomeGallery');?>" method="post"
 													class="js-validate need-validate" novalidate>
 													<input type="hidden" name="id" value="<?= $val->id;?>">
-													<p>Are you sure want to delete this Gallery Item?</p>
+													<p>Are you sure you want to delete this Gallery Item?</p>
 													<div class="modal-footer px-0 pb-0">
 														<button type="button" class="btn btn-white btn-sm"
 															data-bs-dismiss="modal">Cancel</button>
@@ -495,10 +495,10 @@
 					</div>
 
 					<div class="mb-4">
-						<label for="inputSubTitle" class="input-label">Sub Title <small
+						<label for="inputSubTitle" class="input-label">Subtitle <small
 								class="text-secondary">(optional)</small></label>
 						<input class="form-control form-control-sm" type="text" id="inputSubTitle" name="sub_title"
-							placeholder="Sub Title">
+							placeholder="Subtitle">
 					</div>
 
 					<div class="mb-3">

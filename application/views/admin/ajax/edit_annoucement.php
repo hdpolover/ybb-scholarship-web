@@ -2,7 +2,7 @@
 	<input type="hidden" name="id" value="<?= $item->id;?>">
 
 	<div class="mb-3">
-		<label for="inputSubject" class="input-label">Subject <small class="text-danger">*</small></label>
+		<label for="inputSubject" class="input-label">Title <small class="text-danger">*</small></label>
 		<input class="form-control form-control-sm" type="text" name="subject" value="<?= $item->subject;?>" required>
 	</div>
 
@@ -14,7 +14,7 @@
 					<?= $item->for_public == 'public' ? 'checked' : '';?>>
 				<label class="form-check-label text-dark" for="publicType-<?= $item->id;?>">
 					<b>Public</b>
-					<span class="d-block text-muted small">This will display on
+					<span class="d-block text-muted small">This will be displayed on the 
 						landing page</span>
 				</label>
 			</div>
@@ -26,7 +26,7 @@
 					<?= $item->for_users == 'users' ? 'checked' : '';?>>
 				<label class="form-check-label text-dark" for="usersType-<?= $item->id;?>">
 					<b>All users</b>
-					<span class="d-block text-muted small">This will display on
+					<span class="d-block text-muted small">This will be displayed on the 
 						every users account</span>
 				</label>
 			</div>
@@ -38,7 +38,7 @@
 					<?= $item->for_members == 'members' ? 'checked' : '';?>>
 				<label class="form-check-label text-dark" for="membersType-<?= $item->id;?>">
 					<b>Scholarship members</b>
-					<span class="d-block text-muted small">This will display on
+					<span class="d-block text-muted small">This will be displayed on the 
 						scholarship members account</span>
 				</label>
 			</div>

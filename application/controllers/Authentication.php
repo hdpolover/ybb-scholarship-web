@@ -287,19 +287,19 @@ class Authentication extends CI_Controller
                         // mengirimkan user untuk verifikasi email
                         redirect(site_url('email-activation?act=send-email'));
                     } else {
-                        $this->session->set_flashdata('error', 'Terjadi kesalahan saat mendaftarkan diri !');
+                        $this->session->set_flashdata('error', 'Terjadi kesalahan saat mendaftarkan diri!');
                         redirect($this->agent->referrer());
                     }
                 } else {
-                    $this->session->set_flashdata('warning', 'Email telah digunakan !');
+                    $this->session->set_flashdata('warning', 'Email telah digunakan!');
                     redirect($this->agent->referrer());
                 }
             } else {
-                $this->session->set_flashdata('warning', 'Password tidak sesuai !');
+                $this->session->set_flashdata('warning', 'Password tidak sesuai!');
                 redirect($this->agent->referrer());
             }
         } else {
-            $this->session->set_flashdata('warning', 'Email tidal valid, harap masukkan email yang valid !');
+            $this->session->set_flashdata('warning', 'Email tidal valid, harap masukkan email yang valid!');
             redirect($this->agent->referrer());
         }
     }

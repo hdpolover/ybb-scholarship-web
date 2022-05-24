@@ -2,11 +2,10 @@
 <div class="docs-page-header">
 	<div class="row align-items-center">
 		<div class="col-sm">
-			<h1 class="docs-page-header-title">Scholarship Applicant
+			<h1 class="docs-page-header-title">Scholarship Applicants
 				<a href="<?= site_url('admin/export?data=scholarshipApplicants');?>" class="btn btn-success btn-sm float-end"><i class="bi bi-file-earmark-spreadsheet"></i> export</a>
 			</h1>
-			<p class="docs-page-header-text">List of all user that has been send their applicant for scholarship
-				programs.</p>
+			<p class="docs-page-header-text">List of all users that have submitted their scholarship applications.</p>
 		</div>
 	</div>
 </div>
@@ -21,7 +20,7 @@
 						<tr>
 							<th class="text-center">No.</th>
 							<th></th>
-							<th>Date Apply</th>
+							<th>Applied date</th>
 							<th>Name</th>
 							<th>Email</th>
 							<th>Applicant Status</th>
@@ -39,8 +38,8 @@
 										class="bi bi-eye"></i> account</button>
 								<button type="button" data-bs-toggle="modal" id="<?= $user->user_id; ?>"
 									data-bs-target="#detailApplicant"
-									class="btn btn-primary btn-xs selectorApplicant"><i class="bi bi-eye"></i> applicant
-									data`s</button>
+									class="btn btn-primary btn-xs selectorApplicant"><i class="bi bi-eye"></i> applicant's
+									data</button>
 								<button type="button" data-bs-toggle="modal"
 									data-bs-target="#manageUser<?= $user->user_id; ?>" class="btn btn-warning btn-xs"><i
 										class="bi bi-bookmark-check"></i> manage</button>
@@ -81,7 +80,7 @@
 							<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h4 class="modal-title" id="detailUserTitle">Manage applicant</h4>
+										<h4 class="modal-title" id="detailUserTitle">Manage applicants</h4>
 										<button type="button" class="btn-close" data-bs-dismiss="modal"
 											aria-label="Close"></button>
 									</div>
@@ -99,7 +98,7 @@
 															<span class="d-block text-muted small">Applicant will
 																receive information that
 																<?= $user->gender == 'male' ? 'his' : ($user->gender == 'female' ? 'her' : 'their'); ?>
-																is approve by email and on
+																application is approved by email and on
 																<?= $user->gender == 'male' ? 'his' : ($user->gender == 'female' ? 'her' : 'their'); ?>
 																account</span>
 														</label>
@@ -115,7 +114,7 @@
 															<span class="d-block text-muted small">Applicant will
 																receive information that
 																<?= $user->gender == 'male' ? 'his' : ($user->gender == 'female' ? 'her' : 'their'); ?>
-																is rejected by email and on
+																appliaction is rejected by email and on
 																<?= $user->gender == 'male' ? 'his' : ($user->gender == 'female' ? 'her' : 'their'); ?>
 																account</span>
 														</label>
@@ -124,10 +123,10 @@
 												</div>
 											</div>
 											<div class="mb-3">
-												<label for="formMassage">Massage <small
+												<label for="formMassage">Message <small
 														class="text-secondary">(optional)</small></label>
 												<textarea class="form-control form-control-sm" name="message" rows="3"
-													placeholder="You can include a message for applicant"></textarea>
+													placeholder="You can include a message for the applicant"></textarea>
 											</div>
 											<div class="modal-footer px-0 pb-0">
 												<button type="button" class="btn btn-white btn-sm"

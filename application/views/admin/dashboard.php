@@ -1,22 +1,22 @@
     	<div class="row justify-content-md-between align-items-md-center mb-10">
     		<div class="col-md-7 col-xl-6">
     			<div class="mb-4">
-    				<h1 class="display-5 mb-3"><span class="h3">Welcome to</span><br><span class="text-primary text-highlight-warning">YBB Scholarship</span><br><span class="display-6">system</span></h1>
-    				<p class="lead">Manage your scholarship programs from share information to make report with ease in one platform.</p>
+    				<h1 class="display-5 mb-3"><span class="h3">Welcome to the </span><br><span class="text-primary text-highlight-warning">YBB Scholarship</span><br><span class="display-6">system</span></h1>
+    				<p class="lead">Manage your scholarship program from sharing information to making reports with ease in one platform.</p>
     			</div>
 
     			<div class="d-flex flex-wrap gap-2">
     				<!-- Card -->
     				<div class="bg-soft-secondary text-center rounded p-3" style="min-width: 7rem;">
     					<h2 class="h1 fw-normal mb-1"><?= $users;?></h2>
-    					<span class="text-cap mb-0" style="font-size: 0.75rem;">User</span>
+    					<span class="text-cap mb-0" style="font-size: 0.75rem;">Users</span>
     				</div>
     				<!-- End Card -->
 
     				<!-- Card -->
     				<div class="bg-soft-secondary text-center rounded p-3" style="min-width: 7rem;">
     					<h2 class="h1 fw-normal mb-1"><?= $members;?></h2>
-    					<span class="text-cap mb-0" style="font-size: 0.75rem;">Grantee</span>
+    					<span class="text-cap mb-0" style="font-size: 0.75rem;">Grantees</span>
     				</div>
     				<!-- End Card -->
 
@@ -46,7 +46,7 @@
     				<img class="card-img p-2" src="<?= base_url(); ?>assets/svg/design-system/docs-avatars.svg" alt="Image Description">
     				<div class="card-body">
     					<h4 class="card-title text-inherit">Manage users</h4>
-    					<p class="card-text small text-body">Manage user information.</p>
+    					<p class="card-text small text-body">Manage user information</p>
     				</div>
     			</a>
     			<!-- End Card -->
@@ -59,7 +59,7 @@
     				<img class="card-img p-2" src="<?= base_url(); ?>assets/svg/design-system/docs-toggle-state.svg" alt="Image Description">
     				<div class="card-body">
     					<h4 class="card-title text-inherit">Scholarship</h4>
-    					<p class="card-text small text-body">Manage scholarship applicant.</p>
+    					<p class="card-text small text-body">Manage scholarship applicants</p>
     				</div>
     			</a>
     			<!-- End Card -->
@@ -72,7 +72,7 @@
     				<img class="card-img p-2" src="<?= base_url(); ?>assets/svg/design-system/docs-sorting.svg" alt="Image Description">
     				<div class="card-body">
     					<h4 class="card-title text-inherit">Settings</h4>
-    					<p class="card-text small text-body">Customize landing page with ease.</p>
+    					<p class="card-text small text-body">Customize landing page</p>
     				</div>
     			</a>
     			<!-- End Card -->

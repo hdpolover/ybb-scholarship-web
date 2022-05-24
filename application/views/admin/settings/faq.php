@@ -3,7 +3,7 @@
 	<div class="row align-items-center">
 		<div class="col-sm">
 			<h1 class="docs-page-header-title">Website Settings for FAQ Page</h1>
-			<p class="docs-page-header-text">Manage FAQ page content in here.</p>
+			<p class="docs-page-header-text">Manage FAQ page contents.</p>
 		</div>
 	</div>
 </div>
@@ -13,7 +13,7 @@
 	<div class="col-md-12">
 		<div class="card">
 			<div class="card-header">
-				<h4 class="card-title">Manage FAQ component
+				<h4 class="card-title">Manage FAQ components
 					<button type="button" class="btn btn-primary btn-sm float-end" data-bs-toggle="modal"
 						data-bs-target="#tambah">Add new FAQ</button>
 					<a class="btn btn-ghost-secondary btn-sm float-end" style="margin-right: 10px;" href="<?= site_url('faq'); ?>" target="_blank">
