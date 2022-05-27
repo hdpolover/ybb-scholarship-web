@@ -12,6 +12,7 @@ class M_admin extends CI_Model
     function getChartFieldStudy(){
         $this->db->select('field_study, COUNT(*) as count');
         $this->db->from('tb_scholarship');
+        $this->db->where(['field_study !=' => '-', 'field_study !=' => ' - ', 'field_study !=' => ' ', 'field_study !=' => '', 'field_study !=' => null]);
         $this->db->group_by("field_study");
         return $this->db->get()->result();
     }
@@ -20,6 +21,7 @@ class M_admin extends CI_Model
     {
         $this->db->select('school, COUNT(*) as count');
         $this->db->from('tb_scholarship');
+        $this->db->where(['school !=' => '-', 'school !=' => ' - ', 'school !=' => ' ', 'school !=' => '', 'school !=' => null]);
         $this->db->group_by("school");
         return $this->db->get()->result();
     }
@@ -28,6 +30,7 @@ class M_admin extends CI_Model
     {
         $this->db->select('current_gpa, COUNT(*) as count');
         $this->db->from('tb_scholarship');
+        $this->db->where(['current_gpa !=' => '-', 'current_gpa !=' => ' - ', 'current_gpa !=' => ' ', 'current_gpa !=' => '', 'current_gpa !=' => null, 'current_gpa !=' => 0]);
         $this->db->group_by("current_gpa");
         return $this->db->get()->result();
     }
@@ -36,6 +39,7 @@ class M_admin extends CI_Model
     {
         $this->db->select('semester, COUNT(*) as count');
         $this->db->from('tb_scholarship');
+        $this->db->where(['semester !=' => '-', 'semester !=' => ' - ', 'semester !=' => ' ', 'semester !=' => '', 'semester !=' => null, 'semester !=' => 0]);
         $this->db->group_by("semester");
         return $this->db->get()->result();
     }
@@ -52,17 +56,17 @@ class M_admin extends CI_Model
 
     function getChartDaily()
     {
-        $this->db->select('created_at, COUNT(created_at) as count');
+        $this->db->select("FROM_UNIXTIME(created_at, '%Y-%m-%d') AS created_at, COUNT(FROM_UNIXTIME(created_at, '%Y-%m-%d')) AS count");
         $this->db->from('tb_scholarship');
-        $this->db->group_by('created_at');
+        $this->db->group_by("FROM_UNIXTIME(created_at, '%Y-%m-%d')");
         return $this->db->get()->result();
     }
 
     function getChartDailyAccount()
     {
-        $this->db->select('created_at, COUNT(created_at) as count');
+        $this->db->select("FROM_UNIXTIME(created_at, '%Y-%m-%d') AS created_at, COUNT(FROM_UNIXTIME(created_at, '%Y-%m-%d')) AS count");
         $this->db->from('tb_auth');
-        $this->db->group_by('created_at');
+        $this->db->group_by("FROM_UNIXTIME(created_at, '%Y-%m-%d')");
         return $this->db->get()->result();
     }
 

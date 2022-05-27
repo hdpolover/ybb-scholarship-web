@@ -68,15 +68,21 @@ class Admin extends CI_Controller
         // school chart
         $statChartSchool = $this->M_admin->getChartSchool();
         foreach($statChartSchool as $val):
-            $data['arrChartSchool']['school'][] = "'".$val->school."'";
-            $data['arrChartSchool']['jmlPeserta'][] = $val->count;
+            $school = $val->school == null ? 'Tidak Mengisi' : str_replace("'", "`", $val->school);
+            if($school != '-' || $school != ' - ' || $school != ''){
+                $data['arrChartSchool']['school'][] = "'".strip_tags($school)."'";
+                $data['arrChartSchool']['jmlPeserta'][] = $val->count;
+            }
         endforeach;
 
         // field of study chart
         $statChartField = $this->M_admin->getChartFieldStudy();
         foreach($statChartField as $val):
-            $data['arrChartField']['fieldStudy'][] = "'".$val->field_study."'";
-            $data['arrChartField']['jmlPeserta'][] = $val->count;
+            $field_study = $val->field_study == null ? 'Tidak Mengisi' : str_replace("'", "`", $val->field_study);
+            if($field_study != '-' || $field_study != ' - ' || $field_study != ''){
+                $data['arrChartField']['fieldStudy'][] = "'".strip_tags($field_study)."'";
+                $data['arrChartField']['jmlPeserta'][] = $val->count;
+            }
         endforeach;
 
         // current gpa chart
@@ -103,19 +109,21 @@ class Admin extends CI_Controller
         // daiily chart
         $statChartDaily = $this->M_admin->getChartDaily();
         foreach ($statChartDaily as $val):
-            $data['arrChartDaily']['created_at'][] = "'".date("Y-m-d\TH:i:s\.v\Z", $val->created_at)."'";
+            // $data['arrChartDaily']['created_at'][] = "'".date("Y-m-d\TH:i:s\.v\Z", $val->created_at)."'";
+            $data['arrChartDaily']['created_at'][] = "'".$val->created_at."'";
             $data['arrChartDaily']['jmlPeserta'][] = $val->count;
         endforeach;
 
         // daily  account chart
         $statChartDailyAccount = $this->M_admin->getChartDailyAccount();
         foreach ($statChartDailyAccount as $val):
-            $data['arrChartDailyAccount']['created_at'][] = "'".date("Y-m-d\TH:i:s\.v\Z", $val->created_at)."'";
+            // $data['arrChartDailyAccount']['created_at'][] = "'".date("Y-m-d\TH:i:s\.v\Z", $val->created_at)."'";
+            $data['arrChartDailyAccount']['created_at'][] = "'".$val->created_at."'";
             $data['arrChartDailyAccount']['jmlPeserta'][] = $val->count;
         endforeach;
+        $data['arrChartDailyDate'] = array_unique(array_merge($data['arrChartDailyAccount']['created_at'], $data['arrChartDaily']['created_at']), SORT_REGULAR);
 
-        
-        $this->templateback->view('admin/statistik', $data);
+        $this->templateback->view('admin/statistik_bar', $data);
     }
 
     public function userList()
