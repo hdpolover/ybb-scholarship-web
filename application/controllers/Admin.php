@@ -50,6 +50,8 @@ class Admin extends CI_Controller
 
     public function index()
     {
+        $data['pendaftaran_buka'] = $this->M_home->get_settingsValue('pendaftaran_buka');
+        $data['pendaftaran_max'] = $this->M_home->get_settingsValue('pendaftaran_max');
         $count = $this->M_admin->countDashboard();
 
         $data['users'] = $count['users'];
@@ -212,6 +214,13 @@ class Admin extends CI_Controller
                 $data['contribute_whatsapp'] = $this->M_home->get_settingsValue('contribute_whatsapp');
 
                 $this->templateback->view('admin/settings/contribute', $data);
+                break;
+
+            case 'scholarship':
+                $data['pendaftaran_buka'] = $this->M_home->get_settingsValue('pendaftaran_buka');
+                $data['pendaftaran_max'] = $this->M_home->get_settingsValue('pendaftaran_max');
+
+                $this->templateback->view('admin/settings/pendaftaran', $data);
                 break;
             
             default:
@@ -800,6 +809,20 @@ class Admin extends CI_Controller
             redirect($this->agent->referrer());
         }
     }
+
+    // register scholarship
+
+    function changeScholarReg()
+    {
+        if ($this->M_admin->changeScholarReg() == true) {
+            $this->session->set_flashdata('notif_success', 'Succesfuly change settings ');
+            redirect(site_url('settings/website?page=scholarship'));
+        } else {
+            $this->session->set_flashdata('notif_warning', 'There is a problem when trying to change settings, try again later');
+            redirect($this->agent->referrer());
+        }
+    }
+
 
     // mailer
 

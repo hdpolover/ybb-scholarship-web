@@ -69,6 +69,7 @@ $route['information/timeline'] = 'admin/timeline';
 $route['settings/website'] = 'admin/settingWebsite';
 
 
+
 // home
 $route['default_controller'] = 'home';
 $route['announcements'] = 'home/announcements';

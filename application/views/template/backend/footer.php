@@ -33,6 +33,7 @@
 <script src="<?= base_url(); ?>assets/vendor/prism/prism.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/fslightbox/index.js"></script>
 <script src="<?= base_url(); ?>assets/vendor/imask/dist/imask.min.js"></script>
+<script src="<?= base_url(); ?>assets/vendor/hs-quantity-counter/dist/hs-quantity-counter.min.js"></script>
 
 <!-- JS Front -->
 <script src="<?= base_url(); ?>assets/js/theme.min.js"></script>
@@ -103,6 +104,10 @@
 		// INITIALIZATION OF INPUT MASK
 		// =======================================================
 		HSCore.components.HSMask.init('.js-input-mask')
+		
+		// INITIALIZATION OF  QUANTITY COUNTER
+		// =======================================================
+		new HSQuantityCounter('.js-quantity-counter')
 
 
 		// INITIALIZATION OF SWIPER

@@ -62,6 +62,19 @@
         <!-- End Card -->
     </div>
     <!-- End Col -->
+    <!-- End Col -->
+    <div class="col mb-4">
+        <!-- Card -->
+        <a class="card card-sm card-transition h-100" href="<?= site_url('settings/website?page=scholarship'); ?>" data-aos="fade-up">
+            <img class="card-img p-2" src="<?= base_url(); ?>assets/svg/design-system/docs-file-attachments.svg" alt="Image Description">
+            <div class="card-body">
+                <h4 class="card-title text-inherit">Scholarship</h4>
+                <p class="card-text small text-body">Manage scholarship settings.</p>
+            </div>
+        </a>
+        <!-- End Card -->
+    </div>
+    <!-- End Col -->
 </div>
 <!-- End Row -->
 

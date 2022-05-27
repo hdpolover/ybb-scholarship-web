@@ -34,6 +34,10 @@ class M_home extends CI_Model
         return $this->db->get()->result();
     }
 
+    public function get_totalApplicantLolos($status){
+        return $this->db->get_where('tb_scholarship', $status)->num_rows();
+    }
+
     // home
     function get_homeSection($key){
         $query =  $this->db->get_where('tb_home', ['key' => $key, 'is_deleted' => 0]);

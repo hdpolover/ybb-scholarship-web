@@ -35,6 +35,10 @@ class User extends CI_Controller
 
     public function index()
     {
+        $data['pendaftaran_buka'] = $this->M_home->get_settingsValue('pendaftaran_buka');
+        $data['pendaftaran_max'] = $this->M_home->get_settingsValue('pendaftaran_max');
+        $data['applicant_lolos'] = $this->M_home->get_totalApplicantLolos(['status' => 2]);
+
         $data['user'] = $this->M_auth->get_auth($this->session->userdata('email'));
 
         $data['scholarship'] = $this->cekScholarshipStatus();
@@ -56,6 +60,10 @@ class User extends CI_Controller
 
     public function scholarship()
     {
+        $data['pendaftaran_buka'] = $this->M_home->get_settingsValue('pendaftaran_buka');
+        $data['pendaftaran_max'] = $this->M_home->get_settingsValue('pendaftaran_max');
+        $data['applicant_lolos'] = $this->M_home->get_totalApplicantLolos(['status' => 2]);
+
         $data['user'] = $this->M_auth->get_auth($this->session->userdata('email'));
 
         $data['scholarship'] = $this->cekScholarshipStatus();
@@ -178,6 +186,7 @@ class User extends CI_Controller
     public function cekScholarshipStatus()
     {
         $scholarshipStatus = $this->M_user->getScholarshipStatus($this->session->userdata('user_id'));
+
         switch ($scholarshipStatus) {
             // not yet apply
             case false:
@@ -188,7 +197,7 @@ class User extends CI_Controller
                 ];
                 break;
             // waiting verfication
-            case 1:
+            case "1":
                 $scholar = [
                     'status' => 1,
                     'alert' => 'info',
@@ -196,7 +205,7 @@ class User extends CI_Controller
                 ];
                 break;
             // accepted
-            case 2:
+            case "2":
                 $scholar = [
                     'status' => 2,
                     'alert' => 'success',
@@ -204,7 +213,7 @@ class User extends CI_Controller
                 ];
                 break;
             // rejected
-            case 3:
+            case "3":
                 $scholar = [
                     'status' => 3,
                     'alert' => 'danger',

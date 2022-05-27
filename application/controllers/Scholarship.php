@@ -25,7 +25,22 @@ class Scholarship extends CI_Controller
 
     public function index()
     {
-        $this->templateauth->view('scholarship/apply');
+        $pendaftaran_buka = $this->M_home->get_settingsValue('pendaftaran_buka');
+        $pendaftaran_max = $this->M_home->get_settingsValue('pendaftaran_max');
+        $applicant_lolos = $this->M_home->get_totalApplicantLolos(['status' => 2]);
+
+        if($pendaftaran_buka == 1){
+            if($pendaftaran_max <= $applicant_lolos){
+                $this->session->set_flashdata('notif_warning', "Mohon maaf, Kuota peserta beasiswa telah terpenuhi");
+                redirect('home');
+            }else{
+                $this->templateauth->view('scholarship/apply');
+            }
+        }else{
+            $this->session->set_flashdata('notif_warning', "Mohon maaf, pendaftaran beasiswa telah ditutup");
+            redirect('home');
+        }
+
     }
 
     public function applicant()

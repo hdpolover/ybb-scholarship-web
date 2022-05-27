@@ -647,6 +647,23 @@ class M_admin extends CI_Model
         return true;
     }
 
+    // scholarship setting
+    function changeScholarReg()
+    {
+
+        $pendaftaran_buka = $this->input->post('pendaftaran_buka');
+        $pendaftaran_buka = $pendaftaran_buka == 'on' ? 1 : 0;
+        $this->db->where('key', 'pendaftaran_buka');
+        $this->db->update('tb_settings', ['value' => $pendaftaran_buka]);
+
+        $pendaftaran_max = $this->input->post('pendaftaran_max');
+        $this->db->where('key', 'pendaftaran_max');
+        $this->db->update('tb_settings', ['value' => $pendaftaran_max]);
+
+        return true;
+    }
+
+
     // mailer
     function changeMailerInfo()
     {
