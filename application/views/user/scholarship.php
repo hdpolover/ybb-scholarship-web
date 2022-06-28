@@ -6,7 +6,7 @@
 		</div>
 		<!-- Body -->
 		<div class="card-body">
-			<?php if ($scholarship['status'] == false && ($pendaftaran_buka == 1 || $pendaftaran_max >= $applicant_lolos)):?>
+			<?php if ($scholarship['status'] == false && $pendaftaran_buka == 1 && $pendaftaran_max >= date("Y-m-d")):?>
 			<!-- CTA -->
 			<div class="card card-sm overflow-hidden">
 				<!-- Card -->
@@ -47,11 +47,10 @@
 			</div>
 			<hr class="mb-4">
 			<?php endif;?>
-			<?php if ($pendaftaran_buka == 0 || $pendaftaran_max >= $applicant_lolos && $scholarship['status'] == false):?>
-			<div class="alert alert-soft-warning" role="alert">
+			<?php if ($pendaftaran_buka == 0 || $pendaftaran_max < date("Y-m-d") && $scholarship['status'] == false):?>
+			<div class="alert alert-soft-danger" role="alert">
 				Mohon maaf, pendaftaran beasiswa telah ditutup !
 			</div>
-			<hr class="mb-4">
 			<?php endif;?>
 			<?php if ($scholarship['status'] != false):?>
 			<div class="row">

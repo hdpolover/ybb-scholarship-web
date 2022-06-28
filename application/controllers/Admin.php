@@ -228,6 +228,12 @@ class Admin extends CI_Controller
                 $data['pendaftaran_buka'] = $this->M_home->get_settingsValue('pendaftaran_buka');
                 $data['pendaftaran_max'] = $this->M_home->get_settingsValue('pendaftaran_max');
 
+                if($data['pendaftaran_max'] < date("Y-m-d")){
+                    $this->M_admin->tutupPendaftaran(0);
+                }else{
+                    $this->M_admin->tutupPendaftaran(1);
+                }
+                
                 $this->templateback->view('admin/settings/pendaftaran', $data);
                 break;
             
@@ -823,6 +829,12 @@ class Admin extends CI_Controller
     function changeScholarReg()
     {
         if ($this->M_admin->changeScholarReg() == true) {
+            $data['pendaftaran_max'] = $this->M_home->get_settingsValue('pendaftaran_max');
+
+            if($data['pendaftaran_max'] < date("Y-m-d")){
+                $this->M_admin->tutupPendaftaran(0);
+            }
+
             $this->session->set_flashdata('notif_success', 'Succesfuly change settings ');
             redirect(site_url('settings/website?page=scholarship'));
         } else {
