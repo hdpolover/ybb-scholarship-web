@@ -1,196 +1,110 @@
-<?php class M_user extends CI_Model
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
 
+class M_user extends CI_Model
 {
-
-
-
-
-
-    // login data user atau admin
-
-    public function login($data)
-
+    public function __construct()
     {
+        parent::__construct();
+    }
 
-        $result = $this->db->where('username', $data['username'])
-
-            ->where('password', $data['password'])
-
-            ->get('tbl_user');
-
-
-
-        if ($result->num_rows() > 0) {
-
-            $this->update_lastonline($result->row()->id_user);
-
-            return $result->row();
-
+    public function getScholarshipStatus($user_id)
+    {
+        $query = $this->db->get_where('tb_scholarship', ['user_id' => $user_id, 'is_deleted' => 0]);
+        if ($query->num_rows() > 0) {
+            return $query->row()->status;
         } else {
-
-            return null;
-
+            return false;
         }
-
     }
 
-    
-
-    public function signup($data)
-
+    public function getScholarshipData($user_id)
     {
+        $this->db->select('*');
+        $this->db->from('tb_scholarship sh');
+        $this->db->join('tb_scholarship_file sf', 'sh.scholar_id = sf.scholar_id', 'inner');
+        $this->db->where('sh.user_id', $user_id);
+        $query = $this->db->get();
 
-        $this->db->insert('tbl_user', $data);
-
-        return $this->db->insert_id();
-
+        if ($query->num_rows() > 0) {
+            return $query->row();
+        } else {
+            return false;
+        }
     }
 
+    public function get_annoucementsUser(){
+        return $this->db->get_where('tb_announcement', ['for_users' => 'users', 'for_members' => null, 'is_deleted' => 0])->result();
+    }
 
+    public function get_annoucementsMember(){
+        return $this->db->get_where('tb_announcement', ['for_members' => 'members', 'for_users' => null, 'is_deleted' => 0])->result();
+    }
 
-    //update terakhir online user pada sistem
+    public function get_annoucementsBoth(){
+        return $this->db->get_where('tb_announcement', ['for_members' => 'members', 'for_users' => 'users', 'is_deleted' => 0])->result();
+    }
 
-    public function update_lastonline($id_user)
-
+    public function getDetailUser($user_id)
     {
+        $this->db->select('*');
+        $this->db->from('tb_auth ta');
+        $this->db->join('tb_user tu', 'ta.user_id = tu.user_id', 'inner');
+        $this->db->where('ta.user_id', $user_id);
+        $query = $this->db->get();
+        if ($query->num_rows() > 0) {
+            return $query->row();
+        } else {
+            return false;
+        }
+    }
 
-        date_default_timezone_set('Asia/Jakarta');
+    public function updateProfile($picture)
+    {
+        $name = htmlspecialchars($this->input->post('name'), true);
+        $email = htmlspecialchars($this->input->post('email'), true);
+        $phone = htmlspecialchars($this->input->post('phone'), true);
+        $gender = htmlspecialchars($this->input->post('gender'), true);
 
-
-
-        $data = [
-
-            'last_activity' => date("Y-m-d H:i:s")
-
+        $dAuth = [
+            'email' => $email,
         ];
 
-        $this->db->where('id_user', $id_user);
+        if ($picture == null) {
+            $dUser = [
+                'name' => $name,
+                'phone' => $phone,
+                'gender' => $gender,
+            ];
+        } else {
+            $dUser = [
+                'picture' => $picture,
+                'name' => $name,
+                'phone' => $phone,
+                'gender' => $gender,
+            ];
+        }
 
-        $this->db->update('tbl_user', $data);
+        $this->db->where('user_id', $this->session->userdata('user_id'));
+        $this->db->update('tb_auth', $dAuth);
+
+        $this->db->where('user_id', $this->session->userdata('user_id'));
+        $this->db->update('tb_user', $dUser);
+        return ($this->db->affected_rows() != 1) ? false : true;
     }
 
 
-
-    public function total_admin()
+    public function resetPicture()
     {
-
-        $this->db->select('*');
-
-        $this->db->from('tbl_user');
-
-        $this->db->where('hak_akses', 'admin');
-
-        return $this->db->get()->num_rows();
+        $this->db->where('user_id', $this->session->userdata('user_id'));
+        $this->db->update('tb_user', ['picture' => null]);
+        return ($this->db->affected_rows() != 1) ? false : true;
     }
 
-
-
-    public function total_pengguna()
+    public function changePassword($password)
     {
-
-        $this->db->select('*');
-
-        $this->db->from('tbl_user');
-
-        $this->db->where('hak_akses', 'pengguna');
-
-        return $this->db->get()->num_rows();
+        $this->db->where('user_id', $this->session->userdata('user_id'));
+        $this->db->update('tb_auth', ['password' => password_hash($password, PASSWORD_DEFAULT)]);
+        return ($this->db->affected_rows() != 1) ? false : true;
     }
-
-
-
-
-
-    public function get_admin(){
-
-        $this->db->select('*');
-
-        $this->db->from('tbl_user');
-
-        $this->db->where('hak_akses', 'admin');
-
-        return $this->db->get()->result();   
-
-    }
-
-
-
-    public function get_pengguna(){
-
-        $this->db->select('*');
-
-        $this->db->from('tbl_user');
-
-        $this->db->where('hak_akses', 'pengguna');
-
-        return $this->db->get()->result();
-    }
-
-
-
-    public function get_penggunaDetail($id_user)
-    {
-
-        $this->db->select('*');
-
-        $this->db->from('tbl_user');
-
-        $this->db->where('id_user', $id_user);
-
-        return $this->db->get()->row();
-    }
-
-
-
-    public function insert($data){
-
-        $this->db->insert('tbl_user', $data);
-
-    }
-
-
-
-    
-
-    public function update($data, $id_user){
-
-        $this->db->where('id_user', $id_user);
-
-        $this->db->update('tbl_user', $data);
-
-    }
-
-
-
-    public function delete($id_user){
-
-        $this->db->where('id_user', $id_user);
-
-        $this->db->delete('tbl_user');
-
-    }
-
-
-
-
-
-    public function cek_email($email){
-
-        $this->db->where('email', $email);
-
-        return $this->db->get('tbl_user')->num_rows();
-
-    }
-
-
-
-    public function update_byemail($data, $email){
-
-        $this->db->where('email', $email);
-
-        $this->db->update('tbl_user', $data);   
-
-    }
-
 }
-

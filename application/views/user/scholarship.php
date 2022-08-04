@@ -6,9 +6,9 @@
 		</div>
 		<!-- Body -->
 		<div class="card-body">
-			<?php if ($scholarship['status'] == false && $pendaftaran_buka == 1 && $pendaftaran_max >= date("Y-m-d")):?>
+			<?php if ($scholarship['status'] == false && $pendaftaran_buka == 1 && $pendaftaran_max >= date("Y-m-d") || $this->session->userdata('user_id') == "USR-MLJWT-a88f8"):?>
 			<!-- CTA -->
-			<div class="card card-sm overflow-hidden">
+			<div class="card card-sm overflow-hidden mb-3">
 				<!-- Card -->
 				<div class="card-body">
 					<div class="row justify-content-md-start align-items-md-center text-center text-md-start">
@@ -49,7 +49,7 @@
 			<?php endif;?>
 			<?php if ($pendaftaran_buka == 0 || $pendaftaran_max < date("Y-m-d") && $scholarship['status'] == false):?>
 			<div class="alert alert-soft-danger" role="alert">
-				Mohon maaf, pendaftaran beasiswa telah ditutup !
+				Mohon maaf, pendaftaran beasiswa telah ditutup ! <?php if($this->session->userdata('user_id') == "USR-MLJWT-a88f8"):?> (toleransi untuk akun anda, dapat mendaftarkan data beasiswa) <?php endif;?>
 			</div>
 			<?php endif;?>
 			<?php if ($scholarship['status'] != false):?>

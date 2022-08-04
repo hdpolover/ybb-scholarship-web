@@ -2,7 +2,10 @@
 <div class="docs-page-header">
 	<div class="row align-items-center">
 		<div class="col-sm">
-			<h1 class="docs-page-header-title">Users</h1>
+			<h1 class="docs-page-header-title">Users
+				<a href="<?= site_url('admin/export?data=user-active');?>" class="btn btn-success btn-sm float-end"><i class="bi bi-file-earmark-spreadsheet"></i> export (activated)</a>
+				<a href="<?= site_url('admin/export?data=user-unverified');?>" class="btn btn-success btn-sm float-end" style="margin-right: 5px"><i class="bi bi-file-earmark-spreadsheet"></i> export (unverified)</a>
+			</h1>
 			<p class="docs-page-header-text">List of all users that are registered on the system.</p>
 		</div>
 	</div>

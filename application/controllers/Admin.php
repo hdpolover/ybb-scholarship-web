@@ -40,6 +40,14 @@ class Admin extends CI_Controller
             case 'scholarshipMembers':
                 $this->excel->exportScholarship('members');
                 break;
+
+            case 'user-active':
+                $this->excel->exportUsers(1);
+                break;
+
+            case 'user-unverified':
+                $this->excel->exportUsers(0);
+                break;
             
             default:
                 echo "cant find";

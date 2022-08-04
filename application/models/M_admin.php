@@ -72,7 +72,11 @@ class M_admin extends CI_Model
 
 
     function countDashboard(){
-        $users = $this->db->get_where('tb_auth', ['is_deleted' => 0, 'role' => 2])->num_rows();
+        $this->db->select('*');
+        $this->db->from('tb_user a');
+        $this->db->join('tb_auth b', 'a.user_id = b.user_id');
+        $this->db->where(['b.is_deleted' => 0, 'b.role' => 2, 'name !=' => null, 'name !=' => '', 'email !=' => null, 'email !=' => '']);
+        $users = $this->db->get()->num_rows();
         $members = $this->db->get_where('tb_scholarship', ['status' => 2, 'is_deleted' => 0])->num_rows();
 
         return ['users' => $users, 'members' => $members];
@@ -82,8 +86,8 @@ class M_admin extends CI_Model
         $this->db->select('*');
         $this->db->from('tb_user a');
         $this->db->join('tb_auth b', 'a.user_id = b.user_id');
-        $this->db->where(['b.is_deleted' => 0, 'b.role' => 2]);
-        $this->db->order_by('b.active DESC');
+        $this->db->where(['b.is_deleted' => 0, 'b.role' => 2, 'name !=' => null, 'name !=' => '', 'email !=' => null, 'email !=' => '']);
+        $this->db->order_by('b.active DESC, a.name ASC');
         return $this->db->get()->result();
     }
 
