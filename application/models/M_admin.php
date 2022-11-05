@@ -637,6 +637,9 @@ class M_admin extends CI_Model
         $this->db->where('key', 'web_whatsapp');
         $this->db->update('tb_settings', ['value' => $web_whatsapp]);
 
+        $this->db->where('key', 'contribute_whatsapp');
+        $this->db->update('tb_settings', ['value' => $web_whatsapp]);
+
         $web_facebook = $this->input->post('web_facebook');
         $this->db->where('key', 'web_facebook');
         $this->db->update('tb_settings', ['value' => $web_facebook]);

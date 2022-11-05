@@ -148,7 +148,7 @@
 
 								<p>Upload Twibbon di feed dan story Instagram kamu dan jangan lupa tag ig
 									@youthbreaktheboundaries dengan caption tujuan kamu "Mengapa Ingin Mendaftar
-									Beasiswa YBB". Download twibbon disini: <a href="https://bit.ly/twibbonBeasiswaPemudaYBB" target="_blank">https://bit.ly/twibbonBeasiswaPemudaYBB</a></p>
+									Beasiswa YBB". Download twibbon disini: <a href="https://drive.google.com/drive/folders/1KOl7_ggNRqstCRVK0QLMVQq7IfLvw4Ft" target="_blank">https://drive.google.com/drive/folders/1KOl7_ggNRqstCRVK0QLMVQq7IfLvw4Ft</a></p>
 
 							</div>
 
@@ -519,7 +519,7 @@
 
 								<p>Upload Twibbon di feed dan story Instagram kamu dan jangan lupa tag ig
 									@youthbreaktheboundaries dengan caption tujuan kamu "Mengapa Ingin Mendaftar
-									Beasiswa YBB". Download twibbon disini: <a href="https://bit.ly/twibbonBeasiswaPemudaYBB" target="_blank">https://bit.ly/twibbonBeasiswaPemudaYBB</a></p>
+									Beasiswa YBB". Download twibbon disini: <a href="https://drive.google.com/drive/folders/1KOl7_ggNRqstCRVK0QLMVQq7IfLvw4Ft" target="_blank">https://drive.google.com/drive/folders/1KOl7_ggNRqstCRVK0QLMVQq7IfLvw4Ft</a></p>
 
 							</div>
 

@@ -129,8 +129,13 @@ class Admin extends CI_Controller
             $data['arrChartDailyAccount']['created_at'][] = "'".$val->created_at."'";
             $data['arrChartDailyAccount']['jmlPeserta'][] = $val->count;
         endforeach;
-        $data['arrChartDailyDate'] = array_unique(array_merge($data['arrChartDailyAccount']['created_at'], $data['arrChartDaily']['created_at']), SORT_REGULAR);
-
+        
+        if(!empty($statChartDaily) && !empty(!empty($statChartDailyAccount))){
+            $data['arrChartDailyDate'] = array_unique(array_merge($data['arrChartDailyAccount']['created_at'], $data['arrChartDaily']['created_at']), SORT_REGULAR);
+        }else{
+            $data['arrChartDailyDate'] = null;
+        }
+        
         $this->templateback->view('admin/statistik_bar', $data);
     }
 

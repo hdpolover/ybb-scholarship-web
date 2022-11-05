@@ -62,7 +62,7 @@
 		<div class="col-lg-2 d-none d-lg-inline-block mt-lg-n10">
 			<!-- Logo -->
 			<div class="avatar avatar-xxl avatar-circle shadow-sm p-2 mx-auto">
-				<img class="avatar-img" src="<?= base_url();?>assets/images/logo/iys.png"
+				<img class="avatar-img" src="<?= base_url();?>assets/images/logo/ays.png"
 					alt="Image Description">
 			</div>
 			<!-- End Logo -->

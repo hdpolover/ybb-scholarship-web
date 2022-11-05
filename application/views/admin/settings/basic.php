@@ -36,7 +36,7 @@
 					<div class="mb-3">
 						<label for="inputWebsiteWhatsapp" class="form-label">Website Whatsapp<small
 								class="text-danger">*</small></label>
-						<input type="number" id="inputWebsiteWhatsapp" class="form-control form-control-sm"
+						<input type="text" id="inputWebsiteWhatsapp" class="form-control form-control-sm"
 							name="web_whatsapp" value="<?= $web_whatsapp;?>" required>
 					</div>
 					<div class="mb-3">
