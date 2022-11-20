@@ -96,6 +96,7 @@ class M_auth extends CI_Model
             'user_id' => $user_id,
             'email' => $email,
             'password' => password_hash($password, PASSWORD_DEFAULT),
+            'active' => 1, #change to 1 -> auto verif
             'created_at' => time()
         ];
 
@@ -119,7 +120,7 @@ class M_auth extends CI_Model
                     'user_id' => $user_id,
                     'key' => $chiper,
                     'type' => 1, #VERIFIKASI email / AKTIVASI AKUN 
-                    'status' => 0,
+                    'status' => 1, #change to 1 -> auto verif
                     'date_created' => time()
                 ];
 

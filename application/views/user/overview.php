@@ -8,6 +8,9 @@
 
           			<!-- Body -->
           			<div class="card-body">
+						<div class="alert alert-soft-primary mb-3">
+							Join our telegram group for further information on <a href="https://t.me/youthbreaktheboundaries" class="fw-bold" target="_blank">https://t.me/youthbreaktheboundaries</a>
+						</div>
           				<?php if ($scholarship['status'] == false && $pendaftaran_buka == 1 && $pendaftaran_max >= date("Y-m-d")):?>
           				<!-- CTA -->
           				<div class="card card-sm overflow-hidden mb-5">
